@@ -1,0 +1,70 @@
+    /* User Popup */
+    header #status .user-popup {
+      display: none;
+      width: 270px;
+      position: absolute;
+      right: -10px;
+    }
+      header #status .user-popup .tab {
+        background: #fff;
+        width: 28px;
+        height: 28px;
+        float: right;
+        position: relative;
+        border-radius: 8px 8px 0 0;
+      }
+        header #status .user-popup .tab .arrow {
+          background-position: -165px 0;
+          position: absolute;
+          top: 12px;
+          left: 7px;
+        }
+      header #status .user-popup .container {
+        background: #fff;
+        width: 222px;
+        clear: both;
+        padding: 24px;
+        border-radius: 8px 0 8px 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      }
+        header #status .user-popup .container .login.error .default {
+          display: none;
+        }
+        header #status .user-popup .container input[type="text"],
+        header #status .user-popup .container input[type="password"] {
+          border       : 1px solid #D3D3D3;
+          border-radius: 8px;
+          font-size    : 16px;
+          padding      : 6px 10px;
+          color        : #AFAFAF;
+          margin: 0 0 12px 0;
+        }
+        header #status .user-popup .container button {
+          line-height: 36px;
+        }
+        header #status .user-popup .container button {
+          text-align: center;
+          width: 100%;
+        }
+        header #status .user-popup .container label {
+          margin: 0 0 24px 0;
+          display: block;
+        }
+        header #status .user-popup .container hr {
+          width: 216px;
+          height: 1px;
+          margin: 24px 0;
+        }
+        header #status .user-popup .container label[for="register"] {
+          font-size: 16px;
+          color: #707070;
+          letter-spacing: -1px;
+          text-align: center;
+          display: block;
+        }
+        header #status .user-popup .container button#register {
+          margin: 24px 0 0 0;
+        }
+    header #status .user-popup.visible {
+      display: block;
+    }

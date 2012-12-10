@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+    <!-- CSS Styles -->
+    <link rel='stylesheet' type='text/css' href='css/styles.css'>
+    <link rel='stylesheet' type='text/css' href='css/icons.css'>
+    <link rel='stylesheet' type='text/css' href='css/popups.css'>
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <!-- JavaScript -->
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/prototype.js" type="text/javascript"></script>
+    <script src="js/netgames.js" type="text/javascript"></script>
+    <script src="js/jquery.placeholder.min.js" type="text/javascript"></script>
+	</head>
+	<body>
+    <header>
+      <div class="container-980">
+        <h1 class="logo">NetGames</h1>
+        <div id="status">
+          <div class="cart">
+            <div class="btn green">
+              <div class="icon cart"></div>
+              Cart (2)
+              <div class="arrow"></div>
+            </div>
+          </div>
+          <div class="seperator"></div>
+          <div class="sign-in user-control">
+            <p class="guest">Sign in <span class="arrow"></span></p>
+            <div class="user-popup visible">
+              <div class="tab"><div class="arrow"></div></div>
+              <div class="container">
+                <div class="login error">
+                  <input name="email" type="text" placeholder="Email Address">
+                  <input name="password" type="password" placeholder="Password">
+                  <button name="sign-in" class="silver">Sign in</button>
+                  <hr>
+                  <div class="register default">
+                    <label for="register">Actually, I am a new customer</label>
+                    <button class="blue" id="register">Register</button>
+                  </div>
+                  <div class="error">
+                    <label for="reset-password">Incorrect password</label>
+                    <button class="red" id="reset-password">Reset Password</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div> <!-- End status -->
+        <nav>
+          <div class="top-level">
+            <div class="core"></div>
+            <div class="mobile"></div>
+            <div class="casual"></div>
+            <input type="text" placeholder="Search">
+            <button>Go</button>
+          </div>
+          <div class="secondary-level">
+            <div class="featured"></div>
+            <div class="trailers"></div>
+            <div class="new-releases"></div>
+            <div class="hot-sellers"></div>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </body>
+</html>
