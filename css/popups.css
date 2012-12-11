@@ -5,6 +5,9 @@
       position: absolute;
       right: -10px;
     }
+    header #status .account .user-popup {
+      width: 154px;
+    }
       header #status .user-popup .tab {
         background: #fff;
         width: 28px;
@@ -20,15 +23,57 @@
           left: 7px;
         }
       header #status .user-popup .container {
-        background: #fff;
-        width: 222px;
-        clear: both;
-        padding: 24px;
+        clear        : both;
+        width        : 222px;
+        padding      : 24px;
         border-radius: 8px 0 8px 8px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        background   : #fff;
+        box-shadow   : 0 1px 3px rgba(0,0,0,0.5);
       }
-        header #status .user-popup .container .login.error .default {
+      header #status .account .user-popup .container {
+        width: 154px;
+        padding: 0;
+      }
+        header #status .account .user-popup .container ul {
+          list-style: none;
+        }
+          header #status .account .user-popup .container ul li { 
+            text-align: left;
+            position: relative;
+            line-height: 44px;
+            padding: 4px;
+          }
+            header #status .account .user-popup .container ul li a {
+              display    : block;
+              padding    : 0 12px 0 38px;
+              line-height: 38px;
+              position: relative;
+            }
+            header #status .account .user-popup .container ul li a:hover {
+              color: #fff;
+              background-position: 0 -630px;
+              border-radius: 6px;
+            }
+            header #status .account .user-popup .container ul li .icon { 
+              position: absolute;
+              left: 6px;
+              top: 4px;
+            }
+          header #status .account .user-popup .container ul li ~ li {
+            border-top: 1px solid #D3D3D3;
+          } 
+        header #status .user-popup .container .screen,
+        header #status .user-popup .container .screen.error .default,
+        header #status .user-popup .container .screen .error {
           display: none;
+        }
+        header #status .user-popup .container .screen.visible,
+        header #status .user-popup .container .screen.error .error {
+          display: block;
+        }
+        header #status .user-popup .container .screen.error input.error {
+          color: #951A1A;
+          border-color: #951A1A;
         }
         header #status .user-popup .container input[type="text"],
         header #status .user-popup .container input[type="password"] {
@@ -47,8 +92,14 @@
           width: 100%;
         }
         header #status .user-popup .container label {
-          margin: 0 0 24px 0;
-          display: block;
+          display       : block;
+          text-align    : center;
+          font-size     : 16px;
+          letter-spacing: -1px;
+          color         : #707070;
+        }
+        header #status .user-popup .container label + button {
+          margin: 24px 0 0 0;
         }
         header #status .user-popup .container hr {
           width: 216px;
@@ -56,15 +107,208 @@
           margin: 24px 0;
         }
         header #status .user-popup .container label[for="register"] {
-          font-size: 16px;
           color: #707070;
-          letter-spacing: -1px;
-          text-align: center;
-          display: block;
         }
         header #status .user-popup .container button#register {
           margin: 24px 0 0 0;
         }
+        header #status .user-popup .container .error label {
+          color: #951A1A;
+        }
+        header #status .user-popup .container button ~ button {
+          margin: 12px 0 0;
+        }
+        header #status .user-popup .container .reset .error button {
+          width: 103px;
+        }
+        header #status .user-popup .container .reset .error button + button {
+          margin-left: 11px;
+        }
     header #status .user-popup.visible {
       display: block;
     }
+/* Cart Popup */
+    header #status .popup {
+      display: none;
+      position: absolute;
+      top: -6px;
+      left: -6px;
+    }
+    header #status .popup.visible {
+      display: block;
+    }
+      header #status .popup .tab {
+        background: #fff;
+        border-radius: 8px 8px 0 0;
+        height: 51px;
+      }
+      header #status .wishlist-popup .tab {
+        width: 184px;
+      }
+      header #status .cart-popup .tab {
+        width: 155px;
+      }
+      header #status .popup .container {
+        position     : absolute;
+        right        : 0;
+        width        : 450px;
+        padding      : 24px;
+        border-radius: 8px 0 8px 8px;
+        background   : #fff;
+        box-shadow   : 0 1px 3px rgba(0,0,0,0.5);
+      }
+        header #status .popup .container hr {
+          width              : 100%;
+          margin             : 24px 0;
+          background-position: 0 -1px;
+        }
+        header #status .popup .container .item-container {
+          position: relative;
+          height: 83px;
+        }
+        header #status .popup .container .item-container ~ .item-container {
+          margin: 24px 0 0 0;
+        }
+          header #status .popup .container .item-container h1 {
+            position   : absolute;
+            top        : 10px;
+            left       : 107px;
+            font-size  : 16px;
+            font-weight: 600;
+            color      : #3F3F3F;
+          }
+          header #status .cart-popup .container .item-container h2.cost-ea {
+            position   : absolute;
+            top        : 12px;
+            right      : 68px;
+            font-size  : 14px;
+            font-weight: 400;
+            color      : #707070;
+          }
+          header #status .cart-popup .container.edit .item-container h2.cost-ea {
+            right: 106px;
+          }
+          header #status .wishlist-popup .container .item-container h2.cost-ea {
+            position   : absolute;
+            top        : 10px;
+            right      : 49px;
+            font-size  : 16px;
+            font-weight: 400;
+            color      : #951A1A;
+          }
+          header #status .cart-popup .container .item-container h2.cost {
+            position   : absolute;
+            top        : 10px;
+            right      : 0;
+            font-size  : 16px;
+            font-weight: 400;
+            color      : #951A1A;
+          }
+          header #status .cart-popup .container.edit .item-container h2.cost {
+            right: 48px;
+          }
+          header #status .popup .container .item-container h2.qty {
+            position   : absolute;
+            bottom     : 12px;
+            left       : 107px;
+            font-size  : 14px;
+            font-weight: 400;
+            line-height: 12px;
+            color      : #707070;
+          }
+          header #status .cart-popup .container .item-container .edit {
+            display: none;
+          }
+          header #status .cart-popup .container.edit .item-container .edit {
+            display: block;
+          }
+          header #status .cart-popup .container.edit .item-container input,
+          header #status .wishlist-popup .container .item-container input {
+            width: 27px;
+            text-align: center;
+            position: absolute;
+            bottom: 5px;
+            left: 173px;
+            padding: 2px 0;
+            border-radius: 4px;
+            border: 1px solid #AFAFAF;
+          }
+          header #status .wishlist-popup .container .item-container input {
+            padding: 8px 0;
+            width: 36px;
+            font-size: 14px;
+            bottom: -1px;
+            left: 178px;
+            border-radius: 8px;
+          }
+          header #status .wishlist-popup .container .item-container .btn.add-to-cart {
+            height: 36px;
+            width: 42px;
+            position: absolute;
+            left: 226px;
+            top: 46px;
+          }
+            header #status .wishlist-popup .container .item-container .btn.add-to-cart .icon {
+              top: -1px;
+              position: absolute;
+            }
+          header #status .cart-popup .container .item-container h2.os {
+            position   : absolute;
+            right      : 0;
+            bottom     : 12px;
+            font-size  : 14px;
+            font-weight: 400;
+            line-height: 12px;
+            color      : #707070;
+            padding: 0 0 0 36px;
+          }
+            header #status .cart-popup .container .item-container h2.os .icon {
+              position: absolute;
+              top     : -11px;
+              left    : 0;
+            }
+          header #status .cart-popup .container .item-container h2.os {
+            display: none;
+          }
+          header #status .popup .container .item-container .switch {
+            width: 88px;
+            position: absolute;
+            right: 48px;
+            bottom: 1px;
+          }
+            header #status .cart-popup .container .item-container .switch .icon {
+              position: absolute;
+              top: -1px;
+            }
+          header #status .popup .container .item-container .btn-delete {
+            position: absolute;
+            right: 0;
+            top: 6px;
+            display: none;
+          }
+          header #status .wishlist-popup .container .item-container .btn-delete {
+            display: block;
+          }
+          header #status .cart-popup .container.edit .item-container .btn-delete {
+            display: block;
+          }
+
+        header #status .cart-popup .container button {
+          width: 100%;
+        }
+        header #status .cart-popup .container h3.subtotal {
+          text-align : right;
+          font-size  : 16px;
+          font-weight: 400;
+          line-height: 15px;
+          color      : #707070;
+          margin     : 0 0 24px 0;
+        }
+        header #status .cart-popup .container h3.subtotal .amount {
+          padding: 0 0 0 24px;
+          color  : #951A1A;
+        }
+        /* Locker */
+        .locker {
+          float: right;
+        }

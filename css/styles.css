@@ -7,10 +7,21 @@
   width: 11px;
   height: 6px;
 }
+.placeholder {
+  color: #AFAFAF;
+}
+input[type="text"], input[type="password"] {
+  color: #707070;
+}
+a {
+  color: #28AAE1;
+  text-decoration: none;
+}
 hr {
-  background: url('../img/sprite_hr.png') 0 0;
+  height           : 1px;
+  border           : 0;
+  background       : url('../img/sprite_hr.png') 0 0;
   background-repeat: no-repeat;
-  border: 0;
 }
 button {
   border: none;
@@ -23,15 +34,19 @@ button,
   cursor: pointer;
   -webkit-appearance: none;
 }
+button.green,
 .btn.green {
   background-position: 0 -226px;
   color: #fff;
+  border: 1px solid #53822E;
 }
+button.green:hover,
 .btn.green:hover {
   background-position: 0 -264px;
 }
 button.silver,
-.btn.silver {
+.btn.silver,
+.switch .btn {
   background-position: 0 -302px;
   color: #fff;
   border: 1px solid #AFAFAF;
@@ -41,15 +56,25 @@ button.silver:hover,
 .btn.silver:hover {
   background-position: 0 -338px;
 }
-button.blue,
-.btn.blue {
+button.indigo,
+.btn.indigo {
   background-position: 0 -374px;
   border: 1px solid #1A7196;
   color: #fff;
 }
+button.indigo:hover,
+.btn.indigo:hover {
+  background-position: 0 -410px;
+}
+button.blue,
+.btn.blue {
+  background-position: 0 -554px;
+  border: 1px solid #234E82;
+  color: #fff;
+}
 button.blue:hover,
 .btn.blue:hover {
-  background-position: 0 -410px;
+  background-position: 0 -592px;
 }
 button.red,
 .btn.red {
@@ -61,11 +86,52 @@ button.red:hover,
 .btn.red:hover {
   background-position: 0 -482px;
 }
+/* Switches */
+.switch {
+  width: 100%;
+  position: relative;
+  height: 36px;
+}
+
+.switch .btn {
+  text-align: center;
+  line-height: 36px;
+  height: 36px;
+}
+.switch .btn.active {
+  background-position: 0 -518px;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.33);
+  border-color: #1A7196;
+}
+
+.switch.col-2 .btn {
+  width: 50%;
+  position: absolute;
+  border-radius: 8px 0 0 8px;
+}
+.switch.col-2 .btn:nth-last-child(1) {
+  right: 0;
+  border-radius: 0 8px 8px 0;
+}
+/* Game Thumbs */
+.game-thumb {
+  box-shadow: 0 2px 2px rgba(0,0,0,0.3); 
+}
+.game-thumb.small {
+  border-radius: 14px;
+  overflow: hidden;
+  width: 83px;
+  height: 83px;
+}
 /* ---------------------- Aggregated Styles       */
 /* Elements Using the 1PX Sprite */
 button,
 .btn,
-header {
+header,
+header #status .account .user-popup .container ul li a:hover,
+header nav .top-level .search-container,
+header nav .secondary-level .tab .menu .container li a:hover {
   background: url('../img/sprite_1px.png') 0 0;
   background-repeat: repeat-x;
 }
@@ -86,8 +152,18 @@ header {
 }
 /* Header Sprites */
   header .logo,
-  .arrow {
-    background: url('../img/sprite_main.png') 0 0;
+  .btn-delete,
+  .arrow,
+  header nav .top-level .tab,
+  header nav .top-level .tab .icon,
+  header nav .secondary-level .tab .icon,
+  header nav .secondary-level .tab.active {
+    background: url('../img/sprite_main.png');
+  }
+  .btn-delete {
+    width: 28px;
+    height: 28px;
+    background-position: -165px -6px;
   }
 
   header #status {
@@ -95,6 +171,7 @@ header {
     width: 100%;
     position: relative;
     top: 23px;
+    z-index: 1;
   }
     header .logo {
       width: 165px;
@@ -105,26 +182,25 @@ header {
       top: 26px;
     }
     /* Sign in, sign out and the cart */
-    header #status .sign-in {
-      float: right;
-    }
     header #status .user-control {
       margin: 4px 0 0 0;
       position: relative;
+      float: right;
     }
-      header #status .user-control p {
+      header #status .user-control > p {
         font-size: 18px;
         color: #AFAFAF;
         float: left;
         position: relative;
         padding: 0 24px 0 0;
+        cursor: pointer;
       }
     header #status .seperator {
       height:22px;
       width: 1px;
       background: #707070;
       float: right;
-      margin: 8px 24px;
+      margin: 8px 12px;
     }
       header #status p .arrow {
         position: absolute;
@@ -132,39 +208,258 @@ header {
         top: 12px;
         background-position: -165px 0;
       }
+    header #status .locker,
+    header #status .wishlist,
     header #status .cart {
       float: right;
+      position: relative;
+    }
+    header #status .locker,
+    header #status .locker + .seperator,
+    header #status .wishlist + .seperator,
+    header #status .wishlist,
+    header #status.logged-in .sign-in,
+    header #status .account {
+      display: none;
+    }
+    header #status.logged-in .locker,
+    header #status.logged-in .locker + .seperator,
+    header #status.logged-in .wishlist + .seperator,
+    header #status.logged-in .wishlist,
+    header #status.logged-in .account,
+    header #status .sign-in {
+      display: block;
     }
       header button,
       header .btn {
-        line-height: 38px;
+        line-height: 36px;
       }
-      header #status .cart .btn {
+      header #status .cart > .btn,
+      header #status .locker > .btn,
+      header #status .wishlist > .btn {
         padding: 0 44px 0 0;
         box-shadow: 0 2px 1px rgba(0,0,0,0.4);
+        position: relative;
+        z-index: 1;
       }
-        header #status .cart .btn .icon {
+        header #status .btn .icon {
           float: left;
           margin: 3px 6px ;
         }
-        header #status .cart .btn .arrow {
+        header #status .btn .arrow {
           position: absolute;
           right: 12px;
           top: 18px;
           background-position: -177px 0;
         }
-        header #status .cart .btn .arrow:before {
+        header #status .btn .arrow:before {
           content: "";
           height: 22px;
           width: 1px;
-          background: #A4E273;
           display: block;
           position: absolute;
           top: -10px;
           left: -10px;
         }
+          header #status .cart .btn .arrow:before {
+            background: #A4E273;
+          }
+          header #status .locker .btn .arrow:before {
+            background: #73BEE2;
+          }
     /* Nav */
       header nav {
         position: absolute;
-        top: 80px;  
+        top: 80px;
+        width: 100%;
       }
+        header nav .top-level {
+          height: 64px;
+          background: url('../img/sprite_header-tile.png');
+        }
+          header nav .top-level .tab {
+            width: 150px;
+            height: 57px;
+            float: left;
+            background-position: 0 -32px;
+            margin: 7px 0 0 0;
+          }
+          header nav .top-level .tab ~ .tab {
+            margin-left: -6px;
+          }
+          header nav .top-level .tab.active {
+            background-position: 0 -89px;
+          }
+          header nav .top-level .tab:hover {
+            cursor: pointer;
+          }
+            header nav .top-level .tab h2 {
+              position   : relative;
+              padding    : 0 0 0 46px;
+              text-shadow: 0 -1px 0 #000;
+              font-size  : 16px;
+              font-weight: 400;
+              color      : #AFAFAF;
+              line-height: 38px;
+              margin: 16px 0 0 20px;
+            }
+            header nav .top-level .tab.active h2 {
+              text-shadow: none;
+            }
+            header nav .top-level .tab .icon {
+              width: 36px;
+              height: 36px;
+              position: absolute;
+              top: 1px;
+              left: 0;
+            }
+          
+            header nav .top-level .tab .icon.core { background-position: -150px -38px; }
+            header nav .top-level .tab.active .icon.core { background-position: -150px -76px; }
+            header nav .top-level .tab .icon.mobile { background-position: -186px -38px; }
+            header nav .top-level .tab.active .icon.mobile { background-position: -186px -76px; }
+            header nav .top-level .tab .icon.casual { background-position: -222px -38px; }
+            header nav .top-level .tab.active .icon.casual { background-position: -222px -76px; }
+          
+          header nav .top-level .search-container {
+            content            : "";
+            position           : absolute;
+            top                : 15px;
+            right              : 78px;
+            width              : 337px;
+            height             : 36px;
+            border-radius      : 8px;
+            background-position: 0 -674px;
+          }
+            header nav .top-level .search-container input[type="text"] { 
+              position     : absolute;
+              top          : 2px;
+              right        : 2px;
+              width        : 293px;
+              height       : 32px;
+              padding      : 0 0 0 40px;
+              border       : 0;
+              border-radius: 8px;
+              font-size    : 16px;
+              background   : #fff;
+            }
+            header nav .top-level .search-container .icon.search {
+              position: absolute;
+              top     : 3px;
+              left    : 6px;
+            }
+          header nav .top-level button {
+            width: 67px;
+            position: absolute;
+            right: 0;
+            top: 14px;
+            line-height: 38px;
+            height: 38px;
+            padding: 0;
+          }
+        /* Secondary Level */
+        header nav .secondary-level {
+
+        }
+          header nav .secondary-level > .tab {
+            width: 141px;
+            height: 83px;
+            float: left;
+            cursor: pointer;
+          }
+          header nav .secondary-level > .tab:nth-last-child(1) {
+            float: right;
+          }
+          header nav .secondary-level > .tab.active {
+            background-position: 0 -146px;
+          }
+            header nav .secondary-level > .tab h2 {
+              font-size: 14px;
+              text-shadow: 0 1px 0 #fff;
+              color: #707070;
+              font-weight: 400;
+              text-align: center;
+              margin: 10px 0 0 0;
+            }
+            header nav .secondary-level .tab.active h2 {
+              color: #28AAE1;
+              position: relative;
+            }
+            header nav .secondary-level > .tab .icon {
+              width: 42px;
+              height: 42px;
+              margin: 0 auto -2px;
+            }
+            /* Passive */
+            header nav .secondary-level .tab .icon.featured { background-position: -150px -110px; }
+            header nav .secondary-level .tab .icon.trailers { background-position: -192px -110px; }
+            header nav .secondary-level .tab .icon.new-releases { background-position: -235px -110px; }
+            header nav .secondary-level .tab .icon.hot-sellers { background-position: -277px -110px; }
+            header nav .secondary-level .tab .icon.browse { background-position: -320px -110px; }
+            /* Active */
+            header nav .secondary-level .tab.active .icon.featured { background-position: -150px -152px; }
+            header nav .secondary-level .tab.active .icon.trailers { background-position: -192px -152px; }
+            header nav .secondary-level .tab.active .icon.new-releases { background-position: -235px -152px; }
+            header nav .secondary-level .tab.active .icon.hot-sellers { background-position: -277px -152px; }
+            header nav .secondary-level .tab.active .icon.browse { background-position: -320px -152px; }
+            
+            header nav .secondary-level > .tab .arrow {
+              display: block;
+              position: absolute;
+              right: 24px;
+              top: 58px;
+              background-position: -189px 0;
+            } 
+            header nav .secondary-level .tab .menu { 
+              display: none;
+            }
+            header nav .secondary-level .tab .menu.visible { 
+              position: relative;
+              top: -21px;
+              left: -12px;
+              display: block;
+            }
+              header nav .secondary-level .tab .menu .tab { 
+                width: 32px;
+                height: 24px;
+                background: #FFF;
+                border-radius: 8px 8px 0 0;
+                position: absolute;
+                right: 0;
+              }
+                header nav .secondary-level .tab .menu .tab .arrow {
+                  top: 10px;
+                  right: 12px;
+                } 
+              header nav .secondary-level .tab .menu .container { 
+                position: absolute;
+                background: #FFF;
+                list-style: none;
+                font-size: 14px;
+                color: #707070;
+                border-radius: 10px;
+                width: 100%;
+                top: 24px;
+                border-radius: 8px 0 8px 8px;
+                box-shadow: 0 2px 3px rgba(0,0,0,0.5);
+              }
+                header nav .secondary-level .tab .menu .container ul { 
+                  list-style: none;
+                }
+                header nav .secondary-level .tab .menu .container li { 
+                  padding: 4px 4px;
+                }
+                header nav .secondary-level .tab .menu .container li ~ li { 
+                  border-top: 1px solid #D3D3D3;
+                }
+                  header nav .secondary-level .tab .menu .container li a { 
+                    display: block;
+                    margin: 0;
+                    padding: 0 12px;
+                    line-height: 32px;
+                    border-radius: 6px;
+                  }
+                  header nav .secondary-level .tab .menu .container li a:hover { 
+                    background-position: 0 -630px;
+                    color: #fff;
+                  }
