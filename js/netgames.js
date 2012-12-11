@@ -1,8 +1,10 @@
+var templateDir = './templates/';
+
 var header = {};
 header.init = function() {
   var obj = $('<header></header>');
-  obj.load('./templates/header.html',function(){
-    $('#header').replaceWith(obj);
+  obj.load(templateDir + 'header.html',function(){
+    $('div[template="header"]').replaceWith(obj);
     header.loaded();
   });
 }
@@ -45,7 +47,11 @@ header.loaded = function() {
   });
 
   $('html').on('click',function(){
-    $('.visible').removeClass('visible');
+    $('.visible').each(function(){
+      if (!$(this).hasClass('screen')) {
+        $(this).removeClass('visible');
+      }
+    });
   });
 
   $('.switch .btn').on('click',function(event){
@@ -70,6 +76,60 @@ header.loaded = function() {
     event.stopPropagation();
   });
 }
+var footer = {};
+footer.init = function() {
+  var obj = $('<footer></footer>');
+  obj.load(templateDir + 'footer.html',function(){
+    $('div[template="footer"]').replaceWith(obj);
+  });
+}
+
+var main = {};
+main.init = function() {
+  $('#show-packages').on('click',function(){
+    $('#package-view').addClass('visible');
+    $('#single-view').removeClass('visible');
+  });
+  $('#show-singles').on('click',function(){
+    $('#package-view').removeClass('visible');
+    $('#single-view').addClass('visible');
+  });
+}
+
+/* Scrolling */
+
+var pkg = {};
+pkg.drag = function(el,areaW,parW) {
+  var scrPos = el.position().left - 24;
+  var scrollable = el.closest('.package').find('.package-scroll');
+  scrollable.css({left: -(scrPos*(areaW/parW))});
+  var shadowLeft = el.closest('.package').find('.shadow.left');
+  var shadowRight = el.closest('.package').find('.shadow.right');
+  var percent = (scrPos*(areaW/parW))/100;
+  shadowLeft.css('opacity',percent);
+  shadowRight.css('opacity',1-percent);
+}
+pkg.scrollInit = function() {
+  $('.scroll-bar').each(function(){
+    var scrollable = $(this).closest('.package').find('.package-scroll'),
+        scrollbar = $(this).closest('.scroll'),
+        parW = scrollable.width()-2,
+        areaW = scrollbar.width(),
+        scrW = parW / (areaW/parW);
+    $(this).css('width',areaW/parW*areaW)
+    $(this).draggable({
+      axis: 'x',
+      containment: 'parent',
+      drag: function() {
+        pkg.drag($(this),areaW,parW);
+      }
+    });
+  });
+}
+
 $(function() {
   header.init();
+  main.init();
+  footer.init();
+  pkg.scrollInit()
 });

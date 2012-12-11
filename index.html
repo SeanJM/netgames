@@ -7,16 +7,18 @@
     <link rel='stylesheet' type='text/css' href='css/icons.css'>
     <link rel='stylesheet' type='text/css' href='css/popups.css'>
     <link rel='stylesheet' type='text/css' href='css/header.css'>
+    <link rel='stylesheet' type='text/css' href='css/footer.css'>
     <!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
     <!-- JavaScript -->
     <script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/prototype.js" type="text/javascript"></script>
     <script src="js/netgames.js" type="text/javascript"></script>
     <script src="js/jquery.placeholder.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui-1.9.2.custom.min.js" type="text/javascript"></script>
 	</head>
 	<body>
-    <div id="header" template></div> <!-- This will be replaced by the header template -->
+    <div template="header"></div> <!-- This will be replaced by the header template -->
     <div id="main">
       <div class="container-950">
         <div id="hero">
@@ -57,8 +59,8 @@
         <hr>
         <div id="feature-gallery" class="gallery">
           <div class="switch col-2 edit narrow">
-            <div class="btn active">Singles</div>
-            <div class="btn">Packages</div>
+            <div class="btn active" id="show-singles">Singles</div>
+            <div class="btn" id="show-packages">Packages</div>
           </div>
           <hr>
           <div class="screen visible" id="single-view">
@@ -67,7 +69,7 @@
               <div class="btn indigo more">More<div class="arrow"></div></div>
               <div>
                 <div class="item-container col-2">
-                  <div class="game-thumb">
+                  <div class="single">
                     <div class="heading">
                       <h1><a href="">Hero Academy</a></h1>
                       <div class="platform">
@@ -93,7 +95,7 @@
                   <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
                 </div>
                 <div class="item-container col-2">
-                  <div class="game-thumb">
+                  <div class="single">
                     <div class="heading">
                       <h1><a href="">New Super Mario Bros U</a></h1>
                       <div class="platform">
@@ -123,7 +125,7 @@
               <div class="carousel-container">
                 <div class="carousel">
                   <div class="item-container col-3">
-                    <div class="game-thumb">
+                    <div class="single">
                       <div class="heading">
                         <h1><a href="">The Sims 3</a></h1>
                         <div class="platform">
@@ -149,7 +151,7 @@
                     <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
                   </div>
                   <div class="item-container col-3">
-                    <div class="game-thumb">
+                    <div class="single">
                       <div class="heading">
                         <h1><a href="">Call of Duty: Black Ops II</a></h1>
                         <div class="platform">
@@ -175,7 +177,7 @@
                     <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
                   </div>
                   <div class="item-container col-3">
-                    <div class="game-thumb">
+                    <div class="single">
                       <div class="heading">
                         <h1><a href="">Super Meat Boy</a></h1>
                         <div class="platform">
@@ -213,7 +215,7 @@
               <div class="btn indigo more">More<div class="arrow"></div></div>
               <div>
                 <div class="item-container col-2">
-                  <div class="game-thumb">
+                  <div class="single">
                     <div class="heading">
                       <h1><a href="">Hero Academy</a></h1>
                       <div class="platform">
@@ -239,7 +241,7 @@
                   <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
                 </div>
                 <div class="item-container col-2">
-                  <div class="game-thumb">
+                  <div class="single">
                     <div class="heading">
                       <h1><a href="">New Super Mario Bros U</a></h1>
                       <div class="platform">
@@ -269,7 +271,7 @@
               <div class="carousel-container">
                 <div class="carousel">
                   <div class="item-container col-3">
-                    <div class="game-thumb">
+                    <div class="single">
                       <div class="heading">
                         <h1><a href="">The Sims 3</a></h1>
                         <div class="platform">
@@ -295,7 +297,7 @@
                     <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
                   </div>
                   <div class="item-container col-3">
-                    <div class="game-thumb">
+                    <div class="single">
                       <div class="heading">
                         <h1><a href="">Call of Duty: Black Ops II</a></h1>
                         <div class="platform">
@@ -321,7 +323,7 @@
                     <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
                   </div>
                   <div class="item-container col-3">
-                    <div class="game-thumb">
+                    <div class="single">
                       <div class="heading">
                         <h1><a href="">Super Meat Boy</a></h1>
                         <div class="platform">
@@ -353,13 +355,635 @@
                 </div> <!-- <div class="carousel"> -->
               </div> <!-- <div class="carousel-container"> -->
             </section>
+          </div> <!-- <div class="screen" id="single-view"> -->
+          <div class="screen" id="package-view">
+            <section>
+              <h1>New Releases</h1>
+              <div class="carousel-container">
+                <div class="carousel">
+                  <div class="item-container col-2">
+                    <div class="package">
+                      <div class="heading">
+                        <h1><a href="">Sims Super Fun Pack</a></h1>
+                        <div class="platform">
+                          <div class="icon osx active"></div>
+                          <div class="icon windows"></div>
+                        </div>
+                      </div>
+                      <div class="package-scroll-container"> <!-- Contains the scrolling element -->
+                        <div class="package-scroll"> <!-- This is the div that you will scroll with JavaScript -->
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-showtime-small.png">
+                            </div>
+                            <h2>The Sims 3: Showtime</h2>
+                            <div class="rating-container rating-45"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-generations-small.png">
+                            </div>
+                            <h2>The Sims 3: Generations</h2>
+                            <div class="rating-container rating-4"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-ambitions-small.png">
+                            </div>
+                            <h2>The Sims 3: Ambitions</h2>
+                            <div class="rating-container rating-3"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-university-small.png">
+                            </div>
+                            <h2>The Sims 3: University</h2>
+                            <div class="rating-container rating-35"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-pets-small.png">
+                            </div>
+                            <h2>The Sims 3: Pets</h2>
+                            <div class="rating-container rating-25"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                        </div> <!-- <div class="package-scroll"> -->
+                        <div class="shadow right"></div>
+                        <div class="shadow left"></div>
+                      </div> <!-- <div class="package-scroll-container"> -->
+                      <div class="scroll">
+                        <div class="scroll-bar"></div>
+                      </div>
+                    </div>
+                    <div class="rating-container rating-35"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <p>(1,273 Reviews)</p>
+                    </div>
+                    <div class="price">
+                      <h3>14 points</h3>
+                    </div>
+                    <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+                    <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+                  </div> <!-- <div class="item-container col-2"> -->
+                  <div class="item-container col-2">
+                    <div class="package">
+                      <div class="heading">
+                        <h1><a href="">Sims Super Fun Pack</a></h1>
+                        <div class="platform">
+                          <div class="icon osx active"></div>
+                          <div class="icon windows"></div>
+                        </div>
+                      </div>
+                      <div class="package-scroll-container"> <!-- Contains the scrolling element -->
+                        <div class="package-scroll"> <!-- This is the div that you will scroll with JavaScript -->
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-showtime-small.png">
+                            </div>
+                            <h2>The Sims 3: Showtime</h2>
+                            <div class="rating-container rating-45"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-generations-small.png">
+                            </div>
+                            <h2>The Sims 3: Generations</h2>
+                            <div class="rating-container rating-4"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-ambitions-small.png">
+                            </div>
+                            <h2>The Sims 3: Ambitions</h2>
+                            <div class="rating-container rating-3"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-university-small.png">
+                            </div>
+                            <h2>The Sims 3: University</h2>
+                            <div class="rating-container rating-35"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-pets-small.png">
+                            </div>
+                            <h2>The Sims 3: Pets</h2>
+                            <div class="rating-container rating-25"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                        </div> <!-- <div class="package-scroll"> -->
+                        <div class="shadow right"></div>
+                        <div class="shadow left"></div>
+                      </div> <!-- <div class="package-scroll-container"> -->
+                      <div class="scroll">
+                        <div class="scroll-bar"></div>
+                      </div>
+                    </div>
+                    <div class="rating-container rating-35"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <p>(1,273 Reviews)</p>
+                    </div>
+                    <div class="price">
+                      <h3>14 points</h3>
+                    </div>
+                    <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+                    <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+                  </div> <!-- <div class="item-container col-2"> -->
+                  <div class="controls">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <hr>
+            <section>
+              <h1>Recommended</h1>
+              <div class="carousel-container">
+                <div class="carousel">
+                  <div class="item-container col-2">
+                    <div class="package">
+                      <div class="heading">
+                        <h1><a href="">Sims Super Fun Pack</a></h1>
+                        <div class="platform">
+                          <div class="icon osx active"></div>
+                          <div class="icon windows"></div>
+                        </div>
+                      </div>
+                      <div class="package-scroll-container"> <!-- Contains the scrolling element -->
+                        <div class="package-scroll"> <!-- This is the div that you will scroll with JavaScript -->
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-showtime-small.png">
+                            </div>
+                            <h2>The Sims 3: Showtime</h2>
+                            <div class="rating-container rating-45"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-generations-small.png">
+                            </div>
+                            <h2>The Sims 3: Generations</h2>
+                            <div class="rating-container rating-4"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-ambitions-small.png">
+                            </div>
+                            <h2>The Sims 3: Ambitions</h2>
+                            <div class="rating-container rating-3"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-university-small.png">
+                            </div>
+                            <h2>The Sims 3: University</h2>
+                            <div class="rating-container rating-35"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-pets-small.png">
+                            </div>
+                            <h2>The Sims 3: Pets</h2>
+                            <div class="rating-container rating-25"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                        </div> <!-- <div class="package-scroll"> -->
+                        <div class="shadow right"></div>
+                        <div class="shadow left"></div>
+                      </div> <!-- <div class="package-scroll-container"> -->
+                      <div class="scroll">
+                        <div class="scroll-bar"></div>
+                      </div>
+                    </div>
+                    <div class="rating-container rating-35"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <p>(1,273 Reviews)</p>
+                    </div>
+                    <div class="price">
+                      <h3>14 points</h3>
+                    </div>
+                    <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+                    <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+                  </div> <!-- <div class="item-container col-2"> -->
+                  <div class="item-container col-2">
+                    <div class="package">
+                      <div class="heading">
+                        <h1><a href="">Sims Super Fun Pack</a></h1>
+                        <div class="platform">
+                          <div class="icon osx active"></div>
+                          <div class="icon windows"></div>
+                        </div>
+                      </div>
+                      <div class="package-scroll-container"> <!-- Contains the scrolling element -->
+                        <div class="package-scroll"> <!-- This is the div that you will scroll with JavaScript -->
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-showtime-small.png">
+                            </div>
+                            <h2>The Sims 3: Showtime</h2>
+                            <div class="rating-container rating-45"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-generations-small.png">
+                            </div>
+                            <h2>The Sims 3: Generations</h2>
+                            <div class="rating-container rating-4"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-ambitions-small.png">
+                            </div>
+                            <h2>The Sims 3: Ambitions</h2>
+                            <div class="rating-container rating-3"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-university-small.png">
+                            </div>
+                            <h2>The Sims 3: University</h2>
+                            <div class="rating-container rating-35"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-pets-small.png">
+                            </div>
+                            <h2>The Sims 3: Pets</h2>
+                            <div class="rating-container rating-25"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                        </div> <!-- <div class="package-scroll"> -->
+                        <div class="shadow right"></div>
+                        <div class="shadow left"></div>
+                      </div> <!-- <div class="package-scroll-container"> -->
+                      <div class="scroll">
+                        <div class="scroll-bar"></div>
+                      </div>
+                    </div>
+                    <div class="rating-container rating-35"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <p>(1,273 Reviews)</p>
+                    </div>
+                    <div class="price">
+                      <h3>14 points</h3>
+                    </div>
+                    <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+                    <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+                  </div> <!-- <div class="item-container col-2"> -->
+                  <div class="controls">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <hr>
+            <section>
+              <h1>Action Packed</h1>
+              <div class="carousel-container">
+                <div class="carousel">
+                  <div class="item-container col-2">
+                    <div class="package">
+                      <div class="heading">
+                        <h1><a href="">Sims Super Fun Pack</a></h1>
+                        <div class="platform">
+                          <div class="icon osx active"></div>
+                          <div class="icon windows"></div>
+                        </div>
+                      </div>
+                      <div class="package-scroll-container"> <!-- Contains the scrolling element -->
+                        <div class="package-scroll"> <!-- This is the div that you will scroll with JavaScript -->
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-showtime-small.png">
+                            </div>
+                            <h2>The Sims 3: Showtime</h2>
+                            <div class="rating-container rating-45"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-generations-small.png">
+                            </div>
+                            <h2>The Sims 3: Generations</h2>
+                            <div class="rating-container rating-4"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-ambitions-small.png">
+                            </div>
+                            <h2>The Sims 3: Ambitions</h2>
+                            <div class="rating-container rating-3"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-university-small.png">
+                            </div>
+                            <h2>The Sims 3: University</h2>
+                            <div class="rating-container rating-35"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-pets-small.png">
+                            </div>
+                            <h2>The Sims 3: Pets</h2>
+                            <div class="rating-container rating-25"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                        </div> <!-- <div class="package-scroll"> -->
+                        <div class="shadow right"></div>
+                        <div class="shadow left"></div>
+                      </div> <!-- <div class="package-scroll-container"> -->
+                      <div class="scroll">
+                        <div class="scroll-bar"></div>
+                      </div>
+                    </div>
+                    <div class="rating-container rating-35"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <p>(1,273 Reviews)</p>
+                    </div>
+                    <div class="price">
+                      <h3>14 points</h3>
+                    </div>
+                    <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+                    <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+                  </div> <!-- <div class="item-container col-2"> -->
+                  <div class="item-container col-2">
+                    <div class="package">
+                      <div class="heading">
+                        <h1><a href="">Sims Super Fun Pack</a></h1>
+                        <div class="platform">
+                          <div class="icon osx active"></div>
+                          <div class="icon windows"></div>
+                        </div>
+                      </div>
+                      <div class="package-scroll-container"> <!-- Contains the scrolling element -->
+                        <div class="package-scroll"> <!-- This is the div that you will scroll with JavaScript -->
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-showtime-small.png">
+                            </div>
+                            <h2>The Sims 3: Showtime</h2>
+                            <div class="rating-container rating-45"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-generations-small.png">
+                            </div>
+                            <h2>The Sims 3: Generations</h2>
+                            <div class="rating-container rating-4"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-ambitions-small.png">
+                            </div>
+                            <h2>The Sims 3: Ambitions</h2>
+                            <div class="rating-container rating-3"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-university-small.png">
+                            </div>
+                            <h2>The Sims 3: University</h2>
+                            <div class="rating-container rating-35"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                          <div class="mini-item">
+                            <div class="game-thumb small">
+                              <img src="./img/game-thumb_sims-pets-small.png">
+                            </div>
+                            <h2>The Sims 3: Pets</h2>
+                            <div class="rating-container rating-25"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                              <div class="star"></div>
+                            </div>
+                          </div>
+                        </div> <!-- <div class="package-scroll"> -->
+                        <div class="shadow right"></div>
+                        <div class="shadow left"></div>
+                      </div> <!-- <div class="package-scroll-container"> -->
+                      <div class="scroll">
+                        <div class="scroll-bar"></div>
+                      </div>
+                    </div>
+                    <div class="rating-container rating-35"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <p>(1,273 Reviews)</p>
+                    </div>
+                    <div class="price">
+                      <h3>14 points</h3>
+                    </div>
+                    <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+                    <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+                  </div> <!-- <div class="item-container col-2"> -->
+                  <div class="controls">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
-          <div class="screen" id="package-view"></div>
         </div> <!-- <div id="feature-gallery"> -->
       </div>
     </div>
-    <footer>
-      <div class="logo">NetGames</div>
-    </footer>
+    <div template="footer"></div>
   </body>
 </html>
