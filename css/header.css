@@ -1,0 +1,297 @@
+header {
+  background-position: 0 0;
+  width: 100%;
+  height: 226px;
+  margin-bottom: 24px;
+}
+/* Header Sprites */
+  
+  .btn-delete {
+    width: 28px;
+    height: 28px;
+    background-position: -165px -10px;
+  }
+  .btn-delete:hover {
+    background-position: -193px -10px;
+  }
+
+  header #status {
+    height: 50px;
+    width: 100%;
+    position: relative;
+    top: 23px;
+    z-index: 1;
+  }
+    header .logo {
+      width: 165px;
+      height: 32px;
+      background-position: 0 0;
+      text-indent: -99999px;
+      position: absolute;
+      top: 26px;
+    }
+    /* Sign in, sign out and the cart */
+    header #status .user-control {
+      margin: 4px 0 0 0;
+      position: relative;
+      float: right;
+    }
+      header #status .user-control > p {
+        font-size: 18px;
+        color: #AFAFAF;
+        float: left;
+        position: relative;
+        padding: 0 24px 0 0;
+        cursor: pointer;
+      }
+    header #status .seperator {
+      height:22px;
+      width: 1px;
+      background: #707070;
+      float: right;
+      margin: 8px 12px;
+    }
+      header #status p .arrow {
+        position: absolute;
+        right: 0;
+        top: 12px;
+        background-position: -165px 0;
+      }
+    header #status .locker,
+    header #status .wishlist,
+    header #status .cart {
+      float: right;
+      position: relative;
+    }
+    header #status .locker,
+    header #status .locker + .seperator,
+    header #status .wishlist + .seperator,
+    header #status .wishlist,
+    header #status.logged-in .sign-in,
+    header #status .account {
+      display: none;
+    }
+    header #status.logged-in .locker,
+    header #status.logged-in .locker + .seperator,
+    header #status.logged-in .wishlist + .seperator,
+    header #status.logged-in .wishlist,
+    header #status.logged-in .account,
+    header #status .sign-in {
+      display: block;
+    }
+      header button,
+      header .btn {
+        line-height: 36px;
+      }
+      header #status .cart > .btn,
+      header #status .locker > .btn,
+      header #status .wishlist > .btn {
+        padding: 0 44px 0 0;
+        box-shadow: 0 2px 1px rgba(0,0,0,0.4);
+        position: relative;
+        z-index: 1;
+      }
+        header #status .btn .icon {
+          float: left;
+          margin: 3px 6px ;
+        }
+        header #status .btn .arrow {
+          position: absolute;
+          right: 12px;
+          top: 18px;
+          background-position: -177px 0;
+        }
+        header #status .btn .arrow:before {
+          content: "";
+          height: 22px;
+          width: 1px;
+          display: block;
+          position: absolute;
+          top: -10px;
+          left: -10px;
+        }
+          header #status .cart .btn .arrow:before {
+            background: #A4E273;
+          }
+          header #status .locker .btn .arrow:before {
+            background: #73BEE2;
+          }
+    /* Nav */
+      header nav {
+        position: absolute;
+        top: 80px;
+        width: 100%;
+      }
+        header nav .top-level {
+          height: 64px;
+          background: url('../img/sprite_header-tile.png');
+        }
+          header nav .top-level .tab {
+            width: 150px;
+            height: 57px;
+            float: left;
+            background-position: 0 -32px;
+            margin: 7px 0 0 0;
+          }
+          header nav .top-level .tab ~ .tab {
+            margin-left: -6px;
+          }
+          header nav .top-level .tab.active {
+            background-position: 0 -89px;
+          }
+          header nav .top-level .tab:hover {
+            cursor: pointer;
+          }
+            header nav .top-level .tab h2 {
+              position   : relative;
+              padding    : 0 0 0 46px;
+              text-shadow: 0 -1px 0 #000;
+              font-size  : 16px;
+              font-weight: 400;
+              color      : #AFAFAF;
+              line-height: 38px;
+              margin: 16px 0 0 20px;
+            }
+            header nav .top-level .tab.active h2 {
+              text-shadow: none;
+            }
+            header nav .top-level .tab .icon {
+              width: 36px;
+              height: 36px;
+              position: absolute;
+              top: 1px;
+              left: 0;
+            }
+          
+            header nav .top-level .tab .icon.core { background-position: -150px -38px; }
+            header nav .top-level .tab.active .icon.core { background-position: -150px -76px; }
+            header nav .top-level .tab .icon.mobile { background-position: -186px -38px; }
+            header nav .top-level .tab.active .icon.mobile { background-position: -186px -76px; }
+            header nav .top-level .tab .icon.casual { background-position: -222px -38px; }
+            header nav .top-level .tab.active .icon.casual { background-position: -222px -76px; }
+          
+          header nav .top-level .search-container {
+            content            : "";
+            position           : absolute;
+            top                : 15px;
+            right              : 78px;
+            width              : 337px;
+            height             : 36px;
+            border-radius      : 8px;
+            background-position: 0 -674px;
+          }
+            header nav .top-level .search-container input[type="text"] { 
+              position     : absolute;
+              top          : 2px;
+              right        : 2px;
+              width        : 293px;
+              height       : 32px;
+              padding      : 0 0 0 40px;
+              border       : 0;
+              border-radius: 8px;
+              font-size    : 16px;
+              background   : #fff;
+            }
+            header nav .top-level .search-container .icon.search {
+              position: absolute;
+              top     : 3px;
+              left    : 6px;
+            }
+          header nav .top-level button {
+            width: 67px;
+            position: absolute;
+            right: 0;
+            top: 14px;
+            line-height: 38px;
+            height: 38px;
+            padding: 0;
+          }
+        /* Secondary Level */
+        header nav .secondary-level {
+
+        }
+          header nav .secondary-level > .tab {
+            width: 141px;
+            height: 83px;
+            float: left;
+            cursor: pointer;
+          }
+          header nav .secondary-level > .tab:nth-last-child(1) {
+            float: right;
+          }
+          header nav .secondary-level > .tab.active {
+            background-position: 0 -146px;
+          }
+            header nav .secondary-level > .tab h2 {
+              font-size: 14px;
+              text-shadow: 0 1px 0 #fff;
+              color: #707070;
+              font-weight: 400;
+              text-align: center;
+              margin: 10px 0 0 0;
+            }
+            header nav .secondary-level .tab.active h2 {
+              color: #28AAE1;
+              position: relative;
+            }
+            header nav .secondary-level > .tab .arrow {
+              display: block;
+              position: absolute;
+              right: 24px;
+              top: 58px;
+              background-position: -189px 0;
+            } 
+            header nav .secondary-level .tab .menu { 
+              display: none;
+            }
+            header nav .secondary-level .tab .menu.visible { 
+              display : block;
+              z-index : 1;
+              position: relative;
+              top     : -21px;
+              left    : -12px;
+            }
+              header nav .secondary-level .tab .menu .tab { 
+                width: 32px;
+                height: 24px;
+                background: #FFF;
+                border-radius: 8px 8px 0 0;
+                position: absolute;
+                right: 0;
+              }
+                header nav .secondary-level .tab .menu .tab .arrow {
+                  top: 10px;
+                  right: 12px;
+                } 
+              header nav .secondary-level .tab .menu .container { 
+                position: absolute;
+                background: #FFF;
+                list-style: none;
+                font-size: 14px;
+                color: #707070;
+                border-radius: 10px;
+                width: 100%;
+                top: 24px;
+                border-radius: 8px 0 8px 8px;
+                box-shadow: 0 2px 3px rgba(0,0,0,0.5);
+              }
+                header nav .secondary-level .tab .menu .container ul { 
+                  list-style: none;
+                }
+                header nav .secondary-level .tab .menu .container li { 
+                  padding: 4px 4px;
+                }
+                header nav .secondary-level .tab .menu .container li ~ li { 
+                  border-top: 1px solid #D3D3D3;
+                }
+                  header nav .secondary-level .tab .menu .container li a { 
+                    display: block;
+                    margin: 0;
+                    padding: 0 12px;
+                    line-height: 32px;
+                    border-radius: 6px;
+                  }
+                  header nav .secondary-level .tab .menu .container li a:hover { 
+                    background-position: 0 -630px;
+                    color: #fff;
+                  }

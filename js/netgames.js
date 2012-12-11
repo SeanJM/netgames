@@ -1,4 +1,12 @@
-$(function() {
+var header = {};
+header.init = function() {
+  var obj = $('<header></header>');
+  obj.load('./templates/header.html',function(){
+    $('#header').replaceWith(obj);
+    header.loaded();
+  });
+}
+header.loaded = function() {
   var signIn = $('#status .sign-in');
   signIn.find('.guest').click(function(event){
     signIn.find('.user-popup').toggleClass('visible');
@@ -61,4 +69,7 @@ $(function() {
     }
     event.stopPropagation();
   });
+}
+$(function() {
+  header.init();
 });

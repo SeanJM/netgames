@@ -10,11 +10,44 @@
 .icon.wish { background-position: 0 -64px; }
 .icon.windows { background-position: -32px 0; }
 .active .icon.windows { background-position: -32px -32px; }
+.active.icon.windows { background-position: -32px -64px; }
 .icon.osx { background-position: -64px 0; }
 .active .icon.osx { background-position: -64px -32px; }
+.active.icon.osx { background-position: -64px -64px; }
 .icon.account { background-position: -96px 0; }
 *:hover > .icon.account { background-position: -96px -32px; }
 .icon.logout { background-position: -128px 0; }
 *:hover > .icon.logout { background-position: -128px -32px; }
 .icon.search { background-position: -160px 0px; }
 .icon.add-to-cart { background-position: -160px -32px; }
+.icon.add-to-wishlist { background-position: 0 -64px; }
+
+/* Header & Hero Icons */
+
+header nav .secondary-level > .tab .icon {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto -2px;
+}
+#activity .item-container .icon {
+  position: absolute;
+  left: 140px;
+  bottom: 12px;
+  width: 43px;
+  height: 42px;
+}
+/* Passive */
+#activity .item-container .icon.review { background-position: -363px -110px; }
+header nav .secondary-level .tab .icon.featured { background-position: -150px -110px; }
+header nav .secondary-level .tab .icon.trailers,
+#activity .item-container .icon.trailer { background-position: -192px -110px; }
+header nav .secondary-level .tab .icon.new-releases,
+#activity .item-container .icon.new-release { background-position: -235px -110px; }
+header nav .secondary-level .tab .icon.hot-sellers { background-position: -277px -110px; }
+header nav .secondary-level .tab .icon.browse { background-position: -320px -110px; }
+/* Active */
+header nav .secondary-level .tab.active .icon.featured { background-position: -150px -152px; }
+header nav .secondary-level .tab.active .icon.trailers { background-position: -192px -152px; }
+header nav .secondary-level .tab.active .icon.new-releases { background-position: -235px -152px; }
+header nav .secondary-level .tab.active .icon.hot-sellers { background-position: -277px -152px; }
+header nav .secondary-level .tab.active .icon.browse { background-position: -320px -152px; }

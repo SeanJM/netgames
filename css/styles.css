@@ -19,10 +19,12 @@ a {
 }
 hr {
   height           : 1px;
+  margin           : auto;
   border           : 0;
   background       : url('../img/sprite_hr.png') 0 0;
   background-repeat: no-repeat;
 }
+
 button {
   border: none;
 }
@@ -104,7 +106,6 @@ button.red:hover,
   text-shadow: 0 1px 0 rgba(0,0,0,0.33);
   border-color: #1A7196;
 }
-
 .switch.col-2 .btn {
   width: 50%;
   position: absolute;
@@ -113,6 +114,10 @@ button.red:hover,
 .switch.col-2 .btn:nth-last-child(1) {
   right: 0;
   border-radius: 0 8px 8px 0;
+}
+.switch.col-2.narrow {
+  width: 33%;  
+  margin: auto;
 }
 /* Game Thumbs */
 .game-thumb {
@@ -132,334 +137,347 @@ header,
 header #status .account .user-popup .container ul li a:hover,
 header nav .top-level .search-container,
 header nav .secondary-level .tab .menu .container li a:hover {
-  background: url('../img/sprite_1px.png') 0 0;
+  background-image: url('../img/sprite_1px.png');
   background-repeat: repeat-x;
+}
+header .logo,
+.btn-delete,
+.arrow,
+header nav .top-level .tab,
+header nav .top-level .tab .icon,
+header nav .secondary-level .tab .icon,
+header nav .secondary-level .tab.active,
+#hero .icon,
+.gallery section .item-container .rating-container .star,
+.carousel-container .controls .left,
+    .carousel-container .controls .right {
+  background-image: url('../img/sprite_main.png');
 }
 /* ---------------------- End Aggregated Styles   */
 
 /* ---------------------- Main Container          */
+.container-950,
+.container-960,
+.container-970,
 .container-980 {
-  width: 980px;
   margin: auto;
   position: relative;
 }
+.container-980 { width: 980px; }
+.container-970 { width: 970px; }
+.container-960 { width: 960px; }
+.container-950 { width: 950px; }
 
-/* ---------------------- Header                  */
-header {
-  background-position: 0 0;
+/* ----------------------------- Features */
+#hero {
   width: 100%;
-  height: 226px;
+  height: 451px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  position: relative;
 }
-/* Header Sprites */
-  header .logo,
-  .btn-delete,
-  .arrow,
-  header nav .top-level .tab,
-  header nav .top-level .tab .icon,
-  header nav .secondary-level .tab .icon,
-  header nav .secondary-level .tab.active {
-    background: url('../img/sprite_main.png');
-  }
-  .btn-delete {
-    width: 28px;
-    height: 28px;
-    background-position: -165px -6px;
-  }
-
-  header #status {
-    height: 50px;
-    width: 100%;
+  #hero > img {
+    border-radius: 30px;
     position: relative;
-    top: 23px;
-    z-index: 1;
   }
-    header .logo {
-      width: 165px;
-      height: 32px;
-      background-position: 0 0;
-      text-indent: -99999px;
-      position: absolute;
-      top: 26px;
-    }
-    /* Sign in, sign out and the cart */
-    header #status .user-control {
-      margin: 4px 0 0 0;
+#activity {
+  position: absolute;
+  height: 171px;
+  bottom: 0;
+  background: #fff;
+  width: 100%;
+  border-radius: 0 0 29px 29px;
+}
+  #activity .item-container {
+    width: 33%;
+    height: 171px;
+    position: relative;
+    float: left;
+  }
+  #activity .item-container ~ .item-container,
+  #activity .item-container .thumb .shadow,
+  #activity .item-container .play {
+    background: url('../img/sprite_hero.png');
+    background-repeat: no-repeat;
+  }
+  #activity .item-container ~ .item-container {
+    background-position: 0 -32px;
+  }
+    #activity .item-container .thumb {
+      overflow: hidden;
+      width: 88px;
+      height: 88px;
+      margin: 24px;
       position: relative;
-      float: right;
+      float: left;
     }
-      header #status .user-control > p {
-        font-size: 18px;
-        color: #AFAFAF;
-        float: left;
-        position: relative;
-        padding: 0 24px 0 0;
-        cursor: pointer;
-      }
-    header #status .seperator {
-      height:22px;
-      width: 1px;
-      background: #707070;
-      float: right;
-      margin: 8px 12px;
-    }
-      header #status p .arrow {
+      #activity .item-container .thumb img {
+        border-radius: 8px;
         position: absolute;
-        right: 0;
-        top: 12px;
-        background-position: -165px 0;
+        border: none;
       }
-    header #status .locker,
-    header #status .wishlist,
-    header #status .cart {
-      float: right;
-      position: relative;
-    }
-    header #status .locker,
-    header #status .locker + .seperator,
-    header #status .wishlist + .seperator,
-    header #status .wishlist,
-    header #status.logged-in .sign-in,
-    header #status .account {
-      display: none;
-    }
-    header #status.logged-in .locker,
-    header #status.logged-in .locker + .seperator,
-    header #status.logged-in .wishlist + .seperator,
-    header #status.logged-in .wishlist,
-    header #status.logged-in .account,
-    header #status .sign-in {
-      display: block;
-    }
-      header button,
-      header .btn {
-        line-height: 36px;
-      }
-      header #status .cart > .btn,
-      header #status .locker > .btn,
-      header #status .wishlist > .btn {
-        padding: 0 44px 0 0;
-        box-shadow: 0 2px 1px rgba(0,0,0,0.4);
-        position: relative;
-        z-index: 1;
-      }
-        header #status .btn .icon {
-          float: left;
-          margin: 3px 6px ;
-        }
-        header #status .btn .arrow {
-          position: absolute;
-          right: 12px;
-          top: 18px;
-          background-position: -177px 0;
-        }
-        header #status .btn .arrow:before {
-          content: "";
-          height: 22px;
-          width: 1px;
-          display: block;
-          position: absolute;
-          top: -10px;
-          left: -10px;
-        }
-          header #status .cart .btn .arrow:before {
-            background: #A4E273;
-          }
-          header #status .locker .btn .arrow:before {
-            background: #73BEE2;
-          }
-    /* Nav */
-      header nav {
-        position: absolute;
-        top: 80px;
+      #activity .item-container .thumb .shadow {
         width: 100%;
+        height: 12px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-position: -32px 0;
       }
-        header nav .top-level {
-          height: 64px;
-          background: url('../img/sprite_header-tile.png');
-        }
-          header nav .top-level .tab {
-            width: 150px;
-            height: 57px;
-            float: left;
-            background-position: 0 -32px;
-            margin: 7px 0 0 0;
-          }
-          header nav .top-level .tab ~ .tab {
-            margin-left: -6px;
-          }
-          header nav .top-level .tab.active {
-            background-position: 0 -89px;
-          }
-          header nav .top-level .tab:hover {
-            cursor: pointer;
-          }
-            header nav .top-level .tab h2 {
-              position   : relative;
-              padding    : 0 0 0 46px;
-              text-shadow: 0 -1px 0 #000;
-              font-size  : 16px;
-              font-weight: 400;
-              color      : #AFAFAF;
-              line-height: 38px;
-              margin: 16px 0 0 20px;
-            }
-            header nav .top-level .tab.active h2 {
-              text-shadow: none;
-            }
-            header nav .top-level .tab .icon {
-              width: 36px;
-              height: 36px;
-              position: absolute;
-              top: 1px;
-              left: 0;
-            }
-          
-            header nav .top-level .tab .icon.core { background-position: -150px -38px; }
-            header nav .top-level .tab.active .icon.core { background-position: -150px -76px; }
-            header nav .top-level .tab .icon.mobile { background-position: -186px -38px; }
-            header nav .top-level .tab.active .icon.mobile { background-position: -186px -76px; }
-            header nav .top-level .tab .icon.casual { background-position: -222px -38px; }
-            header nav .top-level .tab.active .icon.casual { background-position: -222px -76px; }
-          
-          header nav .top-level .search-container {
-            content            : "";
-            position           : absolute;
-            top                : 15px;
-            right              : 78px;
-            width              : 337px;
-            height             : 36px;
-            border-radius      : 8px;
-            background-position: 0 -674px;
-          }
-            header nav .top-level .search-container input[type="text"] { 
-              position     : absolute;
-              top          : 2px;
-              right        : 2px;
-              width        : 293px;
-              height       : 32px;
-              padding      : 0 0 0 40px;
-              border       : 0;
-              border-radius: 8px;
-              font-size    : 16px;
-              background   : #fff;
-            }
-            header nav .top-level .search-container .icon.search {
-              position: absolute;
-              top     : 3px;
-              left    : 6px;
-            }
-          header nav .top-level button {
-            width: 67px;
-            position: absolute;
-            right: 0;
-            top: 14px;
-            line-height: 38px;
-            height: 38px;
-            padding: 0;
-          }
-        /* Secondary Level */
-        header nav .secondary-level {
-
-        }
-          header nav .secondary-level > .tab {
-            width: 141px;
-            height: 83px;
-            float: left;
-            cursor: pointer;
-          }
-          header nav .secondary-level > .tab:nth-last-child(1) {
-            float: right;
-          }
-          header nav .secondary-level > .tab.active {
-            background-position: 0 -146px;
-          }
-            header nav .secondary-level > .tab h2 {
-              font-size: 14px;
-              text-shadow: 0 1px 0 #fff;
-              color: #707070;
-              font-weight: 400;
-              text-align: center;
-              margin: 10px 0 0 0;
-            }
-            header nav .secondary-level .tab.active h2 {
-              color: #28AAE1;
-              position: relative;
-            }
-            header nav .secondary-level > .tab .icon {
-              width: 42px;
-              height: 42px;
-              margin: 0 auto -2px;
-            }
-            /* Passive */
-            header nav .secondary-level .tab .icon.featured { background-position: -150px -110px; }
-            header nav .secondary-level .tab .icon.trailers { background-position: -192px -110px; }
-            header nav .secondary-level .tab .icon.new-releases { background-position: -235px -110px; }
-            header nav .secondary-level .tab .icon.hot-sellers { background-position: -277px -110px; }
-            header nav .secondary-level .tab .icon.browse { background-position: -320px -110px; }
-            /* Active */
-            header nav .secondary-level .tab.active .icon.featured { background-position: -150px -152px; }
-            header nav .secondary-level .tab.active .icon.trailers { background-position: -192px -152px; }
-            header nav .secondary-level .tab.active .icon.new-releases { background-position: -235px -152px; }
-            header nav .secondary-level .tab.active .icon.hot-sellers { background-position: -277px -152px; }
-            header nav .secondary-level .tab.active .icon.browse { background-position: -320px -152px; }
-            
-            header nav .secondary-level > .tab .arrow {
-              display: block;
-              position: absolute;
-              right: 24px;
-              top: 58px;
-              background-position: -189px 0;
-            } 
-            header nav .secondary-level .tab .menu { 
-              display: none;
-            }
-            header nav .secondary-level .tab .menu.visible { 
-              position: relative;
-              top: -21px;
-              left: -12px;
-              display: block;
-            }
-              header nav .secondary-level .tab .menu .tab { 
-                width: 32px;
-                height: 24px;
-                background: #FFF;
-                border-radius: 8px 8px 0 0;
-                position: absolute;
-                right: 0;
-              }
-                header nav .secondary-level .tab .menu .tab .arrow {
-                  top: 10px;
-                  right: 12px;
-                } 
-              header nav .secondary-level .tab .menu .container { 
-                position: absolute;
-                background: #FFF;
-                list-style: none;
-                font-size: 14px;
-                color: #707070;
-                border-radius: 10px;
-                width: 100%;
-                top: 24px;
-                border-radius: 8px 0 8px 8px;
-                box-shadow: 0 2px 3px rgba(0,0,0,0.5);
-              }
-                header nav .secondary-level .tab .menu .container ul { 
-                  list-style: none;
-                }
-                header nav .secondary-level .tab .menu .container li { 
-                  padding: 4px 4px;
-                }
-                header nav .secondary-level .tab .menu .container li ~ li { 
-                  border-top: 1px solid #D3D3D3;
-                }
-                  header nav .secondary-level .tab .menu .container li a { 
-                    display: block;
-                    margin: 0;
-                    padding: 0 12px;
-                    line-height: 32px;
-                    border-radius: 6px;
-                  }
-                  header nav .secondary-level .tab .menu .container li a:hover { 
-                    background-position: 0 -630px;
-                    color: #fff;
-                  }
+      #activity .item-container .play {
+        position           : absolute;
+        top                : 24px;
+        left               : 29px;
+        width              : 32px;
+        height             : 32px;
+        background-position: 0 0;
+      }
+    #activity .item-container h2 {
+      float         : left;
+      margin        : 24px 0 9px 0;
+      font-size     : 16px;
+      font-weight   : 600;
+      letter-spacing: -1px;
+    }
+    #activity .item-container p {
+      float         : left;
+      width         : 165px;
+      text-align    : justify;
+      font-size     : 14px;
+      line-height   : 17px;
+      letter-spacing: -1px;
+      color         : #707070;
+    }
+/* Main */
+#main hr {
+  width              : 100%;
+  margin             : 24px 0;
+  background-position: 0 -3px;
+  clear: both;
+}
+/* List Sections */
+#main .gallery hr {
+  float: left;
+}
+.gallery section {
+  float: left;
+}
+  .gallery section h1 {
+    float      : left;
+    font-size  : 28px;
+    font-weight: 400;
+    line-height: 48px;
+    color      : #707070;
+    width: 830px;
+  }
+  .gallery section .btn.more {
+    float      : right;
+    width      : 86px;
+    text-indent: 12px;
+    line-height: 36px;
+    margin: 10px 0 0 0;
+  }
+    .gallery section .btn.more .arrow {
+      position           : absolute;
+      top                : 15px;
+      right              : 9px;
+      width              : 9px;
+      height             : 9px;
+      background-position: -201px 0;
+    }
+  .gallery section .item-container {
+    float: left;
+    margin-top: 34px;
+    position: relative;
+  }
+    .gallery section .item-container .game-thumb {
+      border-radius: 20px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.4);
+      width: 100%;
+      height: 321px;
+    }
+      .gallery section .item-container .game-thumb img {
+        border-radius: 0 0 20px 20px;
+      }
+    .gallery section .item-container .heading {
+      border-radius: 20px 20px 0 0;
+      height: 60px;
+      width: 100%;
+      background: #fff;
+      position: relative;
+    }
+      .gallery section .item-container .heading h1 {
+        width         : 280px;
+        text-indent   : 18px;
+        font-size     : 16px;
+        font-weight   : 600;
+        line-height   : 60px;
+        letter-spacing: -1px;
+        position: absolute;
+        left: 0;
+      }
+      .gallery section .item-container .heading .platform {
+        height: 32px;
+        width: 70px;
+        float: right;
+        margin: 15px 18px 0 0;
+      }
+      .gallery section .item-container .heading .platform .icon {
+        float: right;
+        opacity: 0.3;
+      }
+      .gallery section .item-container .heading .platform .icon.active {
+        opacity: 1;
+      }
+  .gallery section .item-container.col-2 {
+    width: 48.7%;
+  }
+  .gallery section .item-container.col-2:nth-child(2n),
+  .gallery section .item-container.col-3:nth-child(3n) {
+    float: right;
+    margin-right: 0;
+  }
+  .gallery section .item-container.col-3 {
+    width: 300px;
+    margin-right: 24px;
+    margin-bottom: 12px;
+  }
+    .gallery section .item-container.col-3 .game-thumb {
+      height: 264px;
+    }
+    .gallery section .item-container .rating-container {
+      width: 250px;
+      height: 24px;
+      float: left;
+      margin: 18px 0 0 12px;
+    }
+      .gallery section .item-container .rating-container .star {
+        background-position: -221px -14px;
+        width: 24px;
+        height: 24px;
+        float: left;
+      }
+      .gallery section .item-container .rating-container.rating-4 .star:nth-child(5),
+      .gallery section .item-container .rating-container.rating-3 .star:nth-child(5),
+      .gallery section .item-container .rating-container.rating-35 .star:nth-child(5),
+      .gallery section .item-container .rating-container.rating-3 .star:nth-child(4),
+      .gallery section .item-container .rating-container.rating-25 .star:nth-child(5),
+      .gallery section .item-container .rating-container.rating-25 .star:nth-child(4),
+      .gallery section .item-container .rating-container.rating-2 .star:nth-child(5),
+      .gallery section .item-container .rating-container.rating-2 .star:nth-child(4),
+      .gallery section .item-container .rating-container.rating-2 .star:nth-child(3),
+      .gallery section .item-container .rating-container.rating-15 .star:nth-child(5),
+      .gallery section .item-container .rating-container.rating-15 .star:nth-child(4),
+      .gallery section .item-container .rating-container.rating-15 .star:nth-child(3),
+      .gallery section .item-container .rating-container.rating-1 .star:nth-child(5),
+      .gallery section .item-container .rating-container.rating-1 .star:nth-child(4),
+      .gallery section .item-container .rating-container.rating-1 .star:nth-child(3),
+      .gallery section .item-container .rating-container.rating-1 .star:nth-child(2),
+      .gallery section .item-container .rating-container.rating-05 .star:nth-child(5),
+      .gallery section .item-container .rating-container.rating-05 .star:nth-child(4),
+      .gallery section .item-container .rating-container.rating-05 .star:nth-child(3),
+      .gallery section .item-container .rating-container.rating-05 .star:nth-child(2),
+      .gallery section .item-container .rating-container.rating-00 .star:nth-child(5),
+      .gallery section .item-container .rating-container.rating-00 .star:nth-child(4),
+      .gallery section .item-container .rating-container.rating-00 .star:nth-child(3),
+      .gallery section .item-container .rating-container.rating-00 .star:nth-child(2),
+      .gallery section .item-container .rating-container.rating-00 .star:nth-child(1) {
+        background-position: -245px -14px;
+      }
+      .gallery section .item-container .rating-container.rating-45 .star:nth-child(5),
+      .gallery section .item-container .rating-container.rating-35 .star:nth-child(4),
+      .gallery section .item-container .rating-container.rating-25 .star:nth-child(3),
+      .gallery section .item-container .rating-container.rating-15 .star:nth-child(2),
+      .gallery section .item-container .rating-container.rating-05 .star:nth-child(1) {
+        background-position: -269px -14px;
+      }
+      .gallery section .item-container .rating-container p {
+        float: left;
+        font-size: 15px;
+        color: #707070;
+        line-height: 24px;
+        margin: 0 0 0 12px;
+      }
+      .gallery section .item-container.col-3 .rating-container p {
+        position: absolute;
+        right: 12px;
+      }
+    .gallery section .item-container .price {
+      float: left;
+      clear: left;
+      position: relative;
+      margin: 24px 0 0 12px;
+    }
+      .gallery section .item-container .price h2,
+      .gallery section .item-container .price h3 {
+        float: left;
+        font-weight: 400;
+        line-height: 24px;
+      }
+      .gallery section .item-container .price h2 {
+        text-decoration: line-through;
+        font-size: 15px;
+        color: #707070;
+        margin: 0px 0 0 0;
+      }
+      .gallery section .item-container .price h3 {
+        color: #961B1B;
+        font-size: 20px;
+        margin: 0 0 0 12px;
+      }
+    .gallery section .item-container .btn.add-to-cart,
+    .gallery section .item-container .btn.add-to-wishlist {
+      width: 39px;
+      height: 36px;
+      position: absolute;
+      bottom: 0px;
+    }
+    .gallery section .item-container .btn.add-to-cart {
+      right: 12px;
+    }
+    .gallery section .item-container .btn.add-to-wishlist {
+      right: 62px;
+    }
+    .gallery section .item-container .btn.add-to-cart .icon,
+      .gallery section .item-container .btn.add-to-wishlist .icon {
+        position: absolute;
+        top: 1px;
+        left: 4px;
+      }
+/* Gallery Carousel */
+.carousel-container {
+  position: relative;
+  float: left;
+  z-index: 10;
+}
+  .carousel-container .controls {
+    position: absolute;
+    height: 58px;
+    width: 100%;
+  }
+    .carousel-container .controls .left,
+    .carousel-container .controls .right {
+      position: absolute;
+      width: 46px;
+      height: 58px;
+      cursor: pointer;
+    }
+    .carousel-container .controls .left {
+      background-position: -150px -194px;
+      left: -23px;
+    }
+    .carousel-container .controls .left:hover {
+      background-position: -242px -194px;
+    }
+    .carousel-container .controls .right {
+      background-position: -196px -194px;
+      right: -23px;
+    }
+    .carousel-container .controls .right:hover {
+      background-position: -288px -194px;
+    }
+    /* Front Page Gallery View */
+    .gallery .carousel-container .controls {
+      top: 150px;
+    }

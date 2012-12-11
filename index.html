@@ -6,6 +6,7 @@
     <link rel='stylesheet' type='text/css' href='css/styles.css'>
     <link rel='stylesheet' type='text/css' href='css/icons.css'>
     <link rel='stylesheet' type='text/css' href='css/popups.css'>
+    <link rel='stylesheet' type='text/css' href='css/header.css'>
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
     <!-- JavaScript -->
@@ -15,203 +16,350 @@
     <script src="js/jquery.placeholder.min.js" type="text/javascript"></script>
 	</head>
 	<body>
-    <header>
-      <div class="container-980">
-        <h1 class="logo">NetGames</h1>
-        <div id="status" class="logged-in">
-          <div class="cart">
-            <div class="btn green" id="open-cart"><div class="icon cart"></div>Cart (2)<div class="arrow"></div></div>
-            <div class="cart-popup popup"> <!-- Add 'visible' class to see it -->
-              <div class="tab"></div>
-              <div class="container"> <!-- Add edit class for it to be editable -->
-                <div class="switch col-2">
-                  <div class="btn active" id="mini-view-cart">View</div>
-                  <div class="btn" id="mini-edit-cart">Edit</div>
-                </div>
-                <hr>
-                <div class="item-container">
-                  <div class="game-thumb small">
-                    <img src="./img/game-thumb_sims-small.png">
-                  </div>
-                  <h1>The Sims 3: Generations</h1>
-                  <h2 class="cost-ea">$19.99ea</h2>
-                  <h2 class="cost">$19.99</h2>
-                  <h2 class="qty">Quantity: 1</h2>
-                  <input type="text" class="edit" value="1">
-                  <h2 class="os default"><span class="icon windows"></span>Windows</h2>
-                  <div class="switch col-2 edit">
-                    <div class="btn active"><div class="icon windows"></div></div>
-                    <div class="btn"><div class="icon osx"></div></div>
-                  </div>
-                  <div class="btn-delete"></div>
-                </div>
-                <div class="item-container">
-                  <div class="game-thumb small">
-                    <img src="./img/game-thumb_mario-small.png">
-                  </div>
-                  <h1>New Super Mario Bros U</h1>
-                  <h2 class="cost-ea">$19.99ea</h2>
-                  <h2 class="cost">$19.99</h2>
-                  <h2 class="qty">Quantity: 1</h2>
-                  <input type="text" class="edit" value="1">
-                  <h2 class="os default"><span class="icon windows"></span>Windows</h2>
-                  <div class="switch col-2 edit">
-                    <div class="btn active"><div class="icon windows"></div></div>
-                    <div class="btn"><div class="icon osx"></div></div>
-                  </div>
-                  <div class="btn-delete"></div>
-                </div>
-                <hr>
-                <h3 class="subtotal">Subtotal: <span class="amount">$73.97</span></h3>
-                <button class="green">Checkout</button>
+    <div id="header" template></div> <!-- This will be replaced by the header template -->
+    <div id="main">
+      <div class="container-950">
+        <div id="hero">
+          <img src="./img/hero.png">
+          <div id="activity">
+            <div class="item-container">
+              <div class="thumb">
+                <div class="shadow"></div>
+                <a href=""><img src="./img/hero-img_far-cry.png"></a>
               </div>
+              <h2><a href="">Far Cry 3</a></h2>
+              <p>This sequel to the amazing epic takes us into a lot of new teritory. Lots of great...</p>
+              <div class="icon review"></div>
+            </div>
+            <div class="item-container">
+              <div class="thumb">
+                <div class="shadow"></div>
+                <a href=""><img src="./img/hero-img_mario.png"></a>
+              </div>
+              <h2><a href="">New Super Mario Bro...</a></h2>
+              <p>Mario&rsquo;s got some new tricks up his sleeve, and some old ones in this classic revisitin...</p>
+              <div class="icon new-release"></div>
+            </div>
+            <div class="item-container">
+              <div class="thumb">
+                <div class="shadow"></div>
+                <a href=""><img src="./img/hero-img_batman.png"></a>
+                <div class="play"></div>
+              </div>
+              <h2><a href="">Batman: Arkham Asy...</a></h2>
+              <p>Harley Quinn Dishes it out. This is the only time it&rsquo;s okay to hit a woman. </p>
+              <div class="icon trailer"></div>
             </div>
           </div>
-          <div class="seperator"></div>
-          <div class="wishlist">
-            <div class="btn indigo" id="open-wishlist"><div class="icon wish"></div>Wishlist (2)<div class="arrow"></div></div>
-            <div class="wishlist-popup popup"> <!-- Add 'visible' class to see it -->
-              <div class="tab"></div>
-              <div class="container"> <!-- Add edit class for it to be editable -->
-                <div class="item-container">
-                  <div class="game-thumb small">
-                    <img src="./img/game-thumb_sims-small.png">
+        </div> <!-- <div id="hero"> -->
+      </div>
+      <div class="container-950">
+        <hr>
+        <div id="feature-gallery" class="gallery">
+          <div class="switch col-2 edit narrow">
+            <div class="btn active">Singles</div>
+            <div class="btn">Packages</div>
+          </div>
+          <hr>
+          <div class="screen visible" id="single-view">
+            <section>
+              <h1>New Releases</h1>
+              <div class="btn indigo more">More<div class="arrow"></div></div>
+              <div>
+                <div class="item-container col-2">
+                  <div class="game-thumb">
+                    <div class="heading">
+                      <h1><a href="">Hero Academy</a></h1>
+                      <div class="platform">
+                        <div class="icon osx active"></div>
+                        <div class="icon windows active"></div>
+                      </div>
+                    </div>
+                    <img src="./img/feature_hero-academy.png">
                   </div>
-                  <h1>The Sims 3: Generations</h1>
-                  <h2 class="cost-ea">$19.99</h2>
-                  <h2 class="qty">Quantity: </h2>
-                  <input type="text" class="edit" value="1">
+                  <div class="rating-container rating-45"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <p>(1,273 Reviews)</p>
+                  </div>
+                  <div class="price">
+                    <h2>$29.99</h2>
+                    <h3>$19.99</h3>
+                  </div>
                   <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
-                  <div class="switch col-2 edit">
-                    <div class="btn active"><div class="icon windows"></div></div>
-                    <div class="btn"><div class="icon osx"></div></div>
-                  </div>
-                  <div class="btn-delete"></div>
+                  <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
                 </div>
-                <div class="item-container">
-                  <div class="game-thumb small">
-                    <img src="./img/game-thumb_mario-small.png">
+                <div class="item-container col-2">
+                  <div class="game-thumb">
+                    <div class="heading">
+                      <h1><a href="">New Super Mario Bros U</a></h1>
+                      <div class="platform">
+                        <div class="icon osx active"></div>
+                        <div class="icon windows"></div>
+                      </div>
+                    </div>
+                    <img src="./img/feature_mario.png">
                   </div>
-                  <h1>New Super Mario Bros U</h1>
-                  <h2 class="cost-ea">$19.99</h2>
-                  <h2 class="qty">Quantity: </h2>
-                  <input type="text" class="edit" value="1">
+                  <div class="rating-container rating-5"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <p>(1,273 Reviews)</p>
+                  </div>
+                  <div class="price">
+                    <h2>$29.99</h2>
+                    <h3>$19.99</h3>
+                  </div>
                   <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
-                  <div class="switch col-2 edit">
-                    <div class="btn"><div class="icon windows"></div></div>
-                    <div class="btn active"><div class="icon osx"></div></div>
-                  </div>
-                  <div class="btn-delete"></div>
+                  <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="seperator"></div>
-          <div class="locker">
-            <div class="btn blue"><div class="icon locker"></div>Locker (83)<div class="arrow"></div></div>
-          </div>
-          <div class="seperator"></div>
-          <div class="account user-control">
-            <p class="user">Sean J MacIsaac <span class="arrow"></span></p>
-            <div class="user-popup">  <!-- Add 'visible' class to see it -->
-              <div class="tab"><div class="arrow"></div></div>
-              <div class="container">
-                <ul>
-                  <li><a href="/account"><span class="icon account"></span>My Account</a></li>
-                  <li><a><span class="icon logout"></span>Logout</a></li>
-                </ul>
+              <!-- 3 Column Items -->
+              <div class="carousel-container">
+                <div class="carousel">
+                  <div class="item-container col-3">
+                    <div class="game-thumb">
+                      <div class="heading">
+                        <h1><a href="">The Sims 3</a></h1>
+                        <div class="platform">
+                          <div class="icon osx active"></div>
+                          <div class="icon windows"></div>
+                        </div>
+                      </div>
+                      <img src="./img/feature_sims3.png">
+                    </div>
+                    <div class="rating-container rating-4"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <p>(1,273 Reviews)</p>
+                    </div>
+                    <div class="price">
+                      <h2>$29.99</h2>
+                      <h3>$19.99</h3>
+                    </div>
+                    <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+                    <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+                  </div>
+                  <div class="item-container col-3">
+                    <div class="game-thumb">
+                      <div class="heading">
+                        <h1><a href="">Call of Duty: Black Ops II</a></h1>
+                        <div class="platform">
+                          <div class="icon osx active"></div>
+                          <div class="icon windows active"></div>
+                        </div>
+                      </div>
+                      <img src="./img/feature_cod-black-ops-2.png">
+                    </div>
+                    <div class="rating-container rating-45"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <p>(1,273 Reviews)</p>
+                    </div>
+                    <div class="price">
+                      <h2>$29.99</h2>
+                      <h3>$19.99</h3>
+                    </div>
+                    <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+                    <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+                  </div>
+                  <div class="item-container col-3">
+                    <div class="game-thumb">
+                      <div class="heading">
+                        <h1><a href="">Super Meat Boy</a></h1>
+                        <div class="platform">
+                          <div class="icon osx active"></div>
+                          <div class="icon windows"></div>
+                        </div>
+                      </div>
+                      <img src="./img/feature_meat.png">
+                    </div>
+                    <div class="rating-container rating-35"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <p>(1,273 Reviews)</p>
+                    </div>
+                    <div class="price">
+                      <h2>$29.99</h2>
+                      <h3>$19.99</h3>
+                    </div>
+                    <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+                    <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+                  </div>
+                  <div class="controls">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                  </div>
+                </div> <!-- <div class="carousel"> -->
+              </div> <!-- <div class="carousel-container"> -->
+            </section>
+            <hr>
+            <section>
+              <h1>Recommended For You</h1>
+              <div class="btn indigo more">More<div class="arrow"></div></div>
+              <div>
+                <div class="item-container col-2">
+                  <div class="game-thumb">
+                    <div class="heading">
+                      <h1><a href="">Hero Academy</a></h1>
+                      <div class="platform">
+                        <div class="icon osx active"></div>
+                        <div class="icon windows active"></div>
+                      </div>
+                    </div>
+                    <img src="./img/feature_hero-academy.png">
+                  </div>
+                  <div class="rating-container rating-45"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <p>(1,273 Reviews)</p>
+                  </div>
+                  <div class="price">
+                    <h2>$29.99</h2>
+                    <h3>$19.99</h3>
+                  </div>
+                  <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+                  <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+                </div>
+                <div class="item-container col-2">
+                  <div class="game-thumb">
+                    <div class="heading">
+                      <h1><a href="">New Super Mario Bros U</a></h1>
+                      <div class="platform">
+                        <div class="icon osx active"></div>
+                        <div class="icon windows"></div>
+                      </div>
+                    </div>
+                    <img src="./img/feature_mario.png">
+                  </div>
+                  <div class="rating-container rating-5"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <p>(1,273 Reviews)</p>
+                  </div>
+                  <div class="price">
+                    <h2>$29.99</h2>
+                    <h3>$19.99</h3>
+                  </div>
+                  <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+                  <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+                </div>
               </div>
-            </div>
+              <!-- 3 Column Items -->
+              <div class="carousel-container">
+                <div class="carousel">
+                  <div class="item-container col-3">
+                    <div class="game-thumb">
+                      <div class="heading">
+                        <h1><a href="">The Sims 3</a></h1>
+                        <div class="platform">
+                          <div class="icon osx active"></div>
+                          <div class="icon windows"></div>
+                        </div>
+                      </div>
+                      <img src="./img/feature_sims3.png">
+                    </div>
+                    <div class="rating-container rating-4"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <p>(1,273 Reviews)</p>
+                    </div>
+                    <div class="price">
+                      <h2>$29.99</h2>
+                      <h3>$19.99</h3>
+                    </div>
+                    <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+                    <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+                  </div>
+                  <div class="item-container col-3">
+                    <div class="game-thumb">
+                      <div class="heading">
+                        <h1><a href="">Call of Duty: Black Ops II</a></h1>
+                        <div class="platform">
+                          <div class="icon osx active"></div>
+                          <div class="icon windows active"></div>
+                        </div>
+                      </div>
+                      <img src="./img/feature_cod-black-ops-2.png">
+                    </div>
+                    <div class="rating-container rating-45"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <p>(1,273 Reviews)</p>
+                    </div>
+                    <div class="price">
+                      <h2>$29.99</h2>
+                      <h3>$19.99</h3>
+                    </div>
+                    <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+                    <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+                  </div>
+                  <div class="item-container col-3">
+                    <div class="game-thumb">
+                      <div class="heading">
+                        <h1><a href="">Super Meat Boy</a></h1>
+                        <div class="platform">
+                          <div class="icon osx active"></div>
+                          <div class="icon windows"></div>
+                        </div>
+                      </div>
+                      <img src="./img/feature_meat.png">
+                    </div>
+                    <div class="rating-container rating-35"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <p>(1,273 Reviews)</p>
+                    </div>
+                    <div class="price">
+                      <h2>$29.99</h2>
+                      <h3>$19.99</h3>
+                    </div>
+                    <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+                    <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+                  </div>
+                  <div class="controls">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                  </div>
+                </div> <!-- <div class="carousel"> -->
+              </div> <!-- <div class="carousel-container"> -->
+            </section>
           </div>
-          <div class="sign-in user-control">
-            <p class="guest">Sign in <span class="arrow"></span></p>
-            <div class="user-popup"> <!-- Add 'visible' class to make it seen  -->
-              <div class="tab"><div class="arrow"></div></div>
-              <div class="container">
-                <!-- Login -->
-                <div class="login screen visible"> <!-- Add 'error' Class To View The Error and 'visible' to make it seen  -->
-                  <input name="email" type="text" placeholder="Email Address">
-                  <input name="password" type="password" placeholder="Password">
-                  <button name="sign-in" class="silver">Sign in</button>
-                  <hr>
-                  <div class="register default">
-                    <label for="register">Actually, I am a new customer</label>
-                    <button class="indigo" id="register">Register</button>
-                  </div>
-                  <div class="error">
-                    <label for="reset-password">Incorrect password</label>
-                    <button class="red" id="reset-password">Reset Password</button>
-                  </div>
-                </div>
-                <!-- Register -->
-                <div class="register screen">  <!-- Add 'error' Class To View The Error and 'visible' to make it seen -->
-                  <input class="error" name="email" type="text" placeholder="Email Address">
-                  <input name="password" type="text" placeholder="Password">
-                  <input name="password-confirm" type="text" placeholder="Confirm Password">
-                  <button name="register" class="indigo">Register</button>
-                  <hr>
-                  <div class="reset default">
-                    <label for="reset-password-confirm">Registration info will be e-mailed</label>
-                  </div>
-                  <div class="error">
-                    <label for="error-register">The Email address you supplied is not a valid e-mail.</label>
-                  </div>
-                </div>
-                <!-- Reset Password -->
-                <div class="reset screen"> <!-- Add 'error' Class To View The Error and 'visible' to make it seen  -->
-                  <input name="email" type="text" placeholder="Email Address">
-                  <button name="reset" class="silver">Reset</button>
-                  <hr>
-                  <div class="reset default">
-                    <label for="reset-password-confirm">We will send you a link to your Email address to confirm the resetting of the password</label>
-                    <button class="red">Cancel</button>
-                  </div>
-                  <div class="error">
-                    <label for="error-register">The Email address you supplied does not exist in your database. Try again or create an account.</label>
-                    <button class="indigo" id="error-register">Register</button>
-                    <button class="red">Cancel</button>
-                  </div>
-                </div>
-              </div>
-            </div> <!-- End User Popup -->
-          </div> 
-        </div> <!-- End status -->
-      </div><!-- <div class="container-980"> -->
-      <nav>
-        <div class="top-level">
-          <div class="container-980">
-            <div class="tab active"><h2><span class="icon core"></span>Core</h2></div>
-            <div class="tab"><h2><span class="icon mobile"></span>Mobile</h2></div>
-            <div class="tab"><h2><span class="icon casual"></span>Casual</h2></div>
-            <div class="search-container">
-              <input type="text" placeholder="Search">
-              <div class="icon search"></div>
-            </div>
-            <button class="indigo">Go</button>
-          </div>
-        </div>
-        <div class="container-980">
-          <div class="secondary-level">
-            <div class="tab active"><h2><span class="icon featured"></span>Featured</h2></div>
-            <div class="tab"><h2><span class="icon trailers"></span>Trailers</h2></div>
-            <div class="tab"><h2><span class="icon new-releases"></span>New Releases</h2></div>
-            <div class="tab"><h2><span class="icon hot-sellers"></span>Hot Sellers</h2></div>
-            <div class="tab">
-              <h2><span class="icon browse"></span>Browse<span class="arrow"></span></h2>
-              <div class="menu"> <!-- Add class 'visible' for it to be seen -->
-                <div class="tab"><div class="arrow"></div></div>
-                <div class="container">
-                  <ul>
-                    <li><a href="/action">Action</a></li>
-                    <li><a href="/strategy">Strategy</a></li>
-                    <li><a href="/role-playing">Role Playing</a></li>
-                  </ul>
-                </div>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
+          <div class="screen" id="package-view"></div>
+        </div> <!-- <div id="feature-gallery"> -->
+      </div>
+    </div>
+    <footer>
+      <div class="logo">NetGames</div>
+    </footer>
   </body>
 </html>
