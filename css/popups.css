@@ -267,7 +267,7 @@
               top     : -11px;
               left    : 0;
             }
-          header #status .cart-popup .container .item-container h2.os {
+          header #status .cart-popup .container.edit .item-container h2.os {
             display: none;
           }
           header #status .popup .container .item-container .switch {

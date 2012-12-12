@@ -21,6 +21,13 @@
 .icon.search { background-position: -160px 0px; }
 .icon.add-to-cart { background-position: -160px -32px; }
 .icon.add-to-wishlist { background-position: 0 -64px; }
+.icon.filter { background-position: -96px -64px; }
+.icon.trailers { background-position: -64px -96px; }
+.icon.images { background-position: 0 -96px; }
+.icon.demo { background-position: -32px -96px; }
+.active .icon.trailers { background-position: -64px -128px; }
+.active .icon.images { background-position: 0 -128px; }
+.active .icon.demo { background-position: -32px -128px; }
 
 /* Header & Hero Icons */
 

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+    <!-- CSS Styles -->
+    <link rel='stylesheet' type='text/css' href='css/styles.css'>
+    <link rel='stylesheet' type='text/css' href='css/icons.css'>
+    <link rel='stylesheet' type='text/css' href='css/popups.css'>
+    <link rel='stylesheet' type='text/css' href='css/header.css'>
+    <link rel='stylesheet' type='text/css' href='css/footer.css'>
+    <link rel='stylesheet' type='text/css' href='css/menu.css'>
+    <link rel='stylesheet' type='text/css' href='css/filter.css'>
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <!-- JavaScript -->
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/prototype.js" type="text/javascript"></script>
+    <script src="js/netgames.js" type="text/javascript"></script>
+    <script src="js/jquery.placeholder.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui-1.9.2.custom.min.js" type="text/javascript"></script>
+	</head>
+	<body class="browse">
+    <div template="header"></div> <!-- This will be replaced by the header template -->
+    <div id="main">
+      <div class="container-950">
+        <div id="feature-gallery" class="gallery">
+          <label for="sort-games">Sort by:</label>
+          <div class="dropdown">
+            <div class="btn silver">Title<div class="arrow"></div></div>
+            <div class="menu">
+              <div class="tab"><div class="arrow"></div></div>
+              <div class="container">
+                <ul>
+                  <li><a href="">Release Date</a></li>
+                  <li><a href="">Rating</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="switch col-2 edit narrow">
+            <div class="btn active" id="show-singles">Singles</div>
+            <div class="btn" id="show-packages">Packages</div>
+          </div>
+          <hr>
+          <div class="screen visible" id="single-view">
+            <section>
+              <h1>Featured Action Games</h1>
+              <div>
+                <div class="item-container col-2">
+                  <div class="single">
+                    <div class="heading">
+                      <h1><a href="">Hero Academy</a></h1>
+                      <div class="platform">
+                        <div class="icon osx active"></div>
+                        <div class="icon windows active"></div>
+                      </div>
+                    </div>
+                    <img src="./img/feature_hero-academy.png">
+                  </div>
+                  <div class="rating-container rating-45"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <p>(1,273 Reviews)</p>
+                  </div>
+                  <div class="price">
+                    <h2>$29.99</h2>
+                    <h3>$19.99</h3>
+                  </div>
+                  <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+                  <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+                </div>
+                <div class="item-container col-2">
+                  <div class="single">
+                    <div class="heading">
+                      <h1><a href="">New Super Mario Bros U</a></h1>
+                      <div class="platform">
+                        <div class="icon osx active"></div>
+                        <div class="icon windows"></div>
+                      </div>
+                    </div>
+                    <img src="./img/feature_mario.png">
+                  </div>
+                  <div class="rating-container rating-5"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <p>(1,273 Reviews)</p>
+                  </div>
+                  <div class="price">
+                    <h2>$29.99</h2>
+                    <h3>$19.99</h3>
+                  </div>
+                  <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+                  <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+                </div>
+              </div>
+            </section>
+            <hr>
+            <aside id="filter">
+              <div class="titlebar">
+                <div class="icon filter"></div>
+                <h1>Filters</h1>
+              </div>
+              <section>
+                <div class="checkbox checked"></div>
+                <h2>Min Average Rating:</h2>
+                <div class="rating-container rating-35"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                  <div class="star"></div>
+                  <div class="star"></div>
+                  <div class="star"></div>
+                  <div class="star"></div>
+                  <div class="star"></div>
+                  <p>Very Poor</p>
+                  <p>Poor</p>
+                  <p>Okay</p>
+                  <p>Good</p>
+                  <p>Excelent</p>
+                </div>
+              </section>
+              <section>
+                <div class="checkbox checked"></div>
+                <h2>Price Range:</h2>
+                <div class="range-slider active">
+                  <div class="slider-container">
+                    <div class="range"></div>
+                    <div class="knob left active"></div> <!-- When the user has specifically selected this knob -->
+                    <div class="knob right"></div>
+                  </div>
+                  <div class="bubble-indicator left">4</div> <!-- Bubble Indicators only show when the slider is being used -->
+                  <div class="bubble-indicator right">14</div>
+                </div>
+                <div class="units col-7">
+                  <p>$1</p>
+                  <p>$10</p>
+                  <p>$20</p>
+                  <p>$30</p>
+                  <p>$50</p>
+                  <p>$60</p>
+                  <p>$70</p>
+                </div>
+              </section>
+              <section>
+                <div class="checkbox"></div>
+                <h2>Intended Audience:</h2>
+                <div class="range-slider disabled"> <!-- Disabled Range Slider -->
+                  <div class="slider-container">
+                    <div class="range"></div>
+                    <div class="knob left"></div>
+                    <div class="knob right"></div>
+                  </div>
+                  <div class="bubble-indicator left">4</div> <!-- Bubble Indicators only show when the slider is being used -->
+                  <div class="bubble-indicator right">14</div>
+                </div>
+                <div class="units col-4">
+                  <p>3+</p>
+                  <p>6+</p>
+                  <p>13+</p>
+                  <p>18+</p>
+                </div>
+              </section>
+              <section>
+                <div class="checkbox"></div>
+                <h2>Media:</h2>
+                <div class="squareBtn"><div class="icon trailers"></div>Trailers</div>
+                <div class="squareBtn"><div class="icon images"></div>Images</div>
+                <div class="squareBtn"><div class="icon demo"></div>Demo</div>
+              </section>
+              <section>
+                <div class="checkbox"></div>
+                <h2>Gaming Platform:</h2>
+                <div class="switch col-2">
+                  <div class="btn active"><div class="icon windows"></div><p>Windows</p></div>
+                  <div class="btn"><div class="icon osx"></div><p>OS X</p></div>
+                </div>
+              </section>
+            </aside>
+          </div>
+        </div> <!-- <div id="feature-gallery"> -->
+      </div>
+    </div>
+    <div template="footer"></div>
+  </body>
+</html>

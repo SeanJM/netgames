@@ -215,6 +215,7 @@ header {
             height: 83px;
             float: left;
             cursor: pointer;
+            position: relative;
           }
           header nav .secondary-level > .tab:nth-last-child(1) {
             float: right;
@@ -232,66 +233,14 @@ header {
             }
             header nav .secondary-level .tab.active h2 {
               color: #28AAE1;
-              position: relative;
             }
-            header nav .secondary-level > .tab .arrow {
+            header nav .secondary-level > .tab h2 > .arrow {
               display: block;
               position: absolute;
               right: 24px;
               top: 58px;
               background-position: -189px 0;
             } 
-            header nav .secondary-level .tab .menu { 
-              display: none;
+            header nav .secondary-level > .tab.active .arrow {
+              background-position: -266px 0;
             }
-            header nav .secondary-level .tab .menu.visible { 
-              display : block;
-              z-index : 1;
-              position: relative;
-              top     : -21px;
-              left    : -12px;
-            }
-              header nav .secondary-level .tab .menu .tab { 
-                width: 32px;
-                height: 24px;
-                background: #FFF;
-                border-radius: 8px 8px 0 0;
-                position: absolute;
-                right: 0;
-              }
-                header nav .secondary-level .tab .menu .tab .arrow {
-                  top: 10px;
-                  right: 12px;
-                } 
-              header nav .secondary-level .tab .menu .container { 
-                position: absolute;
-                background: #FFF;
-                list-style: none;
-                font-size: 14px;
-                color: #707070;
-                border-radius: 10px;
-                width: 100%;
-                top: 24px;
-                border-radius: 8px 0 8px 8px;
-                box-shadow: 0 2px 3px rgba(0,0,0,0.5);
-              }
-                header nav .secondary-level .tab .menu .container ul { 
-                  list-style: none;
-                }
-                header nav .secondary-level .tab .menu .container li { 
-                  padding: 4px 4px;
-                }
-                header nav .secondary-level .tab .menu .container li ~ li { 
-                  border-top: 1px solid #D3D3D3;
-                }
-                  header nav .secondary-level .tab .menu .container li a { 
-                    display: block;
-                    margin: 0;
-                    padding: 0 12px;
-                    line-height: 32px;
-                    border-radius: 6px;
-                  }
-                  header nav .secondary-level .tab .menu .container li a:hover { 
-                    background-position: 0 -630px;
-                    color: #fff;
-                  }

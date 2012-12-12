@@ -9,6 +9,15 @@ header.init = function() {
   });
 }
 header.loaded = function() {
+  var path = window.location.pathname;
+  var browse = 'browse.html';
+  console.log(path);
+  if (path == '/netgames/browse.html') { 
+    $('header .secondary-level .tab:eq(4)').addClass('active');
+  }
+  else {
+    $('header .secondary-level .tab:eq(0)').addClass('active');
+  }
   var signIn = $('#status .sign-in');
   signIn.find('.guest').click(function(event){
     signIn.find('.user-popup').toggleClass('visible');
@@ -93,6 +102,16 @@ main.init = function() {
   $('#show-singles').on('click',function(){
     $('#package-view').removeClass('visible');
     $('#single-view').addClass('visible');
+  });
+  $('.dropdown .btn').on('click',function(event){
+    $(this).parent().find('.menu').addClass('visible');
+    event.stopPropagation();
+  });
+  $('.checkbox').on('click',function(){
+    $(this).toggleClass('checked');
+  });
+  $('.squareBtn').on('click',function(){
+    $(this).toggleClass('active');
   });
 }
 
