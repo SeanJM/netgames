@@ -1,4 +1,9 @@
 /* Filters */
+#filter.aside-scroll {
+  position: fixed;
+  top: 10px;
+  z-index: 1;
+}
 #filter {
   width: 299px;
   float: left;
@@ -7,6 +12,10 @@
   border-radius: 12px;
   border: 1px solid #D3D3D3;
   position: relative;
+  margin: 12px 0 0 0;
+}
+body.search #filter {
+  margin-top: 24px;
 }
   #filter .titlebar {
     position           : relative;
@@ -33,8 +42,8 @@
       color: #fff;
     }
   #filter section {
-    padding: 24px;
-    width: 251px;
+    padding: 16px;
+    width: 268px;
   }
   #filter section ~ section {
     border-top: 1px solid #D3D3D3;
@@ -53,18 +62,18 @@
       width: 200px;
     }
     #filter section .rating-container {
-      width: 245px;
+      width: 263px;
       float: left;
       margin: 0;
     }
       #filter section .rating-container .star {
-        margin: 0 12px 0;
+        margin: 0 14px 0;
       }
       #filter section .rating-container p {
         font-size: 10px;
         color: #707070;
         float: left;
-        width: 48px;
+        width: 19.7%;
         text-align: center;
       }
       #filter section .range-slider {
@@ -147,16 +156,29 @@
           #filter section .units.col-7 p {
             width: 14.28%;
             text-indent: 2px;
+            position: relative;
           }
           #filter section .units p:after {
             content: "|";
             top: -14px;
-            position: relative;
             left: -10px;
+            position: relative;
           }
           #filter section .units.col-7 p ~ p {
             text-align: center;
             text-indent: 0;
+          }
+          #filter section .units.col-7 p:nth-child(2) {
+            left: -8px;
+          }
+          #filter section .units.col-7 p:nth-child(3) {
+            left: -4px;
+          }
+          #filter section .units.col-7 p:nth-last-child(2) {
+            left: 8px;
+          }
+          #filter section .units.col-7 p:nth-last-child(3) {
+            left: 4px;
           }
           #filter section .units.col-7 p:nth-last-child(1) {
             text-align: right;
@@ -188,7 +210,7 @@
             color: #707070;
           }
           #filter section .squareBtn ~ .squareBtn {
-            margin-left: 5px;
+            margin-left: 11px;
           }
           #filter section .squareBtn.active {
             background-position: -441px -64px;
@@ -203,6 +225,36 @@
               text-indent: 12px;
               text-align: left;
             }
-            #filter section .switch .icon {
-              
+            #filter section .flag-container {
+              width: 20%;
+              float: left;
             }
+              #filter section .flag-container .flag {
+                width: 35px;
+                height: 22px;
+                margin: auto;
+              }
+              #filter section .flag-container .flag.french {
+                background-position: -363px -152px;
+              }
+              #filter section .flag-container .flag.italian {
+                background-position: -397px -152px;
+              }
+              #filter section .flag-container .flag.german {
+                background-position: -363px -194px;
+              }
+              #filter section .flag-container .flag.english {
+                background-position: -363px -173px;
+              }
+              #filter section .flag-container .flag.spanish {
+                background-position: -397px -173px;
+              }
+              #filter section .flag-container .selector {
+                width: 12px;
+                height: 12px;
+                background-position: -410px -195px;
+                margin: 6px auto 0;
+              }
+              #filter section .flag-container .selector.selected {
+                background-position: -398px -195px;
+              }

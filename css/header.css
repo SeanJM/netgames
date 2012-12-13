@@ -4,8 +4,7 @@ header {
   height: 226px;
   margin-bottom: 24px;
 }
-/* Header Sprites */
-  
+/* Header Sprites */  
   .btn-delete {
     width: 28px;
     height: 28px;
@@ -57,24 +56,24 @@ header {
         top: 12px;
         background-position: -165px 0;
       }
-    header #status .locker,
-    header #status .wishlist,
-    header #status .cart {
+    header #status > .locker,
+    header #status > .wishlist,
+    header #status > .cart {
       float: right;
       position: relative;
     }
-    header #status .locker,
-    header #status .locker + .seperator,
-    header #status .wishlist + .seperator,
-    header #status .wishlist,
+    header #status > .locker,
+    header #status > .locker + .seperator,
+    header #status > .wishlist + .seperator,
+    header #status > .wishlist,
     header #status.logged-in .sign-in,
     header #status .account {
       display: none;
     }
-    header #status.logged-in .locker,
-    header #status.logged-in .locker + .seperator,
-    header #status.logged-in .wishlist + .seperator,
-    header #status.logged-in .wishlist,
+    header #status.logged-in > .locker,
+    header #status.logged-in > .locker + .seperator,
+    header #status.logged-in > .wishlist + .seperator,
+    header #status.logged-in > .wishlist,
     header #status.logged-in .account,
     header #status .sign-in {
       display: block;
@@ -91,10 +90,6 @@ header {
         position: relative;
         z-index: 1;
       }
-        header #status .btn .icon {
-          float: left;
-          margin: 3px 6px ;
-        }
         header #status .btn .arrow {
           position: absolute;
           right: 12px;
@@ -110,11 +105,14 @@ header {
           top: -10px;
           left: -10px;
         }
-          header #status .cart .btn .arrow:before {
+          header #status > .cart .btn .arrow:before {
             background: #A4E273;
           }
-          header #status .locker .btn .arrow:before {
+          header #status > .locker .btn .arrow:before {
             background: #73BEE2;
+          }
+          header #status > .wishlist .btn .arrow:before {
+            background: #97DEF2;
           }
     /* Nav */
       header nav {

@@ -28,6 +28,42 @@
 .active .icon.trailers { background-position: -64px -128px; }
 .active .icon.images { background-position: 0 -128px; }
 .active .icon.demo { background-position: -32px -128px; }
+.available .icon.trailers,
+.available.icon.trailers { background-position: -64px -160px; }
+.available .icon.images,
+.available.icon.images { background-position: 0 -160px; }
+.available .icon.demo { background-position: -32px -160px; }
+.icon.facebook { background-position: -96px -128px; }
+.icon.twitter { background-position: -96px -96px; }
+.icon.gplus { background-position: -96px -160px; }
+.icon.email { background-position: -128px -64px; }
+.icon.single-player { background-position: -128px -96px; }
+.icon.multi-player { background-position: -128px -128px; }
+.icon.disclosure { background-position: -128px -160px; }
+.icon.thumbup { background-position: -160px -64px; }
+.icon.thumbdown { background-position: -160px -96px; }
+.active .icon.thumbup { background-position: -160px -128px; }
+.active .icon.thumbdown { background-position: -160px -160px; }
+.icon.flag { background-position: -192px 0; }
+.small .icon.flag { background-position: 0 -192px; }
+.icon.option { background-position: -192px -32px; }
+.icon.reply { background-position: -192px -64px; }
+a:hover .icon.reply { background-position: -192px -96px; }
+.icon.quote { background-position: -192px -128px; }
+a:hover .icon.quote { background-position: -192px -160px; }
+
+.esrb-icon {
+  background-image: url('../img/sprite_esrb.png');
+  width: 70px;
+  height: 99px;
+}
+.esrb-icon.early-childhood { background-position: 0 0; }
+.esrb-icon.everyone { background-position: -70px 0; }
+.esrb-icon.everyone10 { background-position: -140px 0; }
+.esrb-icon.teen { background-position: -210px 0; }
+.esrb-icon.mature { background-position: 0 -99px; }
+.esrb-icon.adults-only { background-position: -70px -99px; }
+.esrb-icon.rating-pending { background-position: -140px -99px; }
 
 /* Header & Hero Icons */
 

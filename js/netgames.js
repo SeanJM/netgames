@@ -10,9 +10,8 @@ header.init = function() {
 }
 header.loaded = function() {
   var path = window.location.pathname;
-  var browse = 'browse.html';
   console.log(path);
-  if (path == '/netgames/browse.html') { 
+  if (/browse.html/.test(path) || /game-details.html/.test(path)) { 
     $('header .secondary-level .tab:eq(4)').addClass('active');
   }
   else {
@@ -55,14 +54,6 @@ header.loaded = function() {
     event.stopPropagation();
   });
 
-  $('html').on('click',function(){
-    $('.visible').each(function(){
-      if (!$(this).hasClass('screen')) {
-        $(this).removeClass('visible');
-      }
-    });
-  });
-
   $('.switch .btn').on('click',function(event){
     $(this).closest('.switch').find('.active').removeClass('active');
     $(this).addClass('active');
@@ -95,6 +86,12 @@ footer.init = function() {
 
 var main = {};
 main.init = function() {
+  $('html').on('click',function(){
+    $('.popup.visible,.menu.visible').each(function(){
+      $(this).removeClass('visible');
+    });
+  });
+
   $('#show-packages').on('click',function(){
     $('#package-view').addClass('visible');
     $('#single-view').removeClass('visible');
@@ -113,6 +110,55 @@ main.init = function() {
   $('.squareBtn').on('click',function(){
     $(this).toggleClass('active');
   });
+  $('.selector').on('click',function(){
+    $(this).toggleClass('selected');
+  });
+  if ($('aside').size() > 0) {
+    $('aside').each(function(){
+      var aside = $(this);
+      var clear = function() {
+        aside.removeClass('aside-scroll');
+        aside.removeAttr('scrolltop');
+      }
+      $(window).on('scroll',function(){
+        if (aside.closest('.screen').hasClass('visible')) {
+          var scroll = $(window).scrollTop(),
+              asideTop  = aside.offset().top - 12;
+          if (scroll > asideTop) {
+            aside.addClass('aside-scroll');
+            aside.attr('scrolltop',asideTop);
+          }
+          if (scroll < aside.attr('scrolltop')) {
+            clear();
+          }
+        }
+        else { clear(); }
+      });
+    });
+  }
+  $('#game-details .switch .btn').on('click',function(){
+    var id = $(this).attr('id');
+    function clear() { $('.screen.visible').removeClass('visible'); }
+    if (/about/.test(id)) { clear(); $('#about').addClass('visible'); }
+    if (/reviews/.test(id)) { clear(); $('#reviews').addClass('visible'); }
+    if (/discussion/.test(id)) { clear(); $('#discussion').addClass('visible'); }
+    if (/recommended/.test(id)) { clear(); $('#recommended').addClass('visible'); }
+  });
+  $('.confirm-menu-container > .btn').on('click',function(event){
+    $(this).closest('.confirm-menu-container').find('.confirm-menu').addClass('visible');
+    event.stopPropagation();
+  });
+  $('.confirm-menu .btn').on('click',function(event){
+    $(this).closest('.confirm-menu').removeClass('visible');
+    if ($(this).closest('.comment').size() > 0 && $(this).hasClass('confirm')) {
+      $(this).closest('.comment').remove();
+    }
+    event.stopPropagation();
+  });
+  $('.menu-container > .btn').on('click',function(){
+    $(this).parent().find('.menu').addClass('visible');
+  });
+
 }
 
 /* Scrolling */
@@ -120,7 +166,7 @@ main.init = function() {
 var pkg = {};
 pkg.drag = function(el,areaW,parW) {
   var scrPos = el.position().left - 24;
-  var scrollable = el.closest('.package').find('.package-scroll');
+  var scrollable = el.closest('.package').find('.scrollable');
   scrollable.css({left: -(scrPos*(areaW/parW))});
   var shadowLeft = el.closest('.package').find('.shadow.left');
   var shadowRight = el.closest('.package').find('.shadow.right');
@@ -130,8 +176,13 @@ pkg.drag = function(el,areaW,parW) {
 }
 pkg.scrollInit = function() {
   $('.scroll-bar').each(function(){
-    var scrollable = $(this).closest('.package').find('.package-scroll'),
-        scrollbar = $(this).closest('.scroll'),
+    if ($(this).closest('.package').size() > 0) {
+      var scrollable = $(this).closest('.package').find('.scrollable');
+    }
+    if ($(this).closest('.media-overview').size() > 0) {
+      var scrollable = $(this).closest('.media-overview').find('.scrollable');
+    }
+    var scrollbar = $(this).closest('.scroll'),
         parW = scrollable.width()-2,
         areaW = scrollbar.width(),
         scrW = parW / (areaW/parW);

@@ -1,3 +1,46 @@
+/* Elements Using the 1PX Sprite */
+button,
+.btn,
+header,
+header #status .account .user-popup .container ul li a:hover,
+header nav .top-level .search-container,
+.menu .container li a:hover,
+.scroll,
+.scroll .scroll-bar,
+#filter .titlebar,
+.group-table .row:hover,
+article.bubble .bottom {
+  background-image: url('../img/sprite_1px.png');
+  background-repeat: repeat-x;
+}
+
+header .logo,
+.btn-delete,
+.arrow,
+header nav .top-level .tab,
+header nav .top-level .tab .icon,
+header nav .secondary-level .tab .icon,
+header nav .secondary-level .tab.active,
+#hero .icon,
+.star,
+.carousel-container .controls .left,
+.carousel-container .controls .right,
+footer .logo,
+.package .scrollable-container .shadow,
+.checkbox,
+.slider-container .knob,
+.bubble-indicator,
+.squareBtn,
+.flag,
+.selector,
+.item-container .media .tab.available,
+.package-available,
+.scrollable .tab,
+.play,
+.confirm-menu {
+  background-image: url('../img/sprite_main.png');
+}
+/* ---------------------- End Aggregated Styles   */
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +55,8 @@
 }
 input[type="text"], input[type="password"] {
   color: #707070;
+  border: 1px solid #AFAFAF;
+  box-shadow: inset 0 1px 4px rgba(0,0,0,0.2);
 }
 a {
   color: #28AAE1;
@@ -35,6 +80,8 @@ button,
   font-size: 16px;
   cursor: pointer;
   -webkit-appearance: none;
+  height: 36px;
+  line-height: 36px;
 }
 button.green,
 .btn.green {
@@ -58,6 +105,18 @@ button.silver:hover,
 .btn.silver:hover {
   background-position: 0 -338px;
 }
+.btn.small {
+  height: 24px;
+}
+.btn.silver.small {
+  background-position: 0 -1017px;
+}
+.btn.silver.small:hover {
+  background-position: 0 -1042px;
+}
+  .btn.small .icon {
+    margin: -4px 0 0 -2px; 
+  }
 button.indigo,
 .btn.indigo {
   background-position: 0 -374px;
@@ -85,8 +144,17 @@ button.red,
   color: #fff;
 }
 button.red:hover,
-.btn.red:hover {
-  background-position: 0 -482px;
+.btn.red:hover { background-position: 0 -482px; }
+
+.btn.facebook { background-position: 0 -776px; border: 1px solid #3B5998; }
+.btn.facebook:hover { background-position: 0 -812px; }
+
+.btn.gplus { background-position: 0 -848px; border: 1px solid #B32E1D; }
+.btn.gplus:hover { background-position: 0 -884px; }
+
+.btn .icon {
+  float: left;
+  margin: 2px 4px;
 }
 .checkbox {
   background-position: -258px -62px;
@@ -108,11 +176,21 @@ button.red:hover,
   position: relative;
   height: 36px;
 }
-
 .switch .btn {
   text-align: center;
   line-height: 36px;
   height: 36px;
+  float: left;
+}
+.switch .btn {
+  border-radius: 0;
+}
+.switch .btn:nth-last-child(1) {
+  border-radius: 0 8px 8px 0;
+}
+.switch .btn:nth-child(1) {
+  border-radius: 8px 0 0 8px;
+  border-right: 0;
 }
 .switch .btn.active {
   background-position: 0 -518px;
@@ -123,19 +201,23 @@ button.red:hover,
 .switch.col-2 .btn {
   width: 50%;
   position: absolute;
-  border-radius: 8px 0 0 8px;
 }
 .switch.col-2 .btn:nth-last-child(1) {
   right: 0;
-  border-radius: 0 8px 8px 0;
 }
 .switch.col-2.narrow {
   width: 33%;  
   margin: auto;
 }
-.switch .icon {
-  float: left;
-  margin: 2px 0 0 6px;
+.switch.col-4.narrow {
+  width: 60%;
+  margin: 0 20%;
+}
+.switch.col-4 .btn {
+  width: 24.8%;
+}
+.switch.col-4 .btn ~ .btn {
+  margin: 0 -1px 0;
 }
 .switch .icon + p {
   float: left;
@@ -143,57 +225,54 @@ button.red:hover,
   left: 28px;
   font-size: 15px;
 }
-.browse .switch.col-2.narrow {
+#browse .switch.col-2.narrow {
   float: right;
 }
+.scroll {
+  height: 18px;
+  width: 415px;
+  margin: 0 24px;
+  border-radius: 9px;
+  background-position: 0 -710px;
+  float: left;
+}
+  .scroll .scroll-bar {
+    height: 12px;
+    width: 250px;
+    background-position: 0 -728px;
+    float: left;
+    margin: 3px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
 /* Game Thumbs */
 .game-thumb {
   box-shadow: 0 2px 2px rgba(0,0,0,0.3); 
+  overflow: hidden;
 }
 .game-thumb.small,
-.package .package-scroll .game-thumb.small {
+.package .scrollable .game-thumb.small {
   border-radius: 14px;
-  overflow: hidden;
   width: 83px;
   height: 83px;
 }
-.package .package-scroll .game-thumb.small img {
+.game-thumb.medium {
+  border-radius: 20px;
+  width: 157px;
+  height: 157px;
+}
+.game-thumb.large {
+  width: 214px;
+  height: 214px;
+  border-radius: 20px;
+}
+.package .scrollable .game-thumb.small img {
   border-radius: 0;
 }
+.rating-container p {
+  color: #707070;
+}
 /* ---------------------- Aggregated Styles       */
-/* Elements Using the 1PX Sprite */
-button,
-.btn,
-header,
-header #status .account .user-popup .container ul li a:hover,
-header nav .top-level .search-container,
-.menu .container li a:hover,
-.package .scroll,
-.package .scroll .scroll-bar,
-#filter .titlebar {
-  background-image: url('../img/sprite_1px.png');
-  background-repeat: repeat-x;
-}
-header .logo,
-.btn-delete,
-.arrow,
-header nav .top-level .tab,
-header nav .top-level .tab .icon,
-header nav .secondary-level .tab .icon,
-header nav .secondary-level .tab.active,
-#hero .icon,
-.star,
-.carousel-container .controls .left,
-.carousel-container .controls .right,
-footer .logo,
-.package .package-scroll-container .shadow,
-.checkbox,
-.slider-container .knob,
-.bubble-indicator,
-.squareBtn {
-  background-image: url('../img/sprite_main.png');
-}
-/* ---------------------- End Aggregated Styles   */
 /* ---------------------- Main Container          */
 .container-950,
 .container-960,
@@ -235,9 +314,8 @@ footer .logo,
     float: left;
   }
   #activity .item-container ~ .item-container,
-  #activity .item-container .thumb .shadow,
-  #activity .item-container .play {
-    background: url('../img/sprite_hero.png');
+  #activity .item-container .thumb .shadow {
+    background-image: url('../img/sprite_hero.png');
     background-repeat: no-repeat;
   }
   #activity .item-container ~ .item-container {
@@ -264,13 +342,13 @@ footer .logo,
         left: 0;
         background-position: -32px 0;
       }
-      #activity .item-container .play {
+      .play {
         position           : absolute;
         top                : 24px;
         left               : 29px;
         width              : 32px;
         height             : 32px;
-        background-position: 0 0;
+        background-position: -441px -127px;
       }
     #activity .item-container h2 {
       float         : left;
@@ -309,7 +387,7 @@ footer .logo,
   float: left;
   width: 100%;
 }
-  .gallery section h1 {
+  section h1 {
     float      : left;
     font-size  : 28px;
     font-weight: 400;
@@ -332,212 +410,6 @@ footer .logo,
       height             : 9px;
       background-position: -201px 0;
     }
-  .gallery section .item-container {
-    float: left;
-    margin-top: 34px;
-    position: relative;
-  }
-    .gallery section .item-container .single {
-      border-radius: 20px;
-      box-shadow: 0 1px 6px rgba(0,0,0,0.4);
-      width: 100%;
-      height: 321px;
-    }
-      .gallery section .item-container .single img {
-        border-radius: 0 0 20px 20px;
-      }
-    .gallery section .item-container .heading {
-      border-radius: 20px 20px 0 0;
-      height: 60px;
-      width: 100%;
-      background: #fff;
-      position: relative;
-    }
-      .gallery section .item-container .heading h1 {
-        width         : 280px;
-        text-indent   : 18px;
-        font-size     : 16px;
-        font-weight   : 600;
-        line-height   : 60px;
-        letter-spacing: -1px;
-        position: absolute;
-        left: 0;
-      }
-      .gallery section .item-container .heading .platform {
-        height: 32px;
-        width: 70px;
-        float: right;
-        margin: 15px 18px 0 0;
-      }
-      .gallery section .item-container .heading .platform .icon {
-        float: right;
-        opacity: 0.3;
-      }
-      .gallery section .item-container .heading .platform .icon.active {
-        opacity: 1;
-      }
-  .gallery section .item-container.col-2 {
-    width: 48.7%;
-  }
-  .gallery section .item-container.col-2:nth-child(2n),
-  .gallery section .item-container.col-3:nth-child(3n) {
-    float: right;
-    margin-right: 0;
-  }
-  .gallery section .item-container.col-3 {
-    width: 300px;
-    margin-right: 24px;
-    margin-bottom: 12px;
-  }
-    .gallery section .item-container.col-3 .single {
-      height: 264px;
-    }
-    .gallery section .item-container .rating-container {
-      float: left;
-    }
-    .gallery section .item-container .rating-container {
-      width: 250px;
-      height: 24px;
-      margin: 18px 0 0 12px;
-    }
-    .gallery section .item-container .package .rating-container {
-      height: 14px;
-      margin: 6px 0 0 0;
-    }
-      .star {
-        background-position: -221px -14px;
-        width: 24px;
-        height: 24px;
-        float: left;
-      }
-      .gallery section .item-container .package .rating-container .star {
-        width: 15px;
-        height: 14px;
-        background-position: -221px 0;
-      }
-      /* Regular Size Stars */
-      .gallery section .item-container .rating-container.rating-4 .star:nth-child(5),
-      .gallery section .item-container .rating-container.rating-3 .star:nth-child(5),
-      .gallery section .item-container .rating-container.rating-35 .star:nth-child(5),
-      .gallery section .item-container .rating-container.rating-3 .star:nth-child(4),
-      .gallery section .item-container .rating-container.rating-25 .star:nth-child(5),
-      .gallery section .item-container .rating-container.rating-25 .star:nth-child(4),
-      .gallery section .item-container .rating-container.rating-2 .star:nth-child(5),
-      .gallery section .item-container .rating-container.rating-2 .star:nth-child(4),
-      .gallery section .item-container .rating-container.rating-2 .star:nth-child(3),
-      .gallery section .item-container .rating-container.rating-15 .star:nth-child(5),
-      .gallery section .item-container .rating-container.rating-15 .star:nth-child(4),
-      .gallery section .item-container .rating-container.rating-15 .star:nth-child(3),
-      .gallery section .item-container .rating-container.rating-1 .star:nth-child(5),
-      .gallery section .item-container .rating-container.rating-1 .star:nth-child(4),
-      .gallery section .item-container .rating-container.rating-1 .star:nth-child(3),
-      .gallery section .item-container .rating-container.rating-1 .star:nth-child(2),
-      .gallery section .item-container .rating-container.rating-05 .star:nth-child(5),
-      .gallery section .item-container .rating-container.rating-05 .star:nth-child(4),
-      .gallery section .item-container .rating-container.rating-05 .star:nth-child(3),
-      .gallery section .item-container .rating-container.rating-05 .star:nth-child(2),
-      .gallery section .item-container .rating-container.rating-0 .star:nth-child(5),
-      .gallery section .item-container .rating-container.rating-0 .star:nth-child(4),
-      .gallery section .item-container .rating-container.rating-0 .star:nth-child(3),
-      .gallery section .item-container .rating-container.rating-0 .star:nth-child(2),
-      .gallery section .item-container .rating-container.rating-0 .star:nth-child(1) {
-        background-position: -245px -14px;
-      }
-      .gallery section .item-container .rating-container.rating-45 .star:nth-child(5),
-      .gallery section .item-container .rating-container.rating-35 .star:nth-child(4),
-      .gallery section .item-container .rating-container.rating-25 .star:nth-child(3),
-      .gallery section .item-container .rating-container.rating-15 .star:nth-child(2),
-      .gallery section .item-container .rating-container.rating-05 .star:nth-child(1) {
-        background-position: -269px -14px;
-      }
-      /* Small Stars */
-      .gallery section .item-container .package .rating-container.rating-4 .star:nth-child(5),
-      .gallery section .item-container .package .rating-container.rating-35 .star:nth-child(5),
-      .gallery section .item-container .package .rating-container.rating-3 .star:nth-child(5),
-      .gallery section .item-container .package .rating-container.rating-3 .star:nth-child(4),
-      .gallery section .item-container .package .rating-container.rating-25 .star:nth-child(5),
-      .gallery section .item-container .package .rating-container.rating-25 .star:nth-child(4),
-      .gallery section .item-container .package .rating-container.rating-2 .star:nth-child(5),
-      .gallery section .item-container .package .rating-container.rating-2 .star:nth-child(4),
-      .gallery section .item-container .package .rating-container.rating-2 .star:nth-child(3),
-      .gallery section .item-container .package .rating-container.rating-15 .star:nth-child(5),
-      .gallery section .item-container .package .rating-container.rating-15 .star:nth-child(4),
-      .gallery section .item-container .package .rating-container.rating-15 .star:nth-child(3),
-      .gallery section .item-container .package .rating-container.rating-1 .star:nth-child(5),
-      .gallery section .item-container .package .rating-container.rating-1 .star:nth-child(4),
-      .gallery section .item-container .package .rating-container.rating-1 .star:nth-child(3),
-      .gallery section .item-container .package .rating-container.rating-1 .star:nth-child(2),
-      .gallery section .item-container .package .rating-container.rating-05 .star:nth-child(5),
-      .gallery section .item-container .package .rating-container.rating-05 .star:nth-child(4),
-      .gallery section .item-container .package .rating-container.rating-05 .star:nth-child(3),
-      .gallery section .item-container .package .rating-container.rating-05 .star:nth-child(2),
-      .gallery section .item-container .package .rating-container.rating-0 .star:nth-child(5),
-      .gallery section .item-container .package .rating-container.rating-0 .star:nth-child(4),
-      .gallery section .item-container .package .rating-container.rating-0 .star:nth-child(3),
-      .gallery section .item-container .package .rating-container.rating-0 .star:nth-child(2),
-      .gallery section .item-container .package .rating-container.rating-0 .star:nth-child(1) {
-        background-position: -236px 0;
-      }
-      .gallery section .item-container .package .rating-container.rating-45 .star:nth-child(5),
-      .gallery section .item-container .package .rating-container.rating-35 .star:nth-child(4),
-      .gallery section .item-container .package .rating-container.rating-25 .star:nth-child(3),
-      .gallery section .item-container .package .rating-container.rating-15 .star:nth-child(2),
-      .gallery section .item-container .package .rating-container.rating-05 .star:nth-child(1) {
-        background-position: -251px 0;
-      }
-      .gallery section .item-container .rating-container p {
-        float: left;
-        font-size: 15px;
-        color: #707070;
-        line-height: 24px;
-        margin: 0 0 0 12px;
-      }
-      .gallery section .item-container.col-3 .rating-container p {
-        position: absolute;
-        right: 12px;
-      }
-    .gallery section .item-container .price {
-      float: left;
-      clear: left;
-      position: relative;
-      margin: 24px 0 0 12px;
-    }
-      .gallery section .item-container .price h2,
-      .gallery section .item-container .price h3 {
-        float: left;
-        font-weight: 400;
-        line-height: 24px;
-      }
-      .gallery section .item-container .price h2 {
-        text-decoration: line-through;
-        font-size: 15px;
-        color: #707070;
-        margin: 0px 12px 0 0;
-      }
-      .gallery section .item-container .price h3 {
-        color: #961B1B;
-        font-size: 20px;
-        margin: 0;
-      }
-    .gallery section .item-container .btn.add-to-cart,
-    .gallery section .item-container .btn.add-to-wishlist {
-      width: 39px;
-      height: 36px;
-      position: absolute;
-      bottom: 0px;
-    }
-    .gallery section .item-container .btn.add-to-cart {
-      right: 12px;
-    }
-    .gallery section .item-container .btn.add-to-wishlist {
-      right: 62px;
-    }
-    .gallery section .item-container .btn.add-to-cart .icon,
-      .gallery section .item-container .btn.add-to-wishlist .icon {
-        position: absolute;
-        top: 1px;
-        left: 4px;
-      }
 /* Gallery Carousel */
 .carousel-container {
   position: relative;
@@ -582,70 +454,6 @@ footer .logo,
     .gallery #package-view .carousel-container .controls {
       top: 160px;
     }
-    /* Front Page Package Browsing */
-    .package { 
-      border-radius: 20px;
-      box-shadow: 0 1px 6px rgba(0,0,0,0.4);
-      width: 100%;
-      height: 300px;
-    }
-    .package .heading {
-      box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
-    } 
-      .package .package-scroll-container {
-        float   : left;
-        position: relative;
-        width   : 408px;
-        margin  : 24px;
-        overflow: hidden;
-      }
-        .package .package-scroll-container .package-scroll {
-          width: 1000px; /* Disable this later */
-          position: relative;
-        }
-          .package .package-scroll-container .package-scroll .mini-item {
-            float: left;
-            width: 83px;
-            cursor: pointer;
-            margin: 0 18px 0 0;
-          }
-          .package .package-scroll-container .package-scroll .mini-item h2 {
-            font-size: 12px;
-            font-weight: 700;
-            color: #3F3F3F;
-            margin: 12px 0 0 0;
-          }
-        .package .package-scroll-container .shadow {
-          position           : absolute;
-          width              : 18px;
-          height             : 148px;
-        }
-        .package .package-scroll-container .shadow.right {
-          background-position: -406px 0;
-          right: 0;
-        }
-        .package .package-scroll-container .shadow.left {
-          background-position: -423px 0;
-          left: 0;
-          opacity: 0;
-        }
-    .package .scroll {
-      height: 18px;
-      width: 415px;
-      margin: 0 24px;
-      border-radius: 9px;
-      background-position: 0 -710px;
-      float: left;
-    }
-      .package .scroll .scroll-bar {
-        height: 12px;
-        width: 250px;
-        background-position: 0 -728px;
-        float: left;
-        margin: 3px;
-        border-radius: 6px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-      }
   #main label {
     font-size: 16px;
     font-weight: 400;

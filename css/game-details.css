@@ -1,0 +1,507 @@
+/* Sprites */
+.rank-container,
+#game-details .comment article.bubble .bottom .left,
+#game-details .comment article.bubble .bottom .right,
+#game-details .comment article.bubble > .arrow {
+  background-image: url('../img/sprite_details.png');
+}
+#game-details {}
+  #game-details h1 {
+    margin: 0 0 24px;
+  }
+/* Aggregated */
+#game-details .overview,
+#game-details .media-overview {
+  padding      : 24px;
+  background   : #fff;
+  border-radius: 20px;
+  border       : 1px solid #D3D3D3;
+  box-shadow   : 0 3px 3px rgba(0,0,0,0.15);
+}
+
+#game-details .media-overview,
+#game-details .mini-overview {
+  height       : 546px;
+}
+/* Over View */
+  #game-details .overview {
+    float        : left;
+    width        : 250px;
+    clear: left;
+  }
+    #game-details .mini-overview .game-thumb {
+      margin: 17px;
+    }
+    #game-details .mini-overview .rating-container {
+      float: left;
+      width: 100%;
+      margin: 16px 0 12px;
+    }
+      #game-details .mini-overview .rating-container p {
+        float: right;
+      }
+    #game-details .overview .row {
+      float      : left;
+      position   : relative;
+      width      : 100%;
+      padding-top: 5px;
+    }
+      #game-details .mini-overview .row p,
+      #game-details .about-overview .row p {
+        float: left;
+        width: 30%;
+        line-height: 36px;
+        font-size: 15px;
+        color: #707070;
+      }
+      #game-details .mini-overview .row p + p,
+      #game-details .about-overview .row p + p {
+        float: right;
+        width: 70%;
+        text-align: right;
+      }
+      #game-details .mini-overview .row.list-price p + p {
+        text-decoration: line-through;;
+      }
+      #game-details .mini-overview .row.price p + p {
+        color: #961B1B;
+        font-size: 22px;
+        letter-spacing: -1px;
+      }
+      #game-details .mini-overview .row.cart p {
+        width: 50px;
+      }
+      #game-details .mini-overview .row.cart input[type="text"] {
+        float: left;
+        width: 43px;
+        padding: 7px 0 9px;
+        text-align: center;
+        font-size: 15px;
+        border-radius: 8px;
+      }
+      #game-details .mini-overview .row.cart .btn {
+        float: right;
+        width: 137px;
+        letter-spacing: -1px;
+      }
+      #game-details .overview hr {
+        background-position: 0 -4px;
+        margin: 18px 0 24px;
+        float: left;
+      }
+      #game-details .mini-overview hr + .btn,
+      #game-details .about-overview hr + .btn {
+        float: left;
+        width: 100%;
+        text-indent: 20px;
+      }
+        #game-details .mini-overview hr + .btn .icon,
+        #game-details .about-overview hr + .btn .icon {
+          margin: 2px 8px;
+        }
+/* Media */
+  #game-details .media-overview {
+    float: right;
+    width: 570px;
+    margin: 0 0 24px 0;
+  }
+    #game-details .media-overview .scroll {
+      width: 100%;
+      margin: 16px 0 24px;
+    }
+      #game-details .media-overview .scroll .scroll-bar {
+        width: 80px;
+      }
+    #game-details .media-overview .media-gallery-container {
+      margin: 14px 0 0;
+      width: 570px;
+      overflow: hidden;
+    }
+    #game-details .media-overview .media-gallery-container .scrollable {
+      width: 1000px;
+    }
+      #game-details .media-overview .media-gallery-container .scrollable .tab {
+        float: left;
+        width: 118px;
+        height: 110px;
+        background-position: -521px 0;
+        position: relative;
+      }
+      #game-details .media-overview .media-gallery-container .scrollable .tab.active {
+        background-position: -521px -110px;
+      }
+        #game-details .media-overview .media-gallery-container .scrollable .tab img {
+          margin: 14px 16px;
+          border-radius: 8px;
+        }
+        #game-details .media-overview .media-gallery-container .scrollable .tab .play {
+          top: 36px;
+          left: 42px;
+        }
+    /* Media Indicator (icon) # */
+    #game-details .media-overview .media {
+      float: left;
+      width: 160px;
+    }
+    #game-details .media-overview .media .icon {
+      float: left;
+    }
+    #game-details .media-overview .media .icon + p {
+      float: left;
+      line-height: 32px;
+      margin: 0 10px;
+      color: #707070;
+    }
+    #game-details .media-overview .media .icon + p + .icon {
+      margin: 0 0 0 10px;
+    }
+    /* Social Media */
+    #game-details .media-overview .social {
+      float: right;
+    }
+    #game-details .media-overview .social .btn {
+      float: left;
+      margin: 0 0 0 12px;
+    }
+    #game-details .media-overview .social p {
+      float: left;
+      line-height: 36px;
+      font-size: 16px;
+      color: #707070;
+      margin: 0 10px 0 0;
+    }
+    /* Switch */
+    #game-details .switch {
+      clear: both;
+    }
+/* Screen */
+  /* Universal */
+  #game-details .details {
+    float: right;
+    width: 600px;
+  }
+  #game-details aside {
+    float: left;
+    width: 300px;
+  }
+  #game-details .screen {
+    margin-top: 24px;
+  }
+  /* End Universal */
+    #game-details section h1.aside {
+      float: left;
+      width: 298px;
+    }
+  #game-details .about-overview .esrb-icon {
+    margin: 14px auto;
+  }
+  #game-details .about-overview .player {
+    float        : left;
+    position     : relative;
+    width        : 100%;
+    height       : 53px;
+    border       : 1px solid #D3D3D3;
+    border-radius: 6px;
+    text-align   : center;
+    font-size    : 16px;
+    line-height  : 53px;
+    color        : #707070;
+    box-shadow   : 0 3px 7px rgba(0,0,0,0.1);
+    margin: 30px 0 8px;
+  }
+    #game-details .about-overview .player .icon {
+      position: absolute;
+      top     : 11px;
+      left    : 10px;
+    }
+      #game-details #about .details h2 {
+        color: #707070;
+        font-weight: 400;
+        margin-bottom: 18px;
+        font-size: 22px;
+      }
+      #game-details #about .details p {
+        color: #707070;
+        font-size: 15px;
+      }
+      #game-details #about .details p ~ p {
+        margin-top: 24px;
+      }
+      #game-details #about .details .row {
+        float: left;
+        width: 100%;
+      }
+        #game-details #about .details .row p {
+          float: left;
+          line-height: 30px;
+          color: #3F3F3F;
+        }
+        #game-details #about .details .row p + p {
+          float     : right;
+          width     : 490px;
+          margin    : 0;
+          text-align: left;
+          color     : #707070;
+        }
+        #game-details .details hr {
+          float              : left;
+          background-position: 0 -2px;
+        }
+        #game-details .details h1 {
+          width: 100%;
+        }
+        #game-details .screen {
+          display: none;
+        }
+        #game-details .screen.visible {
+          display: block;
+        }
+        /* Review Overview */
+        #game-details .review-overview .rank-container {
+          float              : left;
+          width              : 80px;
+          height             : 79px;
+          background-position: 0 0;
+        }
+          #game-details .review-overview .rank-container h4 {
+            text-align : center;
+            font-size  : 12px;
+            font-weight: 400;
+            line-height: 30px;
+            color      : #AFAFAF;
+          }
+          #game-details .review-overview .rank-container h3 {
+            text-align : center;
+            font-size  : 26px;
+            font-weight: 300;
+            line-height: 45px;
+            color      : #707070;
+            text-shadow: 0 1px 0 rgba(255,255,255);
+          }
+          #game-details .review-overview .rating-container {
+            float: right;
+            width: 133px;
+          }
+            #game-details .review-overview .rating-container p {
+              float      : left;
+              margin-top : 3px;
+              font-size  : 16px;
+              font-weight: 300;
+              line-height: 27px;
+              color      : #707070;
+            }
+            #game-details .review-overview .rating-container p + p {
+              margin   : 0;
+              font-size: 15px;
+              color    : #afafaf;
+            }
+            #game-details .review-overview .group-table {
+              float        : left;
+              width        : 298px;
+              margin       : 24px -24px;
+              border-top   : 1px solid #d3d3d3;
+              border-bottom: 1px solid #d3d3d3;
+            }
+              #game-details .review-overview .group-table .row {
+                width  : 250px;
+                height : 24px;
+                padding: 14px 24px;
+                cursor : pointer;
+              }
+              #game-details .review-overview .group-table .row:nth-child(even) {
+                background: #f3f4f4;
+              }
+              #game-details .review-overview .group-table .row:hover {
+                background-image   : url('../img/sprite_1px.png');
+                background-position: 0 -920px;
+                background-repeat  : repeat-x;
+              }
+                #game-details .review-overview .group-table .row .rating-container {
+                  float: left;
+                }
+                #game-details .review-overview .group-table .row .disclosure {
+                  position: absolute;
+                  top     : 12px;
+                  right   : 12px;
+                }
+                #game-details .review-overview .group-table .row p {
+                  float       : right;
+                  margin-right: 33px;
+                  line-height : 24px;
+                  color       : #707070;
+                }
+              #game-details .review-overview .group-table + .btn {
+                float     : left;
+                width     : 100%;
+                text-align: center;
+              }
+  /* Comments & Reviews Universal */
+  #game-details .comment {
+    width: 100%;
+    float: left;
+  }
+    #game-details .comment .user-image {
+      float     : left;
+      width     : 94px;
+      height    : 94px;
+      padding   : 6px;
+      border    : 1px solid #d3d3d3;
+      background: #fff;
+      box-shadow: 0 3px 5px rgba(0,0,0,0.12);
+    }
+      #game-details .comment article.bubble {
+        float   : right;
+        position: relative;
+      }
+        #game-details .comment article.bubble > .arrow {
+          position           : absolute;
+          top                : 50px;
+          left               : -10px;
+          width              : 11px;
+          height             : 18px;
+          background-position: -126px 0;
+        }
+        #game-details .comment article.bubble .top {
+          float        : left;
+          width        : 100%;
+          border       : 1px solid #afafaf;
+          border-bottom: none;
+          border-radius: 14px 14px 0 0;
+        }
+        #game-details .comment article.bubble .top .padding {
+          padding: 24px;
+          position: relative;
+        }
+          #game-details .comment article.bubble .top .rating-container {
+            float: left;
+          }
+          #game-details .comment article.bubble .top p {
+            z-index  : 1;
+            float    : left;
+            position : relative;
+            width    : 100%;
+            font-size: 15px;
+            color    : #707070;
+          }
+          #game-details .comment article.bubble .top p ~ p {
+            margin-top: 18px;
+          }
+          #game-details .comment article.bubble .bottom {
+            float              : left;
+            position           : relative;
+            top                : -5px;
+            width              : 100%;
+            height             : 45px;
+            margin             : 0 0 12px;
+            background-position: 0 -972px;
+          }
+          #game-details .comment article.bubble .bottom .left,
+          #game-details .comment article.bubble .bottom .right {
+            position: absolute;
+            width   : 23px;
+            height  : 45px;
+          }
+          #game-details .comment article.bubble .bottom .left {
+            left: 0;
+            background-position: -80px 0;
+          }
+          #game-details .comment article.bubble .bottom .right {
+            right: -2px;
+            background-position: -103px 0;
+          }
+        /* End Bubble */
+        #game-details .comment article.bubble .switch.vote {
+          width: 82px;
+          float: left;
+        }
+          #game-details .comment article.bubble .confirm-menu-container .confirm-menu {
+            left: -44px;
+            top: 32px; 
+          }
+          /* Spam Button */
+          #game-details .comment article.bubble .confirm-menu-container .btn.spam {
+            width: 155px;
+          }
+          .confirm-menu {
+
+          }
+        #game-details .comment article.bubble .social {
+          float: right;
+        }
+          #game-details .comment article.bubble .social .btn {
+            float: left;
+          }
+          #game-details .comment article.bubble .social .btn ~ .btn {
+            margin-left: 12px;
+          }
+          /* Comments Only */
+          #game-details .comment article.bubble .top h1 {
+            line-height: 16px;
+            margin-bottom: 14px;
+            font-size: 16px;
+            width: 100%;
+            float: left;
+          }
+          #game-details .comment article.bubble .top h1 + time {
+            float: right;
+            position: absolute;
+            right: 95px;
+            top: 20px;
+            font-size: 15px;
+            color: #707070;
+          }
+          #game-details .comment article.bubble .top .menu-container {
+            position: absolute;
+            right: 18px;
+            top: 18px;
+            width: 150px;
+          }
+            #game-details .comment article.bubble .top .menu-container .menu {
+              left: -30px;
+            }
+            #game-details .comment article.bubble .top .menu-container .btn {
+              border-radius: 6px 0 0 6px;
+              position: absolute;
+              right: 30px;
+            }
+          #game-details .comment article.bubble .top .confirm-menu-container {
+            position: absolute;
+            right: 17px;
+            top: 18px;
+          }
+            #game-details .comment article.bubble .top .confirm-menu-container .confirm-menu {
+              background-position: -253px -252px;
+              left: -211px;
+              top: 20px;
+            }
+            #game-details .comment article.bubble .top .confirm-menu-container > .btn {
+              border-radius: 0 6px 6px 0;
+              right: 0px;
+            }
+            #game-details .comment article.bubble .top .menu-container .btn + .btn {
+            }
+      #game-details .comment article.bubble {
+        width: 806px;
+      }
+          /* Review only */
+          #game-details .comment.review article.bubble .top h1 {
+            line-height: 25px;
+            margin-bottom: 14px;
+            font-size  : 22px;
+          }
+          #game-details .comment.review article.bubble .top h2 {
+            float      : left;
+            width      : 100%;
+            margin     : 0 0 6px 0;
+            font-size  : 15px;
+            font-weight: 400;
+            line-height: 36px;
+            color      : #707070;
+          }
+        #game-details .comment article.bubble > .confirm-menu-container {
+          float: left;
+          margin-left: 12px;
+        }
+      #game-details .comment.review article.bubble {
+        width   : 456px;
+      }
