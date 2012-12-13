@@ -10,7 +10,6 @@ header.init = function() {
 }
 header.loaded = function() {
   var path = window.location.pathname;
-  console.log(path);
   if (/browse.html/.test(path) || /game-details.html/.test(path)) { 
     $('header .secondary-level .tab:eq(4)').addClass('active');
   }
@@ -196,10 +195,30 @@ pkg.scrollInit = function() {
     });
   });
 }
-
+function spinner() {
+  $('.spinner').each(function(){
+    var spinner = $(this);
+    var delay = 90;
+    /* Start the animation */
+    /* Animate each frame */
+    /* Loop animation when done */
+    function animate() {
+      if (spinner.attr('frame')) {
+        var i = parseInt(spinner.attr('frame'))+1;
+        spinner.attr('frame',i);
+      }
+      if (typeof spinner.attr('frame') == 'undefined' || spinner.attr('frame') > 7) { 
+        spinner.attr('frame',0); 
+      }
+      setTimeout(function() { animate(); },delay);
+    }
+    animate();
+  });
+}
 $(function() {
   header.init();
   main.init();
   footer.init();
   pkg.scrollInit()
+  spinner();
 });

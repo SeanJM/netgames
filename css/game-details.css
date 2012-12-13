@@ -2,7 +2,8 @@
 .rank-container,
 #game-details .comment article.bubble .bottom .left,
 #game-details .comment article.bubble .bottom .right,
-#game-details .comment article.bubble > .arrow {
+#game-details .comment article.bubble > .arrow,
+.comment-loading {
   background-image: url('../img/sprite_details.png');
 }
 #game-details {}
@@ -341,7 +342,7 @@
     float: left;
   }
     #game-details .comment .user-image {
-      float     : left;
+      float     : right;
       width     : 94px;
       height    : 94px;
       padding   : 6px;
@@ -352,14 +353,15 @@
       #game-details .comment article.bubble {
         float   : right;
         position: relative;
+        margin-left: 36px;
       }
         #game-details .comment article.bubble > .arrow {
           position           : absolute;
           top                : 50px;
           left               : -10px;
           width              : 11px;
-          height             : 18px;
-          background-position: -126px 0;
+          height             : 20px;
+          background-position: -127px 0;
         }
         #game-details .comment article.bubble .top {
           float        : left;
@@ -403,7 +405,7 @@
           }
           #game-details .comment article.bubble .bottom .left {
             left: 0;
-            background-position: -80px 0;
+            background-position: -81px 0;
           }
           #game-details .comment article.bubble .bottom .right {
             right: -2px;
@@ -483,6 +485,39 @@
       #game-details .comment article.bubble {
         width: 806px;
       }
+      #game-details .comment .comment {
+        width: 900px;
+        float: right;
+      }
+        #game-details .comment .comment .comment { width: 850px; }
+          #game-details .comment .comment .comment .comment { width: 800px; }
+            #game-details .comment .comment .comment .comment .comment { width: 750px; }
+              #game-details .comment .comment .comment .comment .comment { width: 700px; }
+                #game-details .comment .comment .comment .comment .comment .comment { width: 650px; }
+                  #game-details .comment .comment .comment .comment .comment .comment .comment { width: 600px; }
+                    #game-details .comment .comment .comment .comment .comment .comment .comment .comment { width: 550px; }
+                      #game-details .comment .comment .comment .comment .comment .comment .comment .comment .comment { width: 500px; }
+        #game-details .comment .comment article.bubble {
+          width: 756px;
+        }
+          #game-details .comment .comment .comment article.bubble {
+            width: 706px;
+          }
+            #game-details .comment .comment .comment .comment article.bubble {
+              width: 656px;
+            }
+              #game-details .comment .comment .comment .comment .comment article.bubble {
+                width: 606px;
+              }
+                #game-details .comment .comment .comment .comment .comment .comment article.bubble {
+                  width: 556px;
+                }
+                  #game-details .comment .comment .comment .comment .comment .comment article.bubble {
+                    width: 506px;
+                  }
+                    #game-details .comment .comment .comment .comment .comment .comment .comment article.bubble {
+                      width: 456px;
+                    }
           /* Review only */
           #game-details .comment.review article.bubble .top h1 {
             line-height: 25px;
@@ -505,3 +540,59 @@
       #game-details .comment.review article.bubble {
         width   : 456px;
       }
+  #game-details .leave-comment {
+    width: 100%;
+    float: left;
+  }
+  #game-details .comment .leave-comment {
+    margin: 0 0 24px;
+  }
+    #game-details .leave-comment > h1 {
+      font-size: 18px;
+      line-height: 22px;
+      color: #707070;
+    }
+    #game-details .leave-comment > textarea {
+      float: left;
+      width: 100%;
+      height: 200px;
+      margin: 0 0 24px;
+    }
+    #game-details .leave-comment > .btn.cancel,
+    #game-details .leave-comment > button.confirm {
+      width: 130px;
+      text-align: center;
+    }
+
+    #game-details .leave-comment > .btn.cancel {
+      float: left;
+    }
+    #game-details .leave-comment > button.confirm {
+      float: right;
+    }
+    #game-details .leave-comment .character-count {
+      float: right;
+      line-height: 36px;
+      margin: 0 24px 0;
+      font-size: 15px;
+      color: #afafaf;
+    }
+/* Comment Loading */
+.comment-loading-container {
+  float: left;
+  width: 100%;
+  height: 57px;
+  margin-bottom: 24px;
+}
+  .comment-loading-container .comment-loading {
+    width: 57px;
+    height: 57px;
+    background-position: 0 -80px;
+    margin: auto;
+    position: relative;
+  }
+    .comment-loading-container .comment-loading .spinner {
+      top: 14px;
+      left: 18px;
+      position: absolute;
+    }
