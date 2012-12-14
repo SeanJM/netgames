@@ -19,7 +19,7 @@
   z-index : 1;
   position: relative;
   top     : -22px;
-  left    : -12px;
+  right    : 12px;
   width   : 100%;
 }
   .menu .tab { 
@@ -60,6 +60,30 @@
     .menu .container ul { 
       list-style: none;
     }
+    .menu .container.scrollable {
+      height: 210px;
+      overflow: hidden;
+      position: relative;
+    }
+      .menu .container.scrollable .scroll {
+        position: absolute;
+        right: 6px;
+        top: 6px;
+        height: 200px;
+        width: 10px;
+        margin: 0;
+        background: rgba(0,0,0,0.2);
+      }
+        .menu .container.scrollable .scroll .scrollbar {
+          background: #f0f0f0;
+          width: 8px;
+          border-radius: 4px;
+          position: absolute;
+          right: 1px;
+          top: 1px;
+          height: 50px;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
     .menu .container li { 
       padding: 4px 4px;
     }
@@ -248,6 +272,8 @@
         header #status .popup .container .item-container {
           position: relative;
           height: 83px;
+          float: left;
+          width: 100%;
         }
         header #status .popup .container .item-container ~ .item-container {
           margin: 24px 0 0 0;
@@ -417,3 +443,76 @@
       .confirm-menu .container .btn.confirm {
         float: right;
       }
+/* Review Window */
+.popup.window {
+  position: fixed;
+  width: 620px;
+  background: #fff;
+  border: 1px solid #AFAFAF;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  border-radius: 20px;
+  display: none;
+  z-index: 100;
+  
+}
+#write-review {
+  top: 10px;
+  height: 587px;
+}
+.popup.window.visible {
+  display: block;
+}
+  .popup.window .padding {
+    padding: 24px;
+    float: left;
+  }
+  .popup.window h1 {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 400;
+    color: #707070;
+    letter-spacing: -1px;
+    margin: 0 0 24px;
+  }
+  .popup.window .padding > input[type="text"] {
+    float: left;
+    width: 558px;
+  }
+  #write-review .rating-container {
+    float: left;
+    width: 300px;
+    margin: 16px 0;
+  }
+  #write-review .rating-container p {
+    float: left;
+    margin: 0 12px 0 0;
+  }
+  #write-review textarea {
+    width: 546px;
+    padding: 12px;
+    height: 302px;
+    margin-bottom: 18px;
+  }
+  .popup.window .btn {
+    width: 120px;
+    text-align: center;
+  }
+  .popup.window .cancel {
+    float: left;
+  }
+  .popup.window input + .cancel,
+  .popup.window input + .cancel + .confirm,
+  .popup.window .row + .cancel,
+  .popup.window .row + .cancel + .confirm {
+    margin: 24px 0 0;
+  }
+  .popup.window .confirm {
+    float: right;
+  }
+  #write-review .character-count {
+    float: right;
+    line-height: 36px;
+    font-size: 15px;
+    color: #AFAFAF;
+    margin: 0 24px 0;
+  }

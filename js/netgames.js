@@ -1,3 +1,101 @@
+var itemDB = {}
+itemDB.single = [{
+  'name':'Hero Academy',
+  'windows':'active',
+  'esrb':'Everyone',
+  'genre':'Puzzle',
+  'osx':'active',
+  'rating':'45',
+  'rating-count':'1,273',
+  'list-price':'$29.99',
+  'price':'$19.99',
+  'thumb-feature':'./img/feature_hero-academy.png',
+  'thumb-med':'./img/game-thumb_hero-academy-medium.png',
+  'thumb-large':'./img/game-thumb_hero-academy-large.png',
+  'thumb-marquee':'./img/game-thumb_hero-academy-marquee.png'
+},
+{
+  'name':'New Super Mario Bros U',
+  'windows':'active',
+  'esrb':'Everyone',
+  'genre':'Action',
+  'rating':'5',
+  'rating-count':'914',
+  'list-price':'$49.99',
+  'price':'$39.99',
+  'thumb-feature':'./img/feature_mario.png',
+  'thumb-med':'./img/game-thumb_mario-medium.png',
+  'thumb-large':'./img/game-thumb_mario-large.png',
+  'thumb-marquee':'./img/game-thumb_mario-marquee.png'
+},{
+  'name':'The Sims 3',
+  'windows':'active',
+  'esrb':'Teen',
+  'genre':'Simulation',
+  'osx':'not-active',
+  'rating':'5',
+  'rating-count':'914',
+  'list-price':'$49.99',
+  'price':'$39.99',
+  'thumb-feature':'./img/feature_mario.png',
+  'thumb-med':'./img/game-thumb_sims3-medium.png',
+  'thumb-large':'./img/game-thumb_sims3-large.png',
+  'thumb-marquee':'./img/game-thumb_sims3-marquee.png'
+}];
+itemDB.pkg = [{
+  'name':'The Sims 3: Super Fun Pack',
+  'windows':'active',
+  'esrb':'Teen',
+  'genre':'Simulation',
+  'osx':'active',
+  'rating':'5',
+  'rating-count':'914',
+  'price':'14',
+  'games':[{
+    'sub-name':'The Sims 3',
+    'thumb-small':'./img/game-thumb_sims3-small.png',
+    'sub-rating':'45'
+    },{
+    'sub-name':'The Sims 3: Ambitions',
+    'thumb-small':'./img/game-thumb_sims3-ambitions-small.png',
+    'sub-rating':'4'
+    },{
+      'sub-name':'The Sims 2: University',
+      'thumb-small':'./img/game-thumb_sims2-university-small.png',
+      'sub-rating':'4'
+    },{
+      'sub-name':'The Sims 3: Generations',
+      'thumb-small':'./img/game-thumb_sims3-generations-small.png',
+      'sub-rating':'4'
+    }]
+  },{
+  'name':'Minecraft &amp; Friends',
+  'windows':'active',
+  'esrb':'Teen',
+  'genre':'Action',
+  'osx':'active',
+  'rating':'45',
+  'rating-count':'2,914',
+  'price':'14',
+  'games':[{
+    'sub-name':'Hero Academy',
+    'thumb-small':'./img/game-thumb_hero-academy-small.png',
+    'sub-rating':'5'
+    },{
+    'sub-name':'Minecraft',
+    'thumb-small':'./img/game-thumb_minecraft-small.png',
+    'sub-rating':'4'
+  },{
+    'sub-name':'The Sims 2: University',
+    'thumb-small':'./img/game-thumb_sims2-university-small.png',
+    'sub-rating':'4'
+  },{
+    'sub-name':'The Sims 3: Generations',
+    'thumb-small':'./img/game-thumb_sims3-generations-small.png',
+    'sub-rating':'4'
+  }]
+}];
+
 var templateDir = './templates/';
 
 var header = {};
@@ -10,10 +108,13 @@ header.init = function() {
 }
 header.loaded = function() {
   var path = window.location.pathname;
-  if (/browse.html/.test(path) || /game-details.html/.test(path)) { 
+  if (/browse.html/.test(path) || /game-details.html/.test(path) || /game-details/.test(path) || /search-results/.test(path)) { 
     $('header .secondary-level .tab:eq(4)').addClass('active');
   }
-  else {
+  if (/trailers.html/.test(path)) {
+    $('header .secondary-level .tab:eq(1)').addClass('active'); 
+  }
+  if (!/.html/.test(path)) {
     $('header .secondary-level .tab:eq(0)').addClass('active');
   }
   var signIn = $('#status .sign-in');
@@ -154,10 +255,52 @@ main.init = function() {
     }
     event.stopPropagation();
   });
-  $('.menu-container > .btn').on('click',function(){
+  $('.menu-container > .btn').on('click',function(event){
     $(this).parent().find('.menu').addClass('visible');
+    event.stopPropagation();
   });
-
+  $('#write-a-review').on('click',function(event){
+    centerWindow($('#write-review'));
+    $('#write-review').addClass('visible');
+    event.stopPropagation();
+  });
+  $('[name="resend-confirmation"]').on('click',function(event){
+    spawnWindow($('#confirm-resend-confirmation'));
+  });
+  $('.order-summary .continue').on('click',function(event){
+    var screen = $(this).closest('.screen');
+    var i = screen.index();
+    if (i < $('section.screen').size()) {
+      screen.removeClass('visible').next().addClass('visible');
+    }
+    else {
+      $('body').addClass('processing');
+      setTimeout(function(){
+        spawnWindow($('#order-success'));
+        $('body').removeClass('processing');
+      },1000);
+    }
+  });
+  $('.order-summary .billing .btn').on('click',function(event){
+    centerWindow($('#change-credit-card-popup'));
+    $('#change-credit-card-popup').addClass('visible');
+    event.stopPropagation();
+  });
+  $('.order-summary .shipping-speed .btn').on('click',function(event){
+    centerWindow($('#change-shipping-speed-popup'));
+    $('#change-shipping-speed-popup').addClass('visible');
+    event.stopPropagation();
+  });
+  $('.order-summary .shipping-address .btn').on('click',function(event){
+    centerWindow($('#change-shipping-address-popup'));
+    $('#change-shipping-address-popup').addClass('visible');
+    event.stopPropagation();
+  });
+  $('.order-summary .billing-address .btn').on('click',function(event){
+    centerWindow($('#change-billing-address-popup'));
+    $('#change-billing-address-popup').addClass('visible');
+    event.stopPropagation();
+  });
 }
 
 /* Scrolling */
@@ -215,10 +358,45 @@ function spinner() {
     animate();
   });
 }
+
+/* Ugly prototype stuff */
+
+function itemTemplate() {
+  var templateFile = './templates/items.html';
+  var templateData = $('<div></div>');
+  function runTemplate(element,limit) {
+    $('div[' + element + ']').each(function(n){
+      var templateRef = $(this);
+      var templateName = '[template="' + $(this).attr('template') + '"]';
+      var templatePre  = templateData.find(templateName);
+      var keys         = itemDB[$(this).attr('obj')];
+      for (var i=0;i<keys.length;i++) {
+        if (typeof limit != 'undefined') {
+          if (i < limit) {
+            template.process({'template':templatePre,'keys':keys[i],'element':templateRef});
+          }
+        }
+        else {
+          template.process({'template':templatePre,'keys':keys[i],'element':templateRef});
+        }
+      }
+    });
+    $('div[' + element + ']').remove();
+  }
+  templateData.load(templateFile,function(){
+    runTemplate('feature-tile',2);
+    runTemplate('single-tile',3);
+    runTemplate('package-tile');
+    runTemplate('package-list');
+    runTemplate('single-list');
+  });
+}
+
 $(function() {
   header.init();
   main.init();
   footer.init();
   pkg.scrollInit()
   spinner();
+  itemTemplate();
 });

@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+    <!-- CSS Styles -->
+    <link rel='stylesheet' type='text/css' href='css/styles.css'>
+    <link rel='stylesheet' type='text/css' href='css/icons.css'>
+    <link rel='stylesheet' type='text/css' href='css/popups.css'>
+    <link rel='stylesheet' type='text/css' href='css/header.css'>
+    <link rel='stylesheet' type='text/css' href='css/footer.css'>
+    <link rel='stylesheet' type='text/css' href='css/filter.css'>
+    <link rel='stylesheet' type='text/css' href='css/item-container.css'>
+    <link rel='stylesheet' type='text/css' href='css/stars.css'>
+    <link rel='stylesheet' type='text/css' href='css/checkout.css'>
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <!-- JavaScript -->
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/prototype.js" type="text/javascript"></script>
+    <script src="js/netgames.js" type="text/javascript"></script>
+    <script src="js/jquery.placeholder.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui-1.9.2.custom.min.js" type="text/javascript"></script>
+	</head>
+	<body id="checkout">
+    <div template="header"></div> <!-- This will be replaced by the header template -->
+    <div id="main">
+      <div class="container-950">
+        <section>
+          <div class="checkout-path path">
+            <div class="padding">
+              <div class="path-container">
+                <div class="status-line-container step-1">
+                  <div class="status-line"></div>
+                </div>
+                <div>
+                  <div class="indicator-container active">
+                    <div class="icon indicator"></div>
+                    Confirm
+                  </div>
+                  <div class="indicator-container">
+                    <div class="icon indicator"></div>
+                    Shipping
+                  </div>
+                  <div class="indicator-container">
+                    <div class="icon indicator"></div>
+                    Payment
+                  </div>
+                  <div class="indicator-container">
+                    <div class="icon indicator"></div>
+                    Order
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- <div class="checkout-path path"> -->
+        </section>
+        <section class="screen" id="cart-confirm">
+          <h1>Confirm the items in my shopping cart</h1>
+          <div class="cart-item-list">
+            <h5 class="game-name">Game Name</h5>
+            <h5 class="quantity">Qty</h5>
+            <h5 class="price-each">Price Ea.</h5>
+            <h5 class="price">Price</h5>
+            <hr>
+            <div class="item-container package">
+              <div class="game-thumb medium">
+                <div class="game-thumb small">
+                  <img src="./img/game-thumb_sims3-small.png">
+                </div>
+                <div class="game-thumb small">
+                  <img src="./img/game-thumb_sims3-small.png">
+                </div>
+                <div class="game-thumb small">
+                  <img src="./img/game-thumb_sims3-small.png">
+                </div>
+                <div class="game-thumb small">
+                  <img src="./img/game-thumb_sims3-small.png">
+                </div>
+              </div>
+              <h1>The Sims Super Fun Pack</h1>
+              <input type="text" value="1">
+              <h2 class="price-each">$19.99</h2>
+              <h2 class="price">$19.99</h2>
+              <h3>Physical Stock: <span class="in-stock">Yes</span></h3>
+              <div class="dropdown" name="platform">
+                <div class="btn silver"><div class="icon windows"></div>Windows<div class="arrow"></div></div>
+                <div class="menu">
+                  <div class="tab"><div class="arrow"></div></div>
+                  <div class="container">
+                    <ul>
+                      <li><a href=""><span class="icon windows active"></span>Windows</a></li>
+                      <li><a href=""><span class="icon osx"></span>OS X</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div> <!-- <div class="dropdown"> -->
+              <div class="media">
+                <label for="media">Media:</label>
+                <div class="switch col-2">
+                  <div class="btn active">Digial</div>
+                  <div class="btn">Physical</div>
+                </div>
+              </div>
+              <div class="btn-delete"></div>
+            </div> <!-- <div class="item-container package" -->
+            <hr>
+            <div class="item-container package">
+              <div class="game-thumb medium">
+                <img src="./img/game-thumb_super-meat-boy-medium.png">
+              </div>
+              <h1>Super Meat Boy</h1>
+              <input type="text" value="1">
+              <h2 class="price-each">$29.99</h2>
+              <h2 class="price">$39.99</h2>
+              <h3>Physical Stock: <span class="out-of-stock">No</span></h3>
+              <div class="dropdown" name="platform">
+                <div class="btn silver"><div class="icon windows"></div>Windows<div class="arrow"></div></div>
+                <div class="menu">
+                  <div class="tab"><div class="arrow"></div></div>
+                  <div class="container">
+                    <ul>
+                      <li><a href=""><span class="icon windows"></span>Windows</a></li>
+                      <li><a href=""><span class="icon osx"></span>OS X</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div> <!-- <div class="dropdown"> -->
+              <div class="media">
+                <label for="media">Media:</label>
+                <div class="switch col-2">
+                  <div class="btn active">Digial</div>
+                  <div class="btn">Physical</div>
+                </div>
+              </div>
+              <div class="btn-delete"></div>
+            </div> <!-- <div class="item-container package"> -->
+            <hr>
+            <div class="subtotal">
+              <h2>Subtotal: <span class="amount">$79.99</span></h2>
+              <button class="btn indigo continue">Continue</button>
+              <div class="icon warning"></div><p>Physical Copies incur a shipping charge</p>
+            </div>
+          </div>
+        </section>
+        <section class="screen">
+          <div class="message">
+            <div class="padding">
+              <div class="icon error"></div>
+              <h1>The Zip Code you entered does not exist</strong></h1>
+              <h2>Click <a href="">here</a> to go to the invalid field to fix this problem</h2>
+            </div>
+          </div>
+          <aside>
+            <h1>Address Book</h1>
+            <div class="address-overview overview">
+              <div class="row">
+                <h1>Sean J MacIsaac</h1>
+                <h2>456 Bethesday Drive,</h2>
+                <h2>Ottawa, Ontario</h2>
+                <h2>K1N 8G3</h2>
+                <div class="btn-delete"></div>
+                <div class="btn silver">Ship to this Address</div>
+              </div>
+              <hr>
+              <div class="row">
+                <h1>Team 3</h1>
+                <h2>456 Golden Ave unit 777,</h2>
+                <h2>Ottawa, Ontario</h2>
+                <h2>K1L 3H1</h2>
+                <div class="btn-delete"></div>
+                <div class="btn silver">Ship to this Address</div>
+              </div>
+            </div>
+          </aside>
+          <div class="details">
+            <h1>Shipping Address</h1>
+            <div class="row">
+              <label for="fulname">Full Name</label>
+              <input type="text" name="fullname">
+            </div>
+            <div class="row">
+              <label for="street-address-1">Street Address (Line 1)</label>
+              <input type="text" name="street-address-1">
+            </div>
+            <div class="row">
+              <label for="street-address-2">Street Address (Line 2)</label>
+              <input type="text" name="street-address-2">
+            </div>
+            <div class="row col-2">
+              <div class="col">
+                <label for="country">Country</label>
+                <div class="dropdown" name="country">
+                  <div class="btn silver">United States<div class="arrow"></div></div>
+                  <div class="menu">
+                    <div class="tab"><div class="arrow"></div></div>
+                    <div class="container scrollable">
+                      <ul>
+                        <li><a href="">United States of America</a></li>
+                        <li><a href="">Canada</a></li>
+                        <li><a href="">Great Britain</a></li>
+                        <li><a href="">United States of America</a></li>
+                        <li><a href="">Canada</a></li>
+                        <li><a href="">Great Britain</a></li>
+                        <li><a href="">United States of America</a></li>
+                        <li><a href="">Canada</a></li>
+                        <li><a href="">Great Britain</a></li>
+                        <li><a href="">United States of America</a></li>
+                        <li><a href="">Canada</a></li>
+                        <li><a href="">Great Britain</a></li>
+                        <li><a href="">United States of America</a></li>
+                        <li><a href="">Canada</a></li>
+                        <li><a href="">Great Britain</a></li>
+                        <li><a href="">United States of America</a></li>
+                        <li><a href="">Canada</a></li>
+                        <li><a href="">Great Britain</a></li>
+                      </ul>
+                      <span class="scroll">
+                        <span class="scrollbar"></span>
+                      </span>
+                    </div>
+                  </div>
+                </div> <!-- <div class="dropdown" name="date-of-birth"> -->
+              </div>
+              <div class="col">
+                <label for="state">State</label>
+                <div class="dropdown" name="state">
+                  <div class="btn silver">Ontario<div class="arrow"></div></div>
+                  <div class="menu">
+                    <div class="tab"><div class="arrow"></div></div>
+                    <div class="container scrollable">
+                      <ul>
+                        <li><a href="">Ontario</a></li>
+                        <li><a href="">New York</a></li>
+                        <li><a href="">Quebec</a></li>
+                        <li><a href="">Ontario</a></li>
+                        <li><a href="">New York</a></li>
+                        <li><a href="">Quebec</a></li>
+                        <li><a href="">Ontario</a></li>
+                        <li><a href="">New York</a></li>
+                        <li><a href="">Quebec</a></li>
+                        <li><a href="">Ontario</a></li>
+                        <li><a href="">New York</a></li>
+                        <li><a href="">Quebec</a></li>
+                        <li><a href="">Ontario</a></li>
+                        <li><a href="">New York</a></li>
+                        <li><a href="">Quebec</a></li>
+                        <li><a href="">Ontario</a></li>
+                        <li><a href="">New York</a></li>
+                        <li><a href="">Quebec</a></li>
+                      </ul>
+                      <span class="scroll">
+                        <span class="scrollbar"></span>
+                      </span>
+                    </div>
+                  </div>
+                </div> <!-- <div class="dropdown" name="date-of-birth"> -->
+              </div>
+            </div>
+            <div class="row col-2">
+              <div class="col">
+                <label for="city">City</label>
+                <input type="text" name="city">
+              </div>
+              <div class="col">
+                <label for="zip">Zip</label>
+                <input type="text" name="zip">
+              </div>
+            </div>
+            <h1>Shipping Speed</h1>
+            <div class="row">
+              <div class="radio checked"></div><p>Standard Shipping (Average 3 to 5 business days)</p>
+              <div class="radio"></div><p>Express 2 day Shipping</p>
+              <div class="radio"></div><p>Priority 1 day Shipping</p>
+            </div>
+            <button class="btn indigo continue">Continue</button>
+          </div>
+        </section>
+        <section class="screen">
+          <aside>
+            <h1>Credit Cards</h1>
+            <div class="credit-card-overview overview">
+              <div class="row">
+                <h1>Sean James MacIsaac</h1>
+                <div class="icon credit-card visa"></div>
+                <h2>Visa ending in <strong>3456</strong></h2>
+                <h2>Exp: 10/15</h2>
+                <div class="btn-delete"></div>
+                <div class="btn silver">Use This Card</div>
+              </div>
+              <hr>
+              <div class="row">
+                <h1>Team 3</h1>
+                <div class="icon credit-card mastercard"></div>
+                <h2>MasterCard ending in <strong>3456</strong></h2>
+                <h2>Exp: 8/16</h2>
+                <div class="btn-delete"></div>
+                <div class="btn silver">Use This Card</div>
+              </div>
+            </div>
+          </aside>
+          <div class="details">
+            <h1>How I will be paying</h1>
+            <div class="row col-2three">
+              <div class="col">
+                <label for="credit-card-number">Credit Card Number</label>
+                <input name="credit-card-number" type="text">
+              </div>
+              <div class="col">
+                <label for="cid">CID</label>
+                <input name="cid" type="text">
+              </div>
+            </div>
+            <div class="row col-3Two">
+              <label for="expiry">Expiry</label>
+              <div class="col">
+                <div class="dropdown" name="expiry">
+                  <div class="btn silver">Year<div class="arrow"></div></div>
+                  <div class="menu">
+                    <div class="tab"><div class="arrow"></div></div>
+                    <div class="container">
+                      <ul>
+                        <li><a href="">2017</a></li>
+                        <li><a href="">2016</a></li>
+                        <li><a href="">2015</a></li>
+                        <li><a href="">2014</a></li>
+                        <li><a href="">2013</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div> <!-- <div class="dropdown"> -->
+              </div>
+              <div class="col">
+                <div class="dropdown" name="month">
+                  <div class="btn silver">Month<div class="arrow"></div></div>
+                  <div class="menu">
+                    <div class="tab"><div class="arrow"></div></div>
+                    <div class="container scrollable">
+                      <ul>
+                        <li><a href="">01 (January)</a></li>
+                        <li><a href="">02 (February)</a></li>
+                        <li><a href="">03 (March)</a></li>
+                        <li><a href="">04 (April)</a></li>
+                        <li><a href="">05 (May)</a></li>
+                        <li><a href="">06 (June)</a></li>
+                        <li><a href="">07 (July)</a></li>
+                        <li><a href="">08 (August)</a></li>
+                        <li><a href="">09 (September)</a></li>
+                        <li><a href="">10 (October)</a></li>
+                        <li><a href="">11 (November)</a></li>
+                        <li><a href="">12 (December)</a></li>
+                      </ul>
+                      <span class="scroll">
+                        <span class="scrollbar"></span>
+                      </span>
+                    </div>
+                  </div>
+                </div> <!-- <div class="dropdown"> -->
+              </div>
+            </div>
+            <button class="btn indigo continue">Continue</button>
+          </div>
+        </section>
+        <section class="screen visible order-summary">
+          <div class="message">
+            <div class="padding">
+              <div class="icon error"></div>
+              <h1>Your credit card was declined</h1>
+              <h2>Click <a href="">here</a> to fix this problem</h2>
+            </div>
+          </div>
+          <h1>Order Summary</h1>
+          <div class="module order">
+            <div class="titlebar">
+              <h1>Order</h1>
+            </div>
+            <div class="padding">
+              <h3>Games <span class="amount">$79.99</span></h3>
+              <h3>Shipping &amp; Handling <span class="amount">$3.99</span></h3>
+              <hr>
+              <h3>Sub Total <span class="amount">$83.98</span></h3>
+              <h3>HST (13%) <span class="amount">$10.92</span></h3>
+              <hr>
+              <div class="total">
+                <h1>Total</h1>
+                <h2>$73<sup>97</sup></h2>
+              </div>
+            </div>
+          </div>
+          <div class="module billing">
+            <div class="titlebar">
+              <h1>Billing</h1>
+            </div>
+            <div class="padding">
+              <h1>Sean James MacIsaac</h1>
+              <h2>Visa ending in 3456</h2>
+              <div class="icon credit-card visa"></div>
+              <div class="btn silver">Change</div>
+            </div>
+          </div>
+          <div class="module shipping-speed">
+            <div class="titlebar">
+              <h1>Shipping Speed</h1>
+            </div>
+            <div class="padding">
+              <div class="accent-box">
+                <h1>Standard</h1>
+                <h2>3 to 5 busniessdays</h2>
+              </div>
+              <div class="btn silver">Change</div>
+            </div>
+          </div>
+          <div class="module billing-address">
+            <div class="titlebar">
+              <h1>Billing Address</h1>
+            </div>
+            <div class="padding">
+              <h1>Sean J MacIsaac</h1>
+              <h2>456 Bethesda Drive,</h2>
+              <h2>Ottawa, Ontario</h2>
+              <h2>K1N 8G3</h2>
+              <div class="btn silver">Change</div>
+            </div>
+          </div>
+          <div class="module shipping-address">
+            <div class="titlebar">
+              <h1>Shipping Address</h1>
+            </div>
+            <div class="padding">
+              <h1>Sean J MacIsaac</h1>
+              <h2>456 Bethesda Drive,</h2>
+              <h2>Ottawa, Ontario</h2>
+              <h2>K1N 8G3</h2>
+              <div class="btn silver">Change</div>
+            </div>
+          </div>
+          <button class="indigo continue"><div class="spinner"></div>Place Order</button>
+        </section>
+      </div>
+    </div>
+    <div class="popup window" id="change-credit-card-popup">
+      <div class="padding">
+        <h1>Change My Credit Card Number</h1>
+        <div class="row col-2three">
+          <div class="col">
+            <label for="credit-card-number">Credit Card Number</label>
+            <input name="credit-card-number" type="text">
+          </div>
+          <div class="col">
+            <label for="cid">CID</label>
+            <input name="cid" type="text">
+          </div>
+        </div>
+        <div class="row col-3Two">
+          <label for="expiry">Expiry</label>
+          <div class="col">
+            <div class="dropdown" name="expiry">
+              <div class="btn silver">Year<div class="arrow"></div></div>
+              <div class="menu">
+                <div class="tab"><div class="arrow"></div></div>
+                <div class="container">
+                  <ul>
+                    <li><a href="">2017</a></li>
+                    <li><a href="">2016</a></li>
+                    <li><a href="">2015</a></li>
+                    <li><a href="">2014</a></li>
+                    <li><a href="">2013</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div> <!-- <div class="dropdown"> -->
+          </div>
+          <div class="col">
+            <div class="dropdown" name="month">
+              <div class="btn silver">Month<div class="arrow"></div></div>
+              <div class="menu">
+                <div class="tab"><div class="arrow"></div></div>
+                <div class="container scrollable">
+                  <ul>
+                    <li><a href="">01 (January)</a></li>
+                    <li><a href="">02 (February)</a></li>
+                    <li><a href="">03 (March)</a></li>
+                    <li><a href="">04 (April)</a></li>
+                    <li><a href="">05 (May)</a></li>
+                    <li><a href="">06 (June)</a></li>
+                    <li><a href="">07 (July)</a></li>
+                    <li><a href="">08 (August)</a></li>
+                    <li><a href="">09 (September)</a></li>
+                    <li><a href="">10 (October)</a></li>
+                    <li><a href="">11 (November)</a></li>
+                    <li><a href="">12 (December)</a></li>
+                  </ul>
+                  <span class="scroll">
+                    <span class="scrollbar"></span>
+                  </span>
+                </div>
+              </div>
+            </div> <!-- <div class="dropdown"> -->
+          </div>
+        </div>
+        <div class="btn red cancel">Cancel</div>
+        <div class="btn indigo confirm">Save</div>
+      </div>
+    </div> <!-- <div class="popup window"> -->
+    <div class="popup window" id="change-shipping-speed-popup">
+      <div class="padding">
+        <h1>Shipping Speed</h1>
+        <div class="row">
+          <div class="radio checked"></div><p>Standard Shipping (Average 3 to 5 business days)</p>
+          <div class="radio"></div><p>Express 2 day Shipping</p>
+          <div class="radio"></div><p>Priority 1 day Shipping</p>
+        </div>
+        <div class="btn red cancel">Cancel</div>
+        <div class="btn indigo confirm">Save</div>
+      </div>
+    </div>
+    <div class="popup window" id="change-shipping-address-popup">
+      <div class="padding">
+        <h1>Shipping Address</h1>
+        <div class="row">
+          <label for="fulname">Full Name</label>
+          <input type="text" name="fullname">
+        </div>
+        <div class="row col-2">
+          <div class="col">
+            <label for="street-address-1">Street Address (Line 1)</label>
+            <input type="text" name="street-address-1">
+          </div>
+          <div class="col">
+            <label for="street-address-2">Street Address (Line 2)</label>
+            <input type="text" name="street-address-2">
+          </div>
+        </div>
+        <div class="row col-2">
+          <div class="col">
+            <label for="country">Country</label>
+            <div class="dropdown" name="country">
+              <div class="btn silver">United States<div class="arrow"></div></div>
+              <div class="menu">
+                <div class="tab"><div class="arrow"></div></div>
+                <div class="container scrollable">
+                  <ul>
+                    <li><a href="">United States of America</a></li>
+                    <li><a href="">Canada</a></li>
+                    <li><a href="">Great Britain</a></li>
+                    <li><a href="">United States of America</a></li>
+                    <li><a href="">Canada</a></li>
+                    <li><a href="">Great Britain</a></li>
+                    <li><a href="">United States of America</a></li>
+                    <li><a href="">Canada</a></li>
+                    <li><a href="">Great Britain</a></li>
+                    <li><a href="">United States of America</a></li>
+                    <li><a href="">Canada</a></li>
+                    <li><a href="">Great Britain</a></li>
+                    <li><a href="">United States of America</a></li>
+                    <li><a href="">Canada</a></li>
+                    <li><a href="">Great Britain</a></li>
+                    <li><a href="">United States of America</a></li>
+                    <li><a href="">Canada</a></li>
+                    <li><a href="">Great Britain</a></li>
+                  </ul>
+                  <span class="scroll">
+                    <span class="scrollbar"></span>
+                  </span>
+                </div>
+              </div>
+            </div> <!-- <div class="dropdown" name="date-of-birth"> -->
+          </div>
+          <div class="col">
+            <label for="state">State</label>
+            <div class="dropdown" name="state">
+              <div class="btn silver">Ontario<div class="arrow"></div></div>
+              <div class="menu">
+                <div class="tab"><div class="arrow"></div></div>
+                <div class="container scrollable">
+                  <ul>
+                    <li><a href="">Ontario</a></li>
+                    <li><a href="">New York</a></li>
+                    <li><a href="">Quebec</a></li>
+                    <li><a href="">Ontario</a></li>
+                    <li><a href="">New York</a></li>
+                    <li><a href="">Quebec</a></li>
+                    <li><a href="">Ontario</a></li>
+                    <li><a href="">New York</a></li>
+                    <li><a href="">Quebec</a></li>
+                    <li><a href="">Ontario</a></li>
+                    <li><a href="">New York</a></li>
+                    <li><a href="">Quebec</a></li>
+                    <li><a href="">Ontario</a></li>
+                    <li><a href="">New York</a></li>
+                    <li><a href="">Quebec</a></li>
+                    <li><a href="">Ontario</a></li>
+                    <li><a href="">New York</a></li>
+                    <li><a href="">Quebec</a></li>
+                  </ul>
+                  <span class="scroll">
+                    <span class="scrollbar"></span>
+                  </span>
+                </div>
+              </div>
+            </div> <!-- <div class="dropdown" name="date-of-birth"> -->
+          </div>
+        </div>
+        <div class="row col-2">
+          <div class="col">
+            <label for="city">City</label>
+            <input type="text" name="city">
+          </div>
+          <div class="col">
+            <label for="zip">Zip</label>
+            <input type="text" name="zip">
+          </div>
+        </div>
+        <div class="btn red cancel">Cancel</div>
+        <div class="btn indigo confirm">Save</div>
+      </div>
+    </div> <!-- <div class="popup window" id="change-shipping-address-popup"> -->
+    <div class="popup window" id="change-billing-address-popup">
+      <div class="padding">
+        <h1>Billing Address</h1>
+        <div class="row">
+          <label for="fulname">Full Name</label>
+          <input type="text" name="fullname">
+        </div>
+        <div class="row col-2">
+          <div class="col">
+            <label for="street-address-1">Street Address (Line 1)</label>
+            <input type="text" name="street-address-1">
+          </div>
+          <div class="col">
+            <label for="street-address-2">Street Address (Line 2)</label>
+            <input type="text" name="street-address-2">
+          </div>
+        </div>
+        <div class="row col-2">
+          <div class="col">
+            <label for="country">Country</label>
+            <div class="dropdown" name="country">
+              <div class="btn silver">United States<div class="arrow"></div></div>
+              <div class="menu">
+                <div class="tab"><div class="arrow"></div></div>
+                <div class="container scrollable">
+                  <ul>
+                    <li><a href="">United States of America</a></li>
+                    <li><a href="">Canada</a></li>
+                    <li><a href="">Great Britain</a></li>
+                    <li><a href="">United States of America</a></li>
+                    <li><a href="">Canada</a></li>
+                    <li><a href="">Great Britain</a></li>
+                    <li><a href="">United States of America</a></li>
+                    <li><a href="">Canada</a></li>
+                    <li><a href="">Great Britain</a></li>
+                    <li><a href="">United States of America</a></li>
+                    <li><a href="">Canada</a></li>
+                    <li><a href="">Great Britain</a></li>
+                    <li><a href="">United States of America</a></li>
+                    <li><a href="">Canada</a></li>
+                    <li><a href="">Great Britain</a></li>
+                    <li><a href="">United States of America</a></li>
+                    <li><a href="">Canada</a></li>
+                    <li><a href="">Great Britain</a></li>
+                  </ul>
+                  <span class="scroll">
+                    <span class="scrollbar"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <label for="state">State</label>
+            <div class="dropdown" name="state">
+              <div class="btn silver">Ontario<div class="arrow"></div></div>
+              <div class="menu">
+                <div class="tab"><div class="arrow"></div></div>
+                <div class="container scrollable">
+                  <ul>
+                    <li><a href="">Ontario</a></li>
+                    <li><a href="">New York</a></li>
+                    <li><a href="">Quebec</a></li>
+                    <li><a href="">Ontario</a></li>
+                    <li><a href="">New York</a></li>
+                    <li><a href="">Quebec</a></li>
+                    <li><a href="">Ontario</a></li>
+                    <li><a href="">New York</a></li>
+                    <li><a href="">Quebec</a></li>
+                    <li><a href="">Ontario</a></li>
+                    <li><a href="">New York</a></li>
+                    <li><a href="">Quebec</a></li>
+                    <li><a href="">Ontario</a></li>
+                    <li><a href="">New York</a></li>
+                    <li><a href="">Quebec</a></li>
+                    <li><a href="">Ontario</a></li>
+                    <li><a href="">New York</a></li>
+                    <li><a href="">Quebec</a></li>
+                  </ul>
+                  <span class="scroll">
+                    <span class="scrollbar"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row col-2">
+          <div class="col">
+            <label for="city">City</label>
+            <input type="text" name="city">
+          </div>
+          <div class="col">
+            <label for="zip">Zip</label>
+            <input type="text" name="zip">
+          </div>
+        </div>
+        <div class="btn red cancel">Cancel</div>
+        <div class="btn indigo confirm">Save</div>
+      </div>
+    </div>
+    <div class="popup window success" id="order-success">
+      <div class="padding">
+        <h1>Order Successfully Processed</h1>
+        <h2>We sent a copy of your receipt to your e-mail address</h2>
+        <div class="icon order-success"></div>
+        <div class="btn indigo shop">Continue Shopping</div>
+      </div>
+    </div>
+    <div template="footer"></div>
+  </body>
+</html>

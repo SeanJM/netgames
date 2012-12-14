@@ -206,7 +206,8 @@ header {
           }
         /* Secondary Level */
         header nav .secondary-level {
-
+          float: left;
+          width: 100%;
         }
           header nav .secondary-level > .tab {
             width: 141px;

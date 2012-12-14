@@ -9,10 +9,12 @@
 .icon.locker { background-position: 0 -32px; }
 .icon.wish { background-position: 0 -64px; }
 .icon.windows { background-position: -32px 0; }
-.active .icon.windows { background-position: -32px -32px; }
+.active .icon.windows,
+.dropdown li a:hover .icon.windows { background-position: -32px -32px; }
 .active.icon.windows { background-position: -32px -64px; }
 .icon.osx { background-position: -64px 0; }
-.active .icon.osx { background-position: -64px -32px; }
+.active .icon.osx,
+.dropdown li a:hover .icon.osx { background-position: -64px -32px; }
 .active.icon.osx { background-position: -64px -64px; }
 .icon.account { background-position: -96px 0; }
 *:hover > .icon.account { background-position: -96px -32px; }
@@ -51,6 +53,79 @@
 a:hover .icon.reply { background-position: -192px -96px; }
 .icon.quote { background-position: -192px -128px; }
 a:hover .icon.quote { background-position: -192px -160px; }
+/* Trailer Resolution Icons */
+.icon.hidef {
+  background-position: -32px -192px;
+}
+.icon.meddef {
+  background-position: -64px -192px;
+}
+.icon.lowdef {
+  background-position: -96px -192px;
+}
+.active.icon.hidef {
+  background-position: -32px -224px;
+}
+.active.icon.meddef {
+  background-position: -64px -224px;
+}
+.active.icon.lowdef {
+  background-position: -96px -224px;
+}
+.active .icon.hidef {
+  background-position: -32px -256px;
+}
+.active .icon.meddef {
+  background-position: -64px -256px;
+}
+.active .icon.lowdef {
+  background-position: -96px -256px;
+}
+.icon.warning {
+  background-position: -128px -192px;
+}
+.message .icon.register {
+  background-position: 0 -329px;
+}
+.message .icon.confirmed {
+  background-position: -100px -329px;
+}
+.message .icon.error {
+  background-position: -200px -329px;
+}
+.message .icon {
+  width: 100px;
+  height: 77px;
+}
+.credit-card.icon {
+  width: 49px;
+  height: 25px;
+}
+.credit-card.icon.visa {
+  background-position: -300px -329px;
+}
+.credit-card.icon.mastercard {
+  background-position: -300px -354px;
+}
+.credit-card.icon.amex {
+  background-position: -300px -379px;
+}
+
+.icon.order-success {
+  background-position: -506px -220px;
+  width: 228px;
+  height: 169px;
+}
+
+.path .icon.indicator {
+  background-position: -258px -86px;
+  width: 24px;
+  height: 24px;
+}
+
+.path .active .icon.indicator {
+  background-position: -282px -86px;
+}
 
 .esrb-icon {
   background-image: url('../img/sprite_esrb.png');

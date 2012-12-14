@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+    <!-- CSS Styles -->
+    <link rel='stylesheet' type='text/css' href='css/styles.css'>
+    <link rel='stylesheet' type='text/css' href='css/icons.css'>
+    <link rel='stylesheet' type='text/css' href='css/popups.css'>
+    <link rel='stylesheet' type='text/css' href='css/header.css'>
+    <link rel='stylesheet' type='text/css' href='css/footer.css'>
+    <link rel='stylesheet' type='text/css' href='css/filter.css'>
+    <link rel='stylesheet' type='text/css' href='css/item-container.css'>
+    <link rel='stylesheet' type='text/css' href='css/stars.css'>
+    <link rel='stylesheet' type='text/css' href='css/trailers.css'>
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <!-- JavaScript -->
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/prototype.js" type="text/javascript"></script>
+    <script src="js/netgames.js" type="text/javascript"></script>
+    <script src="js/jquery.placeholder.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui-1.9.2.custom.min.js" type="text/javascript"></script>
+	</head>
+	<body id="my-account">
+    <div template="header"></div> <!-- This will be replaced by the header template -->
+    <div id="main">
+      <div class="container-950">
+        <section>
+          <div class="message registration visible">
+            <div class="padding">
+              <div class="icon register"></div>
+              <h1>Hi <strong>seanjmacisaac@gmail.com</strong></h1>
+              <h2>We sent you an Email confirmation, please check to see if you received it to access your account.</h2>
+              <hr>
+              <h3><strong>Didn&#39;t get the confirmation?</strong> Check your e-mail address and/or resend the confirmation.</h3>
+              <div class="btn silver" name="resend-confirmation">Resend</div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="popup window" id="confirm-resend-confirmation">
+      <div class="padding">
+        <h1>Check your Email</h1>
+        <input type="text" name="title" placeholder="Enter your Email address" value="seanjmacisaac@gmail.com">
+        <div class="btn red cancel">Cancel</div>
+        <div class="btn indigo confirm">Resend</div>
+      </div>
+    </div>
+    <div template="footer"></div>
+  </body>
+</html>

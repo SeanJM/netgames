@@ -1,0 +1,198 @@
+<div template="single-feature">
+  <div class="item-container col-2 single">
+    <div class="single-container">
+      <div class="heading">
+        <h1><a href="">{{name}}</a></h1>
+        <div class="platform">
+          <div class="icon osx {{osx}}"></div>
+          <div class="icon windows {{windows}}"></div>
+        </div>
+      </div>
+      <img src="{{thumb-feature}}">
+    </div>
+    <div class="rating-container rating-{{rating}}"> <!-- 4.5 = 45, 4 = 4 etc... -->
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <p>({{rating-count}} Reviews)</p>
+    </div>
+    <div class="price">
+      <h2>{{list-price}}</h2>
+      <h3>{{price}}</h3>
+    </div>
+    <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+    <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+  </div>
+</div>
+
+<div template="single-tile">
+  <div class="item-container col-3 single">
+    <div class="single-container">
+      <div class="heading">
+        <h1><a href="">{{name}}</a></h1>
+        <div class="platform">
+          <div class="icon osx {{osx}}"></div>
+          <div class="icon windows {{windows}}"></div>
+        </div>
+      </div>
+      <img src="{{thumb-marquee}}">
+    </div>
+    <div class="rating-container rating-{{rating}}"> <!-- 4.5 = 45, 4 = 4 etc... -->
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <p>({{rating-count}} Reviews)</p>
+    </div>
+    <div class="price">
+      <h2>{{list-price}}</h2>
+      <h3>{{price}}</h3>
+    </div>
+    <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+    <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+  </div>
+</div>
+
+<div template="package-tile">
+  <div class="item-container col-2 package">
+    <div class="package-container">
+      <div class="heading">
+        <h1><a href="">{{name}}</a></h1>
+        <div class="platform">
+          <div class="icon osx {{osx}}"></div>
+          <div class="icon windows {{windows}}"></div>
+        </div>
+      </div>
+      <div class="scrollable-container"> <!-- Contains the scrolling element -->
+        <div class="scrollable"> <!-- This is the div that you will scroll with JavaScript -->
+          <div sub-template obj="games">
+            <div class="mini-item">
+              <div class="game-thumb small">
+                <img src="{{thumb-small}}">
+              </div>
+              <h2>{{sub-name}}</h2>
+              <div class="rating-container rating-{{sub-rating}}"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- <div class="scrollable"> -->
+        <div class="shadow right"></div>
+        <div class="shadow left"></div>
+      </div> <!-- <div class="scrollable-container"> -->
+      <div class="scroll">
+        <div class="scroll-bar"></div>
+      </div>
+    </div>
+    <div class="rating-container rating-{{rating}}"> <!-- 4.5 = 45, 4 = 4 etc... -->
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <p>({{rating-count}} Reviews)</p>
+    </div>
+    <div class="price">
+      <h3>{{price}} points</h3>
+    </div>
+    <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+    <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+  </div>
+</div>
+
+<div template="package-list">
+  <div class="item-container package">
+    <div class="package-container">
+      <div class="heading">
+        <h1><a href="">{{name}}</a></h1>
+        <div class="platform">
+          <div class="icon osx {{osx}}"></div>
+          <div class="icon windows {{windows}}"></div>
+        </div>
+      </div>
+      <div class="scrollable-container"> <!-- Contains the scrolling element -->
+        <div class="scrollable"> <!-- This is the div that you will scroll with JavaScript -->
+          <div sub-template obj="games">
+            <div class="mini-item">
+              <div class="game-thumb small">
+                <img src="{{thumb-small}}">
+              </div>
+              <h2>{{sub-name}}</h2>
+              <div class="rating-container rating-{{sub-rating}}"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- <div class="scrollable"> -->
+        <div class="shadow right"></div>
+        <div class="shadow left"></div>
+      </div> <!-- <div class="scrollable-container"> -->
+      <div class="scroll">
+        <div class="scroll-bar"></div>
+      </div>
+    </div>
+    <div class="rating-container rating-{{rating}}"> <!-- 4.5 = 45, 4 = 4 etc... -->
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <p>({{rating-count}} Reviews)</p>
+    </div>
+    <div class="price">
+      <h3>{{price}} points</h3>
+    </div>
+    <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+    <div class="btn indigo add-to-wishlist"><div class="icon add-to-wishlist"></div></div>
+  </div>
+  <hr>
+</div>
+
+<div template="single-list">
+  <div class="item-container single">
+    <div class="single">
+      <div class="game-thumb medium">
+        <img src="{{thumb-med}}">
+      </div>
+      <div class="heading">
+        <h1><a href="">{{name}}</a></h1>
+        <div class="platform">
+          <div class="icon osx {{osx}}"></div>
+          <div class="icon windows {{windows}}"></div>
+        </div>
+      </div>
+    </div>
+    <div class="price">
+      <h2>{{list-price}}</h2>
+      <h3>{{price}}</h3>
+    </div>
+    <div class="rating-container rating-5"> <!-- 4.5 = 45, 4 = 4 etc... -->
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <p>({{rating-count}})</p>
+    </div>
+    <div class="esrb"><strong>ESRB</strong> Rating: <span class="rating">{{esrb}}</span></div>
+    <div class="genre"><a href="">{{genre}}</a></div>
+    <div class="media">
+      <div class="tab available"><div class="icon trailers"></div></div>
+      <div class="tab"><div class="icon images"></div></div>
+      <div class="tab available"><div class="icon demo"></div></div>
+    </div>
+    <div class="package-available"><a href="">Available in a package</a></div>
+  </div> <!-- <div class="item-container"> -->
+  <hr>
+</div>

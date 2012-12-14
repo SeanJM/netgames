@@ -99,7 +99,7 @@
             <div class="btn" id="show-recommended">Recommended</div>
           </div>
         </section>
-        <section class="screen" id="about">
+        <section class="screen visible" id="about">
           <aside>
             <h1 class="aside">Overview</h1>
             <div class="about-overview overview">
@@ -240,7 +240,7 @@
                   <div class="icon disclosure"></div>
                 </div>
               </div>
-              <div class="btn silver">Write A Review</div>
+              <div class="btn silver" id="write-a-review">Write A Review</div>
             </div>
           </aside>
           <div class="details">
@@ -373,7 +373,7 @@
             </div> <!-- <div class="review comment"> -->
           </div>
         </section>
-        <section class="screen visible" id="discussion">
+        <section class="screen" id="discussion">
           <h1>Latest Dicussion</h1>
           <div class="comment">
             <article class="bubble">
@@ -561,11 +561,60 @@
             <p class="character-count">3,000</p>
           </div>
         </section>
-        <section class="screen" id="recommended">
-          <h1>Recommended For You</h1>
+        <section class="screen gallery" id="recommended">
+          <h1>Package and Save</h1>
+          <div class="carousel-container">
+            <div class="carousel">
+              <div package-tile obj="pkg" template="package-tile"></div>
+            </div>
+            <div class="controls">
+              <div class="left"></div>
+              <div class="right"></div>
+            </div>
+          </div>
+          <hr>
+          <h1>Customers who bought this, also bought this</h1>
+          <div class="carousel-container">
+            <div class="carousel">
+              <div single-tile obj="single" template="single-tile"></div>
+            </div> <!-- <div class="carousel"> -->
+            <div class="controls">
+              <div class="left"></div>
+              <div class="right"></div>
+            </div>
+          </div> <!-- <div class="carousel-container"> -->
+          <hr>
+          <h1>Customers who loved this, also loved this</h1>
+          <div class="carousel-container">
+            <div class="carousel">
+              <div single-tile obj="single" template="single-tile"></div>
+            </div> <!-- <div class="carousel"> -->
+            <div class="controls">
+              <div class="left"></div>
+              <div class="right"></div>
+            </div>
+          </div> <!-- <div class="carousel-container"> -->
         </section>
+        <div class="popup window" id="write-review">
+          <div class="padding">
+            <h1>Write Your Review</h1>
+            <input type="text" name="title" placeholder="Enter your review title">
+            <div class="rating-container rating-4"> <!-- 4.5 = 45, 4 = 4 etc... -->
+              <p>Rating:</p>
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+            </div>
+            <textarea></textarea>
+            <div class="btn red cancel">Cancel</div>
+            <div class="btn indigo confirm">Review</div>
+            <p class="character-count">3,000</p>
+          </div>
+        </div> <!-- <div class="popup" id="write-a-review"> -->
       </div>
-    </div>
+    </div> <!-- <div id="main"> -->
     <div template="footer"></div>
   </body>
 </html>

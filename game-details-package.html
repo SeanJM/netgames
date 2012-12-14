@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+    <!-- CSS Styles -->
+    <link rel='stylesheet' type='text/css' href='css/styles.css'>
+    <link rel='stylesheet' type='text/css' href='css/icons.css'>
+    <link rel='stylesheet' type='text/css' href='css/popups.css'>
+    <link rel='stylesheet' type='text/css' href='css/header.css'>
+    <link rel='stylesheet' type='text/css' href='css/footer.css'>
+    <link rel='stylesheet' type='text/css' href='css/filter.css'>
+    <link rel='stylesheet' type='text/css' href='css/item-container.css'>
+    <link rel='stylesheet' type='text/css' href='css/game-details.css'>
+    <link rel='stylesheet' type='text/css' href='css/stars.css'>
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <!-- JavaScript -->
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/prototype.js" type="text/javascript"></script>
+    <script src="js/netgames.js" type="text/javascript"></script>
+    <script src="js/jquery.placeholder.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui-1.9.2.custom.min.js" type="text/javascript"></script>
+	</head>
+	<body id="game-details">
+    <div template="header"></div> <!-- This will be replaced by the header template -->
+    <div id="main">
+      <div class="container-950">
+        <section id="overview">
+          <h1>The Sims 3 Super Fun Package</h1>
+          <div class="mini-overview overview">
+            <div class="game-thumb large package">
+              <div class="game-thumb small">
+                <img src="./img/game-thumb_sims3-small.png">
+              </div>
+              <div class="game-thumb small">
+                <img src="./img/game-thumb_sims3-generations-small.png">
+              </div>
+              <div class="game-thumb small">
+                <img src="./img/game-thumb_sims3-pets-small.png">
+              </div>
+              <div class="game-thumb small">
+                <img src="./img/game-thumb_sims3-showtime-small.png">
+              </div>
+            </div>
+            <div class="rating-container rating-45"> <!-- 4.5 = 45, 4 = 4 etc... -->
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+              <p>(73 Reviews)</p>
+            </div>
+            <div class="row">
+              <p>SKU #:</p>
+              <p>1092-298327-123</p>
+            </div>
+            <div class="row list-price">
+              <p>List Price:</p>
+              <p>$29.99</p>
+            </div>
+            <div class="row price">
+              <p>Your Price:</p>
+              <p>$19.99</p>
+            </div>
+            <div class="row cart">
+              <p>Qty:</p>
+              <input type="text" value="1">
+              <div class="btn green">
+                <div class="icon add-to-cart"></div>Add to Cart
+              </div>
+            </div>
+            <hr>
+            <div class="btn blue">
+              <div class="icon add-to-wishlist"></div>Add to Wishlist
+            </div>
+          </div> <!-- <div class="mini-overview"> -->
+          <div class="media-overview">
+            <div class="gallery-container">
+              <iframe width="570" height="320" src="http://www.youtube.com/embed/LPnK9JHoddc" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="media-gallery-container">
+              <div class="scrollable">
+                <div class="tab active"><img src="./img/game-details_1.png"><div class="play"></div></div>
+                <div class="tab"><img src="./img/game-details_2.png"></div>
+                <div class="tab"><img src="./img/game-details_3.png"></div>
+                <div class="tab"><img src="./img/game-details_4.png"></div>
+                <div class="tab"><img src="./img/game-details_5.png"></div>
+              </div> <!-- This is the div that you scroll -->
+            </div>
+            <div class="scroll">
+              <div class="scroll-bar"></div>
+            </div>
+            <div class="media">
+              <div class="icon trailers available"></div><p>2</p>
+              <div class="icon images available"></div><p>7</p>
+            </div>
+            <div class="social">
+              <p>Share:</p>
+              <div class="btn facebook"><div class="icon facebook"></div></div>
+              <div class="btn silver"><div class="icon twitter"></div></div>
+              <div class="btn gplus"><div class="icon gplus"></div></div>
+              <div class="btn blue"><div class="icon email"></div></div>
+            </div>
+          </div>
+          <hr>
+          <div class="switch col-4 narrow">
+            <div class="btn active" id="show-about">About</div>
+            <div class="btn" id="show-reviews">Reviews</div>
+            <div class="btn" id="show-discussion">Discussion</div>
+            <div class="btn" id="show-recommended">Recommended</div>
+          </div>
+        </section>
+        <section class="screen visible" id="about">
+          <aside>
+            <h1 class="aside">Overview</h1>
+            <div class="about-overview overview">
+              <div class="esrb-icon teen"></div>
+              <hr>
+              <div class="row">
+                <p>Genre:</p>
+                <p><a href="">Simulation</a></p>
+              </div>
+              <div class="row">
+                <p>Released:</p>
+                <p>June 2<sup>nd</sup>, 2009</p>
+              </div>
+              <div class="row">
+                <p>Developer:</p>
+                <p><a href="">The Sims Studio</a></p>
+              </div>
+              <div class="row">
+                <p>Publisher:</p>
+                <p><a href="">Electronic Arts</a></p>
+              </div>
+              <div class="player">
+                <div class="icon single-player"></div>
+                Single Player
+              </div>
+              <hr>
+              <div class="btn silver"><div class="icon demo"></div>Download Trial</div>
+            </div>
+          </aside>
+          <div class="details">
+            <h1>Games Included</h1>
+            <div class="item-list">
+              <div single-list obj="single" template="single-list"></div>
+            </div>
+            <h1>About</h1>
+            <p>The Sims 3 is built upon the same concept as its predecessors. Players control their own Sims in activities and relationships in a similar manner to real life. The gameplay is open-ended and indefinite. Sim houses and neighborhoods are entirely in one continuous map. The developers stated, "What you do outside your home now matters as much as what you do within." One of the biggest changes to the franchise is the use of rabbit-holes. Sims aren't allowed to go inside the majority of city buildings; instead, they simply disappear inside for a certain amount of time, a feature known in video games as a rabbit-holes. While the player is given several choices on what happens inside using a text-based notification.</p>
+            <p>The Sims 2 used a reward system called Wants and Fears. This is replaced with a new system called Wishes in The Sims 3. Fulfilling a Sim&#39;s wish contributes to the Sim's Lifetime Happiness score and mood. Some wishes, such as "Go to the Park", may add little points to their lifetime happiness while "Have A Baby Boy" may add thousands of points. In The Sims 2, Wants and Fears also contributed to a Sim's "Aspiration" meter, roughly analogous to current self-esteem. In The Sims 3, Aspiration is removed entirely, replaced with "Moodlets", which contribute positive or negative values to the original Motivation meter. Moodlets can be inspired by physical events, such as having a good meal or comfort from sitting in a good chair, as well as emotional events like a first kiss or a break-up. Most moodlets last for a set duration, but some negative Moodlets can be cured (such as the one incurred by an urgent need to urinate) and some positive ones rely on the Sim's surroundings and traits.</p>
+            <p>The game includes an optional feature called "Story Progression," which allows all Sims in the neighborhood to autonomously continue as if the player were controlling them, such as get married, get jobs and promotions, have children, move into their dream house or move out of the neighbourhood while the player isn't playing. Sims live for a set duration of time (adjustable by the player) and advance through several stages (baby, toddler, child, teen, young adult, adult, and elder). Sims can die of old age or they can die prematurely from causes such as fire, starvation, drowning, electrocution, (as of the World Adventures expansion pack) Mummy's curse, (as of the Ambitions expansion pack) a meteor, and (as of the Late Night expansion pack) by thirst (vampires only). One of the major new additions to gameplay is Opportunities, tasks that Sims can complete to earn rewards. These challenges occur randomly based on aspects of each Sim's lifestyle, such as relationships, skills and job. Career opportunities such as working overtime or completing special tasks can yield a pay raise, cash bonus, or relationship boost. Skill opportunities are requests by neighbors or community members for Sims to solve problems using their acquired skills for cash or relationship rewards. If the opportunity is connected to a Sim's school, the reward may be increased school performance.</p>
+            <hr>
+            <h2>System Requirements</h2>
+            <div class="row">
+              <p>OS:</p>
+              <p>Windows XP, Windows Vista, Windows 7</p>
+            </div>
+            <div class="row">
+              <p>Processor:</p>
+              <p>Intel Code 2 Duo 2.4 Ghz or AMD Athlon X2 4800+</p>
+            </div>
+            <div class="row">
+              <p>Memory:</p>
+              <p>1GB RAM</p>
+            </div>
+            <div class="row">
+              <p>Graphics:</p>
+              <p>ATI 3850HD 512 MB or NVIDIA GeForce 8800 GT 512MB</p>
+            </div>
+            <div class="row">
+              <p>DirectX&#174;:</p>
+              <p>9.0c</p>
+            </div>
+            <div class="row">
+              <p>Hard Drive:</p>
+              <p>17 GB HD space</p>
+            </div>
+            <div class="row">
+              <p>Other:</p>
+              <p>Broadband Internet Connection</p>
+            </div>
+          </div> <!--<div class="details">-->
+        </section>
+        <section class="screen" id="reviews">
+          <aside>
+            <h1 class="aside">Overview</h1>
+            <div class="review-overview overview">
+              <div class="rank-container">
+                <h4>Rank</h4>
+                <h3>98</h3>
+              </div>
+              <div class="rating-container rating-45"> <!-- 4.5 = 45, 4 = 4 etc... -->
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <p>4.2 out of 5</p>
+                <p>(73 Reviews)</p>
+              </div>
+              <div class="group-table">
+                <div class="row">
+                  <div class="rating-container rating-5">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                  </div>
+                  <p>28</p>
+                  <div class="icon disclosure"></div>
+                </div>
+                <div class="row">
+                  <div class="rating-container rating-4">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                  </div>
+                  <p>40</p>
+                  <div class="icon disclosure"></div>
+                </div>
+                <div class="row">
+                  <div class="rating-container rating-3">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                  </div>
+                  <p>3</p>
+                  <div class="icon disclosure"></div>
+                </div>
+                <div class="row">
+                  <div class="rating-container rating-2">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                  </div>
+                  <p>2</p>
+                  <div class="icon disclosure"></div>
+                </div>
+                <div class="row">
+                  <div class="rating-container rating-1">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                  </div>
+                  <p>1</p>
+                  <div class="icon disclosure"></div>
+                </div>
+              </div>
+              <div class="btn silver" id="write-a-review">Write A Review</div>
+            </div>
+          </aside>
+          <div class="details">
+            <h1>Reviews</h1>
+            <div class="review comment">
+              <article class="bubble">
+                <div class="arrow"></div>
+                <div class="top review-content">
+                  <div class="padding">
+                    <h1>Awesome Game!</h1>
+                    <div class="rating-container rating-5">
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                    </div>
+                    <h2><time>June, 4<sup>th</sup></time> by GamerGurl</h2>
+                    
+                    <p>I never played the Sims 2 because I never really found 
+                      the first one to be fun for long. You drown them in a 
+                      pool, build a nice house and that was about it. I don't 
+                      mind open-ended gameplay but general goals are nice. I 
+                      got initially interested with this one after reading 
+                      blog/stories of Sims. This one changed all my gripes 
+                      with the first game, I now have a goal for my Sims, 
+                      one I can slowly attain while having my own fun.
+                    </p>
+
+                    <p>Like many, I do find there is less content but I don't 
+                      mind, really. Skinning resolves the problem and is very 
+                      easy to do. On the technical side though, it's not perfect, 
+                      crashes happen and I could barely play at the start because 
+                      I had set terrain detail too high. Lowering it helped but 
+                      crashes still do happen.
+                    </p>
+
+                  </div>
+                </div>
+                <div class="bottom">
+                  <div class="left"></div>
+                  <div class="right"></div>
+                </div>
+                <div class="switch col-2 vote">
+                  <div class="btn"><div class="icon thumbup"></div></div>
+                  <div class="btn"><div class="icon thumbdown"></div></div>
+                </div>
+                <div class="confirm-menu-container">
+                  <div class="btn silver spam"><div class="icon flag"></div>Flag as Spam</div>
+                  <div class="confirm-menu popup visible">
+                    <div class="container">
+                      <div class="btn red cancel">Cancel</div>
+                      <div class="btn silver confirm">Flag</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="social">
+                  <div class="btn gplus"><div class="icon gplus"></div></div>
+                  <div class="btn silver"><div class="icon twitter"></div></div>
+                  <div class="btn facebook"><div class="icon facebook"></div></div>
+                </div>
+              </article>
+              <div class="user-image">
+                <img src="./img/user-image_2.png">
+              </div>
+            </div> <!-- <div class="review comment"> -->
+            <hr>
+            <div class="review comment">
+              <article class="bubble">
+                <div class="arrow"></div>
+                <div class="top review-content">
+                  <div class="padding">
+                    <h1>Great!</h1>
+                    <div class="rating-container rating-4">
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                      <div class="star"></div>
+                    </div>
+                    <h2><time>June, 4<sup>th</sup></time> by GamerGurl</h2>
+                    
+                    <p>Love the new version! I was a big fan of sims and sims2, 
+                      but this one adds a new dimension. The aging process doesn&rquo;t 
+                      take as long so generations move faster and the story 
+                      doesn&rquo;t lag.
+                    </p>
+
+                    <p>
+                      The sims around your family grow, and their stories develop which 
+                      means you&rquo;re not stuck with the same people to meet and make 
+                      friends with forever. Even the people you make will continue to 
+                      grow when you&rquo;re not playing them. The loading was something 
+                      that drove me nuts in the second game and I guess they&rquo;ve 
+                      reformatted their engine or something because now everything 
+                      is happening at once. Love the gardening skill and guitar skill. 
+                      More opportunities for making a living outside the set career 
+                      paths. AND the new expansion rocks too!
+                    </p>
+
+
+                  </div>
+                </div>
+                <div class="bottom">
+                  <div class="left"></div>
+                  <div class="right"></div>
+                </div>
+                <div class="switch col-2 vote">
+                  <div class="btn"><div class="icon thumbup"></div></div>
+                  <div class="btn"><div class="icon thumbdown"></div></div>
+                </div>
+                <div class="confirm-menu-container">
+                  <div class="btn silver spam"><div class="icon flag"></div>Flag as Spam</div>
+                  <div class="confirm-menu popup">
+                    <div class="container">
+                      <div class="btn red cancel">Cancel</div>
+                      <div class="btn silver confirm">Flag</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="social">
+                  <div class="btn gplus"><div class="icon gplus"></div></div>
+                  <div class="btn silver"><div class="icon twitter"></div></div>
+                  <div class="btn facebook"><div class="icon facebook"></div></div>
+                </div>
+              </article>
+              <div class="user-image">
+                <img src="./img/user-image_1.png">
+              </div>
+            </div> <!-- <div class="review comment"> -->
+          </div>
+        </section>
+        <section class="screen" id="discussion">
+          <h1>Latest Dicussion</h1>
+          <div class="comment">
+            <article class="bubble">
+              <div class="arrow"></div>
+              <div class="top review-content">
+                <div class="padding">
+                  <h1>GamerGurl</h1>
+                  <time>2 hours ago</time>
+                  <div class="menu-container">
+                    <div class="btn silver small"><div class="icon option"></div></div>
+                    <div class="menu visible"> <!-- Add class 'visible' for it to be seen -->
+                      <div class="tab"><div class="icon option"></div></div>
+                      <div class="container">
+                        <ul>
+                          <li><a href="/action"><span class="icon reply"></span>Reply</a></li>
+                          <li><a href="/strategy"><span class="icon quote"></span>Quote</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="confirm-menu-container">
+                    <div class="btn silver small"><div class="icon flag"></div></div>
+                    <div class="confirm-menu popup">
+                      <div class="container">
+                        <div class="btn red cancel">Cancel</div>
+                        <div class="btn silver confirm">Flag</div>
+                      </div>
+                    </div>
+                  </div>
+                  <p>Anyone know how to get their happiness really high?
+                  </p>
+
+                </div>
+              </div>
+              <div class="bottom">
+                <div class="left"></div>
+                <div class="right"></div>
+              </div>
+            </article>
+            <div class="user-image">
+              <img src="./img/user-image_2.png">
+            </div>
+            <div class="comment">
+              <article class="bubble">
+                <div class="arrow"></div>
+                <div class="top review-content">
+                  <div class="padding">
+                    <h1>Mr_Incredibbble</h1>
+                    <time>30 minutes ago</time>
+                    <div class="menu-container">
+                      <div class="btn silver small"><div class="icon option"></div></div>
+                      <div class="menu"> <!-- Add class 'visible' for it to be seen -->
+                        <div class="tab"><div class="icon option"></div></div>
+                        <div class="container">
+                          <ul>
+                            <li><a href="/action"><span class="icon reply"></span>Reply</a></li>
+                            <li><a href="/strategy"><span class="icon quote"></span>Quote</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="confirm-menu-container">
+                      <div class="btn silver small"><div class="icon flag"></div></div>
+                      <div class="confirm-menu popup">
+                        <div class="container">
+                          <div class="btn red cancel">Cancel</div>
+                          <div class="btn silver confirm">Flag</div>
+                        </div>
+                      </div>
+                    </div>
+                    <p>I found that you need to make sure they have a really balanced lifestyle, lots of friends, a girl friend and a good job. Make sure they also go to bed at the same time everyday.
+                    </p>
+
+                  </div>
+                </div>
+                <div class="bottom">
+                  <div class="left"></div>
+                  <div class="right"></div>
+                </div>
+              </article>
+              <div class="user-image">
+                <img src="./img/user-image_3.png">
+              </div>
+              <div class="comment-loading-container">
+                <div class="comment-loading">
+                  <div class="spinner"></div>
+                </div>
+              </div>
+              <div class="comment">
+                <article class="bubble">
+                  <div class="arrow"></div>
+                  <div class="top review-content">
+                    <div class="padding">
+                      <h1>GamerGurl</h1>
+                      <time>Just Now</time>
+                      <div class="menu-container">
+                        <div class="btn silver small"><div class="icon option"></div></div>
+                        <div class="menu"> <!-- Add class 'visible' for it to be seen -->
+                          <div class="tab"><div class="icon option"></div></div>
+                          <div class="container">
+                            <ul>
+                              <li><a href="/action"><span class="icon reply"></span>Reply</a></li>
+                              <li><a href="/strategy"><span class="icon quote"></span>Quote</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="confirm-menu-container">
+                        <div class="btn silver small"><div class="icon flag"></div></div>
+                        <div class="confirm-menu popup">
+                          <div class="container">
+                            <div class="btn red cancel">Cancel</div>
+                            <div class="btn silver confirm">Flag</div>
+                          </div>
+                        </div>
+                      </div>
+                      <p>Thanks Mr_Incredibbble, that sounds like it will be fun. Thank you again!</p>
+
+                    </div>
+                  </div>
+                  <div class="bottom">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                  </div>
+                </article>
+                <div class="user-image">
+                  <img src="./img/user-image_2.png">
+                </div>
+                <div class="leave-comment">
+                  <h1>Reply:</h1>
+                  <textarea></textarea>
+                  <div class="btn red cancel">Cancel</div>
+                  <button class="btn indigo confirm">Comment</button>
+                  <p class="character-count">3,000</p>
+                </div>
+              </div> <!-- <div class="review comment"> -->
+            </div> <!-- <div class="comment"> -->
+            <div class="comment">
+              <article class="bubble">
+                <div class="arrow"></div>
+                <div class="top review-content">
+                  <div class="padding">
+                    <h1>KoolKoala</h1>
+                    <time>1 hour ago</time>
+                    <div class="menu-container">
+                      <div class="btn silver small"><div class="icon option"></div></div>
+                      <div class="menu"> <!-- Add class 'visible' for it to be seen -->
+                        <div class="tab"><div class="icon option"></div></div>
+                        <div class="container">
+                          <ul>
+                            <li><a href="/action"><span class="icon reply"></span>Reply</a></li>
+                            <li><a href="/strategy"><span class="icon quote"></span>Quote</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="confirm-menu-container">
+                      <div class="btn silver small"><div class="icon flag"></div></div>
+                      <div class="confirm-menu popup">
+                        <div class="container">
+                          <div class="btn red cancel">Cancel</div>
+                          <div class="btn silver confirm">Flag</div>
+                        </div>
+                      </div>
+                    </div>
+                    <p>Are you averse to cheating?</p>
+
+                  </div>
+                </div>
+                <div class="bottom">
+                  <div class="left"></div>
+                  <div class="right"></div>
+                </div>
+              </article>
+              <div class="user-image">
+                <img src="./img/user-image_4.png">
+              </div>
+            </div> <!-- <div class="comment"> -->
+          </div> <!-- <div class="comment"> -->
+          <hr>
+          <div class="leave-comment">
+            <h1>Write a new comment:</h1>
+            <textarea></textarea>
+            <button class="btn indigo confirm">Comment</button>
+            <p class="character-count">3,000</p>
+          </div>
+        </section>
+        <section class="screen gallery" id="recommended">
+          <h1>Package and Save</h1>
+          <div class="carousel-container">
+            <div class="carousel">
+              <div package-tile obj="pkg" template="package-tile"></div>
+            </div>
+            <div class="controls">
+              <div class="left"></div>
+              <div class="right"></div>
+            </div>
+          </div>
+          <hr>
+          <h1>Customers who bought this, also bought this</h1>
+          <div class="carousel-container">
+            <div class="carousel">
+              <div single-tile obj="single" template="single-tile"></div>
+            </div> <!-- <div class="carousel"> -->
+            <div class="controls">
+              <div class="left"></div>
+              <div class="right"></div>
+            </div>
+          </div> <!-- <div class="carousel-container"> -->
+          <hr>
+          <h1>Customers who loved this, also loved this</h1>
+          <div class="carousel-container">
+            <div class="carousel">
+              <div single-tile obj="single" template="single-tile"></div>
+            </div> <!-- <div class="carousel"> -->
+            <div class="controls">
+              <div class="left"></div>
+              <div class="right"></div>
+            </div>
+          </div> <!-- <div class="carousel-container"> -->
+        </section>
+        <div class="popup window" id="write-review">
+          <div class="padding">
+            <h1>Write Your Review</h1>
+            <input type="text" name="title" placeholder="Enter your review title">
+            <div class="rating-container rating-4"> <!-- 4.5 = 45, 4 = 4 etc... -->
+              <p>Rating:</p>
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+            </div>
+            <textarea></textarea>
+            <div class="btn red cancel">Cancel</div>
+            <div class="btn indigo confirm">Review</div>
+            <p class="character-count">3,000</p>
+          </div>
+        </div> <!-- <div class="popup" id="write-a-review"> -->
+      </div>
+    </div> <!-- <div id="main"> -->
+    <div template="footer"></div>
+  </body>
+</html>

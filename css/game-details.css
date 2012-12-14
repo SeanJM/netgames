@@ -33,6 +33,23 @@
     #game-details .mini-overview .game-thumb {
       margin: 17px;
     }
+      #game-details .mini-overview .game-thumb.package .game-thumb {
+        margin: 0;
+        margin-top: 20px;
+      }
+      #game-details .mini-overview .game-thumb.package .game-thumb:nth-child(1),
+      #game-details .mini-overview .game-thumb.package .game-thumb:nth-child(3) {
+        float: left;
+        margin-left: 18px;
+      }
+      #game-details .mini-overview .game-thumb.package .game-thumb:nth-child(2n) {
+        float: right;
+        margin-right: 18px;
+      }
+      #game-details .mini-overview .game-thumb.package .game-thumb:nth-child(3),
+      #game-details .mini-overview .game-thumb.package .game-thumb:nth-child(4) {
+        margin-top: 10px;
+      }
     #game-details .mini-overview .rating-container {
       float: left;
       width: 100%;
@@ -41,7 +58,7 @@
       #game-details .mini-overview .rating-container p {
         float: right;
       }
-    #game-details .overview .row {
+    .overview .row {
       float      : left;
       position   : relative;
       width      : 100%;
@@ -50,7 +67,7 @@
       #game-details .mini-overview .row p,
       #game-details .about-overview .row p {
         float: left;
-        width: 30%;
+        width: 32%;
         line-height: 36px;
         font-size: 15px;
         color: #707070;
@@ -58,7 +75,7 @@
       #game-details .mini-overview .row p + p,
       #game-details .about-overview .row p + p {
         float: right;
-        width: 70%;
+        width: 68%;
         text-align: right;
       }
       #game-details .mini-overview .row.list-price p + p {
@@ -101,41 +118,41 @@
           margin: 2px 8px;
         }
 /* Media */
-  #game-details .media-overview {
+  .media-overview {
     float: right;
     width: 570px;
     margin: 0 0 24px 0;
   }
-    #game-details .media-overview .scroll {
+    .media-overview .scroll {
       width: 100%;
       margin: 16px 0 24px;
     }
-      #game-details .media-overview .scroll .scroll-bar {
+      .media-overview .scroll .scroll-bar {
         width: 80px;
       }
-    #game-details .media-overview .media-gallery-container {
+    .media-overview .media-gallery-container {
       margin: 14px 0 0;
       width: 570px;
       overflow: hidden;
     }
-    #game-details .media-overview .media-gallery-container .scrollable {
+    .media-overview .media-gallery-container .scrollable {
       width: 1000px;
     }
-      #game-details .media-overview .media-gallery-container .scrollable .tab {
+      .media-overview .media-gallery-container .scrollable .tab {
         float: left;
         width: 118px;
         height: 110px;
         background-position: -521px 0;
         position: relative;
       }
-      #game-details .media-overview .media-gallery-container .scrollable .tab.active {
+      .media-overview .media-gallery-container .scrollable .tab.active {
         background-position: -521px -110px;
       }
-        #game-details .media-overview .media-gallery-container .scrollable .tab img {
+        .media-overview .media-gallery-container .scrollable .tab img {
           margin: 14px 16px;
           border-radius: 8px;
         }
-        #game-details .media-overview .media-gallery-container .scrollable .tab .play {
+        .media-overview .media-gallery-container .scrollable .tab .play {
           top: 36px;
           left: 42px;
         }
@@ -181,7 +198,7 @@
     float: right;
     width: 600px;
   }
-  #game-details aside {
+  aside {
     float: left;
     width: 300px;
   }
@@ -215,12 +232,6 @@
       top     : 11px;
       left    : 10px;
     }
-      #game-details #about .details h2 {
-        color: #707070;
-        font-weight: 400;
-        margin-bottom: 18px;
-        font-size: 22px;
-      }
       #game-details #about .details p {
         color: #707070;
         font-size: 15px;
@@ -253,25 +264,27 @@
         }
         #game-details .screen {
           display: none;
+          width: 100%;
+          float: left;
         }
         #game-details .screen.visible {
           display: block;
         }
         /* Review Overview */
-        #game-details .review-overview .rank-container {
+        .review-overview .rank-container {
           float              : left;
           width              : 80px;
           height             : 79px;
           background-position: 0 0;
         }
-          #game-details .review-overview .rank-container h4 {
+          .review-overview .rank-container h4 {
             text-align : center;
             font-size  : 12px;
             font-weight: 400;
             line-height: 30px;
             color      : #AFAFAF;
           }
-          #game-details .review-overview .rank-container h3 {
+          .review-overview .rank-container h3 {
             text-align : center;
             font-size  : 26px;
             font-weight: 300;
@@ -279,11 +292,11 @@
             color      : #707070;
             text-shadow: 0 1px 0 rgba(255,255,255);
           }
-          #game-details .review-overview .rating-container {
+          .review-overview .rating-container {
             float: right;
             width: 133px;
           }
-            #game-details .review-overview .rating-container p {
+            .review-overview .rating-container p {
               float      : left;
               margin-top : 3px;
               font-size  : 16px;
@@ -291,50 +304,22 @@
               line-height: 27px;
               color      : #707070;
             }
-            #game-details .review-overview .rating-container p + p {
+            .review-overview .rating-container p + p {
               margin   : 0;
               font-size: 15px;
               color    : #afafaf;
             }
-            #game-details .review-overview .group-table {
-              float        : left;
-              width        : 298px;
-              margin       : 24px -24px;
-              border-top   : 1px solid #d3d3d3;
-              border-bottom: 1px solid #d3d3d3;
-            }
-              #game-details .review-overview .group-table .row {
-                width  : 250px;
-                height : 24px;
-                padding: 14px 24px;
-                cursor : pointer;
-              }
-              #game-details .review-overview .group-table .row:nth-child(even) {
-                background: #f3f4f4;
-              }
-              #game-details .review-overview .group-table .row:hover {
-                background-image   : url('../img/sprite_1px.png');
-                background-position: 0 -920px;
-                background-repeat  : repeat-x;
-              }
-                #game-details .review-overview .group-table .row .rating-container {
-                  float: left;
-                }
-                #game-details .review-overview .group-table .row .disclosure {
-                  position: absolute;
-                  top     : 12px;
-                  right   : 12px;
-                }
-                #game-details .review-overview .group-table .row p {
-                  float       : right;
-                  margin-right: 33px;
-                  line-height : 24px;
-                  color       : #707070;
-                }
-              #game-details .review-overview .group-table + .btn {
+              .review-overview .group-table + .btn {
                 float     : left;
                 width     : 100%;
                 text-align: center;
+              }
+              .review-overview .rating-container + .group-table {
+                margin-top: 24px;
+                margin-bottom: 24px;
+                border-top   : 1px solid #d3d3d3;
+                border-bottom: 1px solid #d3d3d3;
+                border-radius: 0;
               }
   /* Comments & Reviews Universal */
   #game-details .comment {

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+    <!-- CSS Styles -->
+    <link rel='stylesheet' type='text/css' href='css/styles.css'>
+    <link rel='stylesheet' type='text/css' href='css/icons.css'>
+    <link rel='stylesheet' type='text/css' href='css/popups.css'>
+    <link rel='stylesheet' type='text/css' href='css/header.css'>
+    <link rel='stylesheet' type='text/css' href='css/footer.css'>
+    <link rel='stylesheet' type='text/css' href='css/filter.css'>
+    <link rel='stylesheet' type='text/css' href='css/item-container.css'>
+    <link rel='stylesheet' type='text/css' href='css/stars.css'>
+    <link rel='stylesheet' type='text/css' href='css/trailers.css'>
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <!-- JavaScript -->
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/prototype.js" type="text/javascript"></script>
+    <script src="js/netgames.js" type="text/javascript"></script>
+    <script src="js/jquery.placeholder.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui-1.9.2.custom.min.js" type="text/javascript"></script>
+	</head>
+	<body id="my-account">
+    <div template="header"></div> <!-- This will be replaced by the header template -->
+    <div id="main">
+      <div class="container-950">
+        <section>
+          <div class="message account-confirmed">
+            <div class="padding">
+              <div class="icon confirmed"></div>
+              <h1>Thank you <strong>seanjmacisaac@gmail.com</strong></h1>
+              <h2>Your Email has been confirmed! You can now take the time to personalise your account.</h2>
+            </div>
+          </div>
+          <div class="message account-confirmed">
+            <div class="padding">
+              <div class="icon error"></div>
+              <h1>You entered an improperly formatted email address</h1>
+              <h2>Click <a href="#">here</a> to go to the invalid field to fix this problem.</h2>
+            </div>
+          </div>
+          <aside>
+            <h1>Menu</h1>
+            <div class="account-overview overview">
+            <div class="group-table">
+              <a class="row" href="#about">
+                About Me
+                <span class="icon disclosure"></span>
+              </a>
+              <a class="row" href="#email">
+                Email Address &amp; Password
+                <span class="icon disclosure"></span>
+              </a>
+              <a class="row" href="#communications">
+                Communications
+                <span class="icon disclosure"></span>
+              </a>
+              <a class="row" href="#shipping">
+                Shipping Address
+                <span class="icon disclosure"></span>
+              </a>
+              <a class="row" href="#billing">
+                Billing Address
+                <span class="icon disclosure"></span>
+              </a>
+              <a class="row" href="#payment">
+                Payment Details
+                <span class="icon disclosure"></span>
+              </A>
+            </div>
+          </aside>
+          <div class="details">
+            <h1 id="about">About Me</h1>
+            <div class="row col-2">
+              <div class="col">
+                <label for="first-name" class="left">First Name</label>
+                <input name="first-name" type="text" class="left">
+              </div>
+              <div class="col">
+                <label for="first-name" class="right">Last Name</label>
+                <input name="first-name" type="text" class="right">
+              </div>
+            </div>
+            <div class="row">
+              <label for="gender">Gender</label>
+              <div class="switch col-3" name="gender">
+                <div class="btn" id="gender-male">Male</div>
+                <div class="btn" id="gender-female">Male</div>
+                <div class="btn active" id="gender-na">Undisclosed</div>
+              </div>
+            </div>
+            <div class="row col-3">
+              <label for="dob-month">Date of Birth</label>
+              <div class="col">
+                <div class="dropdown" name="dob-month">
+                  <div class="btn silver">Month<div class="arrow"></div></div>
+                  <div class="menu">
+                    <div class="tab"><div class="arrow"></div></div>
+                    <div class="container scrollable">
+                      <ul>
+                        <li><a href="">January</a></li>
+                        <li><a href="">February</a></li>
+                        <li><a href="">March</a></li>
+                        <li><a href="">April</a></li>
+                        <li><a href="">May</a></li>
+                        <li><a href="">June</a></li>
+                        <li><a href="">July</a></li>
+                        <li><a href="">August</a></li>
+                        <li><a href="">September</a></li>
+                        <li><a href="">October</a></li>
+                        <li><a href="">November</a></li>
+                        <li><a href="">December</a></li>
+                      </ul>
+                      <span class="scroll">
+                        <span class="scrollbar"></span>
+                      </span>
+                    </div>
+                  </div>
+                </div> <!-- <div class="dropdown" name="date-of-birth"> -->
+              </div>
+              <div class="col">
+                <div class="dropdown" name="dob-year">
+                  <div class="btn silver">Year<div class="arrow"></div></div>
+                  <div class="menu">
+                    <div class="tab"><div class="arrow"></div></div>
+                    <div class="container scrollable">
+                      <ul>
+                        <li><a href="">2000</a></li>
+                        <li><a href="">1999</a></li>
+                        <li><a href="">1998</a></li>
+                        <li><a href="">1997</a></li>
+                        <li><a href="">1996</a></li>
+                        <li><a href="">1995</a></li>
+                        <li><a href="">1994</a></li>
+                        <li><a href="">1993</a></li>
+                        <li><a href="">1992</a></li>
+                        <li><a href="">1991</a></li>
+                        <li><a href="">1990</a></li>
+                        <li><a href="">1989</a></li>
+                        <li><a href="">1988</a></li>
+                        <li><a href="">1987</a></li>
+                        <li><a href="">1986</a></li>
+                        <li><a href="">1985</a></li>
+                        <li><a href="">1984</a></li>
+                        <li><a href="">1983</a></li>
+                        <li><a href="">1982</a></li>
+                        <li><a href="">1981</a></li>
+                        <li><a href="">1980</a></li>
+                        <li><a href="">1979</a></li>
+                        <li><a href="">1978</a></li>
+                        <li><a href="">1977</a></li>
+                        <li><a href="">1976</a></li>
+                        <li><a href="">1975</a></li>
+                        <li><a href="">1974</a></li>
+                        <li><a href="">1973</a></li>
+                        <li><a href="">1972</a></li>
+                        <li><a href="">1971</a></li>
+                        <li><a href="">1970</a></li>
+                        <li><a href="">1969</a></li>
+                        <span class="scroll">
+                          <span class="scrollbar"></span>
+                        </span>
+                      </ul>
+                    </div>
+                  </div>
+                </div> <!-- <div class="dropdown" name="date-of-birth"> -->
+              </div>
+              <div class="col">
+                <div class="dropdown" name="dob-day">
+                  <div class="btn silver">Day<div class="arrow"></div></div>
+                  <div class="menu">
+                    <div class="tab"><div class="arrow"></div></div>
+                    <div class="container scrollable">
+                      <ul>
+                        <li><a href="">31</a></li>
+                        <li><a href="">30</a></li>
+                        <li><a href="">29</a></li>
+                        <li><a href="">28</a></li>
+                        <li><a href="">27</a></li>
+                        <li><a href="">26</a></li>
+                        <li><a href="">25</a></li>
+                        <li><a href="">24</a></li>
+                        <li><a href="">23</a></li>
+                        <li><a href="">22</a></li>
+                        <li><a href="">21</a></li>
+                        <li><a href="">20</a></li>
+                        <li><a href="">19</a></li>
+                        <li><a href="">18</a></li>
+                        <li><a href="">17</a></li>
+                        <li><a href="">16</a></li>
+                        <li><a href="">15</a></li>
+                        <li><a href="">14</a></li>
+                        <li><a href="">13</a></li>
+                        <li><a href="">12</a></li>
+                        <li><a href="">11</a></li>
+                        <li><a href="">10</a></li>
+                        <li><a href="">9</a></li>
+                        <li><a href="">8</a></li>
+                        <li><a href="">7</a></li>
+                        <li><a href="">6</a></li>
+                        <li><a href="">5</a></li>
+                        <li><a href="">4</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">1</a></li>
+                        <span class="scroll">
+                          <span class="scrollbar"></span>
+                        </span>
+                      </ul>
+                    </div>
+                  </div>
+                </div> <!-- <div class="dropdown" name="date-of-birth"> -->
+              </div>
+            </div>
+            <div class="row">
+              <label for="gaming-platform">Desktop Gaming Platform</label>
+              <div class="switch col-2" name="gender">
+                <div class="btn" id="gender-male"><div class="icon windows"></div>Windows</div>
+                <div class="btn" id="gender-female"><div class="icon osx"></div>OSX</div>
+              </div>
+              <p><span class="icon warning"></span>If you are buying a game as a gift you can change the platform at checkout</p>
+            </div>
+            <hr>
+            <h1 id="email">Email Address &amp; Password</h1>
+            <div class="row">
+              <label for="email-address">Email</label>
+              <input type="text" name="email-address">
+            </div>
+            <div class="row col-2">
+              <div class="col">
+                <label for="new-password">New Password</label>
+                <input type="text" name="new-password">
+              </div>
+              <div class="col">
+                <label for="confirm-new-password">Confirm New Password</label>
+                <input type="text" name="confirm-new-password">
+              </div>
+            </div>
+            <hr>
+            <h1 id="communications">Communications</h1>
+            <div class="row">
+              <div class="group-box">
+                <div class="padding">
+                  <div class="checkbox checked"></div><p>Send me a copy of my receipts to my e-mail address</p>
+                  <div class="checkbox unchecked"></div><p class="disabled">Subscribe to weekly Newsletter</p>
+                  <div class="checkbox checked"></div><p>Send me e-mails about sales that would interest me</p>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <h1 id="shipping">Shipping Address</h1>
+            <div class="row">
+              <label for="street-address-1">Street Address (Line 1)</label>
+              <input type="text" name="street-address-1">
+            </div>
+            <div class="row">
+              <label for="street-address-2">Street Address (Line 2)</label>
+              <input type="text" name="street-address-2">
+            </div>
+            <div class="row col-2">
+              <div class="col">
+                <label for="country">Country</label>
+                <div class="dropdown" name="country">
+                  <div class="btn silver">United States<div class="arrow"></div></div>
+                  <div class="menu">
+                    <div class="tab"><div class="arrow"></div></div>
+                    <div class="container scrollable">
+                      <ul>
+                        <li><a href="">United States of America</a></li>
+                        <li><a href="">Canada</a></li>
+                        <li><a href="">Great Britain</a></li>
+                        <li><a href="">United States of America</a></li>
+                        <li><a href="">Canada</a></li>
+                        <li><a href="">Great Britain</a></li>
+                        <li><a href="">United States of America</a></li>
+                        <li><a href="">Canada</a></li>
+                        <li><a href="">Great Britain</a></li>
+                        <li><a href="">United States of America</a></li>
+                        <li><a href="">Canada</a></li>
+                        <li><a href="">Great Britain</a></li>
+                        <li><a href="">United States of America</a></li>
+                        <li><a href="">Canada</a></li>
+                        <li><a href="">Great Britain</a></li>
+                        <li><a href="">United States of America</a></li>
+                        <li><a href="">Canada</a></li>
+                        <li><a href="">Great Britain</a></li>
+                      </ul>
+                      <span class="scroll">
+                        <span class="scrollbar"></span>
+                      </span>
+                    </div>
+                  </div>
+                </div> <!-- <div class="dropdown" name="date-of-birth"> -->
+              </div>
+              <div class="col">
+                <label for="state">State</label>
+                <div class="dropdown" name="state">
+                  <div class="btn silver">Ontario<div class="arrow"></div></div>
+                  <div class="menu">
+                    <div class="tab"><div class="arrow"></div></div>
+                    <div class="container scrollable">
+                      <ul>
+                        <li><a href="">Ontario</a></li>
+                        <li><a href="">New York</a></li>
+                        <li><a href="">Quebec</a></li>
+                        <li><a href="">Ontario</a></li>
+                        <li><a href="">New York</a></li>
+                        <li><a href="">Quebec</a></li>
+                        <li><a href="">Ontario</a></li>
+                        <li><a href="">New York</a></li>
+                        <li><a href="">Quebec</a></li>
+                        <li><a href="">Ontario</a></li>
+                        <li><a href="">New York</a></li>
+                        <li><a href="">Quebec</a></li>
+                        <li><a href="">Ontario</a></li>
+                        <li><a href="">New York</a></li>
+                        <li><a href="">Quebec</a></li>
+                        <li><a href="">Ontario</a></li>
+                        <li><a href="">New York</a></li>
+                        <li><a href="">Quebec</a></li>
+                      </ul>
+                      <span class="scroll">
+                        <span class="scrollbar"></span>
+                      </span>
+                    </div>
+                  </div>
+                </div> <!-- <div class="dropdown" name="date-of-birth"> -->
+              </div>
+            </div>
+            <div class="row col-2">
+              <div class="col">
+                <label for="city">City</label>
+                <input type="text" name="city">
+              </div>
+              <div class="col">
+                <label for="zip">Zip</label>
+                <input type="text" name="zip">
+              </div>
+            </div>
+            <hr>
+            <h1 id="payment">Payment Info</h1>
+            <div class="row col-2three">
+              <div class="col">
+                <label for="credit-card-number">Credit Card Number</label>
+                <input name="credit-card-number" type="text">
+              </div>
+              <div class="col">
+                <label for="cid">CID</label>
+                <input name="cid" type="text">
+              </div>
+            </div>
+            <div class="row col-3Two">
+              <label for="expiry">Expiry</label>
+              <div class="col">
+                <div class="dropdown" name="expiry">
+                  <div class="btn silver">Year<div class="arrow"></div></div>
+                  <div class="menu">
+                    <div class="tab"><div class="arrow"></div></div>
+                    <div class="container">
+                      <ul>
+                        <li><a href="">2017</a></li>
+                        <li><a href="">2016</a></li>
+                        <li><a href="">2015</a></li>
+                        <li><a href="">2014</a></li>
+                        <li><a href="">2013</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div> <!-- <div class="dropdown"> -->
+              </div>
+              <div class="col">
+                <div class="dropdown" name="month">
+                  <div class="btn silver">Month<div class="arrow"></div></div>
+                  <div class="menu">
+                    <div class="tab"><div class="arrow"></div></div>
+                    <div class="container scrollable">
+                      <ul>
+                        <li><a href="">01 (January)</a></li>
+                        <li><a href="">02 (February)</a></li>
+                        <li><a href="">03 (March)</a></li>
+                        <li><a href="">04 (April)</a></li>
+                        <li><a href="">05 (May)</a></li>
+                        <li><a href="">06 (June)</a></li>
+                        <li><a href="">07 (July)</a></li>
+                        <li><a href="">08 (August)</a></li>
+                        <li><a href="">09 (September)</a></li>
+                        <li><a href="">10 (October)</a></li>
+                        <li><a href="">11 (November)</a></li>
+                        <li><a href="">12 (December)</a></li>
+                      </ul>
+                      <span class="scroll">
+                        <span class="scrollbar"></span>
+                      </span>
+                    </div>
+                  </div>
+                </div> <!-- <div class="dropdown"> -->
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <button class="indigo confirm">Save</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div template="footer"></div>
+  </body>
+</html>

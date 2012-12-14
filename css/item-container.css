@@ -2,8 +2,11 @@
 .item-container {
   position: relative;
 }
+.item-container.col-2.package {
+  float: left;
+}
   .item-container .heading,
-  #browse .item-list .item-container .package .heading {
+  #browse .item-list .item-container .package-container .heading {
     border-radius: 20px 20px 0 0;
     height: 60px;
     width: 100%;
@@ -11,7 +14,7 @@
     position: relative;
   }
     .item-container .heading h1,
-    #browse .item-list .item-container .package .heading h1 {
+    #browse .item-list .item-container .package-container .heading h1 {
       text-indent   : 18px;
       font-size     : 16px;
       font-weight   : 600;
@@ -21,7 +24,7 @@
       left: 0;
     }
     .item-container .heading .platform,
-    #browse .item-list .item-container .package .heading .platform {
+    #browse .item-list .item-container .package-container .heading .platform {
       height: 32px;
       width: 70px;
       float: right;
@@ -51,51 +54,54 @@
         font-size: 20px;
         margin: 0;
       }
-    .gallery .item-container .package .rating-container {
-      height: 14px;
-      margin: 6px 0 0 0;
-      float: left;
-    }
       .star {
         background-position: -221px -14px;
         width: 24px;
         height: 24px;
         float: left;
       }
-      .package .rating-container .star {
+      .package-container .rating-container .star {
         width: 15px;
         height: 14px;
         background-position: -221px 0;
       }
 /* Gallery View */
-.gallery section .item-container {
+  section .item-container {
     float: left;
-    margin-top: 34px;
     position: relative;
   }
-    .gallery section .item-container .single {
+  section h1 + .carousel-container .item-container {
+    margin-top: 0;
+  }
+  section h1 + .carousel-container .item-container.package {
+    margin-top: 34px;
+  }
+  #game-details section h1 + .carousel-container .item-container.package {
+    margin-top: 0;
+  }
+    section .item-container .single-container {
       border-radius: 20px;
       box-shadow: 0 1px 6px rgba(0,0,0,0.4);
       width: 100%;
       height: 321px;
     }
-      .gallery section .item-container .single img {
+      section .item-container .single-container img {
         border-radius: 0 0 20px 20px;
       }
-  .gallery section .item-container.col-2 {
+  section .item-container.col-2 {
     width: 48.7%;
   }
-  .gallery section .item-container.col-2:nth-child(2n),
-  .gallery section .item-container.col-3:nth-child(3n) {
+  section .item-container.col-2:nth-child(2n),
+  section .item-container.col-3:nth-child(3n) {
     float: right;
     margin-right: 0;
   }
-  .gallery section .item-container.col-3 {
+  section .item-container.col-3 {
     width: 300px;
     margin-right: 24px;
     margin-bottom: 12px;
   }
-    .gallery section .item-container.col-3 .single {
+    section .item-container.col-3.single .single-container {
       height: 264px;
     }
     .item-container .rating-container {
@@ -105,19 +111,19 @@
       margin: 18px 0 0 12px;
     }
 
-      .gallery section .item-container .rating-container p {
+      section .item-container .rating-container p {
         float: left;
         font-size: 15px;
         color: #707070;
         line-height: 24px;
         margin: 0 0 0 12px;
       }
-      .gallery section .item-container.col-3 .rating-container p {
+      section .item-container.col-3 .rating-container p {
         position: absolute;
         right: 12px;
       }
-    .gallery section .item-container .price,
-    #browse .item-list .item-container .package ~ .price {
+    section .item-container .price,
+    .item-container.package .price {
       float: left;
       clear: left;
       position: relative;
@@ -142,50 +148,49 @@
 .item-list {
   float: right;
   margin-left: 32px;
+  width: 617px;
 }
   .item-list .item-container {
     width: 617px;
-    margin: 12px 0 0 0;
     float: left;
   }
-#browse.search .item-list {
-  margin-top: 12px;
-}
 /* Singles */
-  #browse #single-view .item-list .item-container {
+  .item-list .item-container.single {
     height: 157px;
   }
-  #browse .item-list .item-container ~ .item-container {
-    margin: 0;
+  #browse .item-list .item-container + .item-container {
+    margin: 36px 0 0;
   }
-    #browse .item-list .item-container .heading {
+    .item-list .item-container .heading {
       width: 436px;
       margin-left: 24px;
       float: left;
       height: 40px;
     }
-    #browse .item-list .item-container h1 {
-      font-size: 21px;
+    .item-list .item-container.single h1 {
+      font-size: 18px;
       font-weight: 600;
       text-indent: 0;
       line-height: 40px
     }
-    #browse .item-list .item-container .platform {
+    .item-list .item-container .platform {
       margin: 8px 0 0;
     }
-    #browse .item-list .item-container .game-thumb {
+    .item-list .item-container .game-thumb {
       float: left;
     }
-    #browse .item-list .item-container .price {
+    .item-list .item-container.single .price {
       position: absolute;
       left: 180px;
       width: 200px;
       top: 46px;
+      margin: 0;
     }
-    #browse #single-view .item-list .item-container .rating-container {
+    .item-list .item-container.single .rating-container {
       top: 46px;
       float: right;
       margin: 6px 0 0 0;
+      width: auto;
     }
       #browse .item-list .item-container .rating-container p {
         font-size: 15px;
@@ -194,39 +199,39 @@
         float: left;
         margin: 0 0 0 10px;
       }
-    #browse .item-list .item-container .esrb {
+    .item-list .item-container.single .esrb {
       position: absolute;
       left: 180px;
       top: 84px;
       font-size: 14px;
       color: #707070;
     }
-    #browse .item-list .item-container .genre {
+    .item-list .item-container.single .genre {
       position: absolute;
       top: 84px;
       right: 0;
       font-size: 14px;
     }
     /* Media Tabs */
-    #browse .item-list .item-container .media {
+    .item-list .item-container .media {
       position: absolute;
       left: 180px;
       bottom: -2px;
       width: 156px;
     }
-      #browse .item-list .item-container .media .tab {
+      .item-list .item-container .media .tab {
         float: left;
         width: 50px;
         height: 36px;
         background-position: -330px -53px;
       }
-        #browse .item-list .item-container .media .tab .icon {
+        .item-list .item-container .media .tab .icon {
           margin: auto;
           position: relative;
           top: -4px;
         }
     /* Package Availability */
-    #browse .item-list .item-container .package-available {
+    .item-list .item-container .package-available {
       width: 163px;
       height: 36px;
       background-position: -334px -216px;
@@ -238,74 +243,83 @@
       letter-spacing: -1px;
       line-height: 24px;
     }
-    #browse #main .item-list hr {
+    .item-list hr {
       background-position: 0 -2px;
       width: 100%;
       margin: 36px 0;
     }
 /* Packages Item Container */
     /* Universal */
-    .package { 
+    .package-container { 
       border-radius: 20px;
       box-shadow: 0 1px 6px rgba(0,0,0,0.4);
       width: 100%;
       height: 300px;
     }
-    .package .heading {
+    .package-container .heading {
       box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
     } 
-      .package .scrollable-container {
+      .package-container .scrollable-container {
         float   : left;
         position: relative;
         width   : 408px;
         margin  : 24px;
         overflow: hidden;
       }
-        .package .scrollable-container .scrollable {
+        .package-container .scrollable-container .scrollable {
           width: 1000px; /* Disable this later */
           position: relative;
         }
-          .package .scrollable-container .scrollable .mini-item {
+          .package-container .scrollable-container .scrollable .mini-item {
             float: left;
             width: 83px;
             cursor: pointer;
             margin: 0 18px 0 0;
+            position: relative;
+            height: 150px;
           }
-          .package .scrollable-container .scrollable .mini-item h2 {
+          .package-container .scrollable-container .scrollable .mini-item h2 {
             font-size: 12px;
             font-weight: 700;
             color: #3F3F3F;
-            margin: 12px 0 0 0;
+            margin: 12px 0 12px 0;
             float: left;
           }
-        .package .scrollable-container .shadow {
+          .item-container.package .package-container .rating-container {
+            height: 14px;
+            margin: 6px 0 0 0;
+            float: left;
+            bottom: 0;
+            position: absolute;
+          }
+        .package-container .scrollable-container .shadow {
           position           : absolute;
           width              : 18px;
           height             : 148px;
         }
-        .package .scrollable-container .shadow.right {
+        .package-container .scrollable-container .shadow.right {
           background-position: -406px 0;
           right: 0;
         }
-        .package .scrollable-container .shadow.left {
+        .package-container .scrollable-container .shadow.left {
           background-position: -423px 0;
           left: 0;
           opacity: 0;
         }
     /* Main Listing Page */
-    #browse .item-list .item-container {
+    #browse .item-list .item-container.package {
       height: 385px;
     }
-        #browse .item-list .item-container .package .heading {
+        #browse .item-list .item-container.package .heading {
           margin: 0;
           width: 100%;
         }
-        #browse .item-list .item-container .package .scrollable-container {
+        #browse .item-list .item-container.package .scrollable-container {
           width   : 569px;
         }
-        #browse .item-list .item-container .package .scroll {
+        #browse .item-list .item-container.package .scroll {
           width: 569px;
         }
-        #browse .item-list .item-container .package ~ .price {
+        #browse .item-list .item-container .package-container ~ .price {
           position: inherit;
         }
