@@ -9,6 +9,10 @@ itemDB.single = [{
   'rating-count':'1,273',
   'list-price':'$29.99',
   'price':'$19.99',
+  'update':'available',
+  'developer':'Robot Entertainment',
+  'publisher':'Robot Entertainment',
+  'serial':'HKJH2H-SKHJD3',
   'thumb-feature':'./img/feature_hero-academy.png',
   'thumb-med':'./img/game-thumb_hero-academy-medium.png',
   'thumb-large':'./img/game-thumb_hero-academy-large.png',
@@ -23,6 +27,10 @@ itemDB.single = [{
   'rating-count':'914',
   'list-price':'$49.99',
   'price':'$39.99',
+  'update':'available',
+  'developer':'Nintendo',
+  'publisher':'Nintendo of America',
+  'serial':'JU832-23-KH-UYE',
   'thumb-feature':'./img/feature_mario.png',
   'thumb-med':'./img/game-thumb_mario-medium.png',
   'thumb-large':'./img/game-thumb_mario-large.png',
@@ -37,10 +45,47 @@ itemDB.single = [{
   'rating-count':'914',
   'list-price':'$49.99',
   'price':'$39.99',
+  'developer':'The Sims Studio',
+  'publisher':'Electronic Arts',
+  'serial':'JU832-23-KH-UYE',
   'thumb-feature':'./img/feature_mario.png',
   'thumb-med':'./img/game-thumb_sims3-medium.png',
   'thumb-large':'./img/game-thumb_sims3-large.png',
   'thumb-marquee':'./img/game-thumb_sims3-marquee.png'
+},{
+  'name':'Call of Duty: Black Ops II',
+  'windows':'active',
+  'esrb':'Mature',
+  'genre':'Action',
+  'osx':'not-active',
+  'rating':'5',
+  'rating-count':'3,942',
+  'list-price':'$59.99',
+  'price':'$49.99',
+  'developer':'Treyarch',
+  'publisher':'Activision',
+  'serial':'JU832-23-KH-UYE',
+  'thumb-small':'./img/game-thumb_cod-black-ops-2-small.png',
+  'thumb-med':'./img/game-thumb_cod-black-ops-2-medium.png',
+  'thumb-large':'./img/game-thumb_cod-black-ops-2-large.png',
+  'thumb-marquee':'./img/game-thumb_cod-black-ops-2-marquee.png'
+},{
+  'name':'Super Meat Boy',
+  'windows':'active',
+  'osx':'active',
+  'esrb':'Teen',
+  'genre':'Action',
+  'rating':'45',
+  'rating-count':'1,102',
+  'list-price':'$19.99',
+  'price':'$9.99',
+  'developer':'Team Meat',
+  'publisher':'Team Meat',
+  'serial':'JU832-23-KH-UYE',
+  'thumb-feature':'./img/game-thumb_super-meat-boy-marquee.png',
+  'thumb-med':'./img/game-thumb_super-meat-boy-medium.png',
+  'thumb-large':'./img/game-thumb_super-meat-boy-large.png',
+  'thumb-marquee':'./img/game-thumb_super-meat-boy-marquee.png'
 }];
 itemDB.pkg = [{
   'name':'The Sims 3: Super Fun Pack',
@@ -51,6 +96,11 @@ itemDB.pkg = [{
   'rating':'5',
   'rating-count':'914',
   'price':'14',
+  'package-count':'12',
+  'developer':'The Sims Studio',
+  'publisher':'Electronic Arts',
+  'update':'available',
+  'serial':'Not Applicable',
   'games':[{
     'sub-name':'The Sims 3',
     'thumb-small':'./img/game-thumb_sims3-small.png',
@@ -77,6 +127,10 @@ itemDB.pkg = [{
   'rating':'45',
   'rating-count':'2,914',
   'price':'14',
+  'package-count':'10',
+  'developer':'Various',
+  'publisher':'NetGames',
+  'serial':'Not Applicable',
   'games':[{
     'sub-name':'Hero Academy',
     'thumb-small':'./img/game-thumb_hero-academy-small.png',
@@ -380,7 +434,6 @@ function spinner() {
 }
 
 /* Ugly prototype stuff */
-
 function itemTemplate() {
   var templateFile = './templates/items.html';
   var templateData = $('<div></div>');
@@ -409,6 +462,8 @@ function itemTemplate() {
     runTemplate('package-tile');
     runTemplate('package-list');
     runTemplate('single-list');
+    runTemplate('single-locker');
+    runTemplate('package-locker');
   });
 }
 

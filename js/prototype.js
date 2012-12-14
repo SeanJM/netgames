@@ -9,6 +9,9 @@ function spawnWindow(element,event) {
   element.addClass('visible');
   if (typeof event != 'undefined') { event.stopPropagation(); }
 }
+
+templateFunction = {};
+
 template = {};
 
 template.load = function (data,callback) {
@@ -19,43 +22,30 @@ template.load = function (data,callback) {
 
 //template.process({'element':$(this),'keys':[{'title':'Some title','subhead':'some more subhead'}]})
 
-template.processOLD = function (object,callback) {
-  var str = object['id'].html(),
-      arr = object['keys'];
-  for (var i=0;i<arr.length;i++) {
-    str.replace(/{{\s*(.*?)}}/g,function(m,key){
-      if (/^if /.test(key)) { 
-        var test = key.replace(/^if /,'');
-        if (!arr[i].hasOwnProperty(test) || !arr[i][test]) { 
-          str = str.split('{{' + key + '}}')[0] + str.split('{{' + key + '}}')[1].split('{{endif}}')[1];
-        }
-      }
-    });
-    object['id'].html(str.replace(/{{\s*(.*?)}}/g,function(m,key){
-      if (arr[i].hasOwnProperty(key)) { return arr[i][key]; }
-      return '';
-    }));
-  }
-  if (typeof callback == 'function') { callback(); }
-}
 template.process = function (object,callback) {
   var el          = object['element'];
   var html        = object['template'];
   var subTemplate = html.find('[sub-template]');
   var subKeys      = object.keys[subTemplate.attr('obj')];
   var processedHtml;
+  var fn           = html.attr('function');
   if (subTemplate.size() > 0 && typeof subKeys != 'undefined') {
     for (i=0;i<subKeys.length;i++) {
       subTemplateHTML = template.fill({'keys':subKeys[i],'template':subTemplate});
       subTemplate.before(subTemplateHTML);
-      console.log('subTemplate');
     }
-    subTemplate.remove();
+    subTemplate.hide();
   }
   var processedHtml = template.fill({'keys':object.keys,'template':object.template});
-  el.before(processedHtml);
+  el.before(processedHtml,function() {
+    if (typeof fn != 'undefined') {
+      templateFunction[fn]();
+    }
+  });
   if (typeof callback == 'function') { callback(); }
+  
 }
+
 template.fill = function (object,callback) {
   var 
       el     = object['template'],
@@ -63,18 +53,41 @@ template.fill = function (object,callback) {
       keys   = object['keys'],
       output;
   output = str.replace(/{{\s*(.*?)}}/g,function(m,key){
+    /* Check for ifs like this
+    {{if\s*(.*?)endif}}/g
+    */
     if (/^if /.test(key)) { 
       var test = key.replace(/^if /,'');
-      if (!arr[i].hasOwnProperty(test) || !arr[i][test]) { 
+      if (!keys.hasOwnProperty(test) || !key[test]) { 
         str = str.split('{{' + key + '}}')[0] + str.split('{{' + key + '}}')[1].split('{{endif}}')[1];
       }
     }
-  });
-  output = str.replace(/{{\s*(.*?)}}/g,function(m,key){
     if (keys.hasOwnProperty(key)) { return keys[key]; }
     return '';
   });
-  console.log(object.keys);
   return output;
   if (typeof callback == 'function') { callback(); }
 }
+
+/* Needs to be adapted */
+/*var templateFile = './templates/items.html';
+var templateData = $('<div></div>');
+template.run = function (element,limit) {
+  $('div[template]').each(function(n){
+    var templateRef = $(this);
+    var templateName = '[template="' + $(this).attr('template') + '"]';
+    var templatePre  = templateData.find(templateName);
+    var keys         = itemDB[$(this).attr('obj')];
+    for (var i=0;i<keys.length;i++) {
+      if (typeof limit != 'undefined') {
+        if (i < limit) {
+          template.process({'template':templatePre,'keys':keys[i],'element':templateRef});
+        }
+      }
+      else {
+        template.process({'template':templatePre,'keys':keys[i],'element':templateRef});
+      }
+    }
+  });
+  $('div[' + element + ']').remove();
+}*/

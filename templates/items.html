@@ -196,3 +196,80 @@
   </div> <!-- <div class="item-container"> -->
   <hr>
 </div>
+
+<div template="single-locker" function="infoDisplay">
+  <div class="item-container">
+    <div class="game-thumb medium">
+      <img src="{{thumb-med}}">
+    </div>
+    <h1>{{name}}</h1>
+    <div class="update-{{update}}"></div>
+    <div class="info popup">
+      <div class="padding">
+        <h1>{{name}}</h1>
+        <hr>
+        <div class="btn indigo">Download</div>
+        <div class="btn blue">Update</div>
+        <hr>
+        <div class="row">
+          <p>Genre:</p>
+          <p><a href="">{{genre}}</a></p>
+        </div>
+        <div class="row">
+          <p>Developer:</p>
+          <p><a href="">{{developer}}</a></p>
+        </div>
+        <div class="row">
+          <p>Publisher:</p>
+          <p><a href="">{{publisher}}</a></p>
+        </div>
+        <div class="row">
+          <p>Serial</p>
+          <p><a href="">{{serial}}</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div template="package-locker">
+  <div class="item-container package">
+    <div class="game-thumb medium">
+      <div sub-template obj="games">
+        <div class="mini-item">
+          <div class="game-thumb small">
+            <img src="{{thumb-small}}">
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1>{{name}}</h1>
+    <div class="update-{{update}}"></div>
+    <div class="info popup">
+      <div class="padding">
+        <h1>{{name}}</h1>
+        <hr>
+        <div class="btn indigo">Download</div>
+        <div class="btn blue">Update</div>
+        <hr>
+        <div class="row">
+          <p>Genre:</p>
+          <p><a href="">{{genre}}</a></p>
+        </div>
+        <div class="row">
+          <p>Developer:</p>
+          <p><a href="">{{developer}}</a></p>
+        </div>
+        <div class="row">
+          <p>Publisher:</p>
+          <p><a href="">{{publisher}}</a></p>
+        </div>
+        <div class="row">
+          <p>Serial</p>
+          <p><a href="">{{serial}}</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="package-count">{{package-count}}</div>
+  </div>
+</div>

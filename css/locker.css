@@ -1,0 +1,230 @@
+#locker {
+
+}
+  /* Sprites */
+  #locker .container,
+  #locker .container .shelf-container,
+  #locker .container .shelf,
+  #locker .container .item-container > h1,
+  #locker .container .item-container.package > .game-thumb,
+  #locker .container .item-container .update-available,
+  #locker .container .item-container .package-count,
+  #locker .container .scroll-left,
+  #locker .container .scroll-right,
+  #locker .container .indicator {
+    background: url('../img/sprite_locker.png');
+  }
+
+
+  #locker .container {
+    width: 945px;
+    height: 700px;
+    float: left;
+    position: relative;
+  }
+    #locker .container .shelf-container {
+      width: 832px;
+      height: 149px;
+      background-position: -56px -42px;
+      float: left;
+      margin: 42px 56px 0;
+      position: relative;
+    }
+    #locker .container .shelf-container + .shelf-container {
+      margin-top: 54px;
+    }
+    #locker .container .shelf {
+      background-position: 0 -702px;
+      width: 901px;
+      height: 174px;
+      position: absolute;
+      left: 22px;
+      top: 137px;
+    }
+    #locker .container .shelf + .shelf {
+      top: 340px;
+    }
+  #locker .container .item-list {
+    width: 832px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 24px;
+  }
+  #locker .container .item-container {
+    position: absolute;
+    top: 53px;
+    width: 157px;
+    height: 190px;
+    cursor: pointer;
+  }
+  #locker .container .item-container.package > .game-thumb {
+    background-position: -664px -239px;
+  }
+  #locker .container .item-container:nth-of-type(1),
+  #locker .container .item-container:nth-of-type(5),
+  #locker .container .item-container:nth-of-type(9){
+    left: 46px;
+  }
+  #locker .container .item-container:nth-of-type(2),
+  #locker .container .item-container:nth-of-type(6),
+  #locker .container .item-container:nth-of-type(10) {
+    left: 240px;
+  }
+  #locker .container .item-container:nth-of-type(3),
+  #locker .container .item-container:nth-of-type(7),
+  #locker .container .item-container:nth-of-type(11) {
+    left: 435px;
+  }
+  #locker .container .item-container:nth-of-type(4),
+  #locker .container .item-container:nth-of-type(8),
+  #locker .container .item-container:nth-of-type(12) {
+    left: 629px;
+  }
+  #locker .container .item-container:nth-of-type(n+5) {
+    top: 256px;
+  }
+  #locker .container .item-container:nth-of-type(n+9) {
+    top: 461px;
+  }
+    #locker .container .item-container .game-thumb {
+      position: relative;
+      z-index: 1;
+    }
+      #locker .container .item-container .game-thumb img {
+        border-radius: 20px;
+      }
+      #locker .container .item-container .game-thumb .game-thumb {
+        position: inherit;
+      }
+    #locker .container .item-container > h1 {
+      font-size: 12px;
+      color: #fff;
+      text-align: center;
+      width: 156px;
+      height: 45px;
+      background-position: -664px -194px;
+      font-weight: 400;
+      float: left;
+      line-height: 68px;
+      position: relative;
+      top: -13px;
+    }
+    #locker .container .item-container .update-available,
+    #locker .container .item-container .package-count {
+      width: 37px;
+      height: 38px;
+      position: absolute;
+      bottom: 23px;
+      z-index: 2;
+    }
+    #locker .container .item-container .update-available {
+      background-position: -822px -283px;
+      left: -14px;
+    }
+    #locker .container .item-container .package-count {
+      background-position: -822px -321px;
+      right: -14px;
+      text-align: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 30px;
+    }
+
+  #locker .container .nav {
+    position: absolute;
+    bottom: 6px;
+    right: 32px;
+  }
+  #locker .container .scroll-left,
+  #locker .container .scroll-right {
+    width: 28px;
+    height: 30px;
+    float: left;
+  }
+  #locker .container .scroll-left {
+    background-position: -826px -217px;
+    margin-left: 12px;
+  }
+  #locker .container .scroll-left:hover {
+    background-position: -826px -247px;
+  }
+  #locker .container .scroll-right {
+    background-position: -854px -217px;
+    margin-left: 12px;
+  }
+  #locker .container .scroll-right:hover {
+    background-position: -854px -247px;
+  }
+  #locker .container .indicator {
+    float: left;
+    background-position: -844px -196px;
+    width: 18px;
+    height: 18px;
+    margin: 4px 6px;
+  }
+  #locker .container .indicator.active {
+    background-position: -826px -196px;
+  }
+  #locker .info.popup {
+    width: 280px;
+    background: rgba(255,255,255,0.9);
+    position: absolute;
+    border-radius: 20px;
+    z-index: 100;
+    display: none;
+    right: -270px;
+    top: -50px;
+  }
+    #locker .info.popup .padding {
+      padding: 24px;
+      float: left;
+    }
+    #locker .info.popup h1 {
+      font-size: 18px;
+      color: #707070;
+      font-weight: 600;
+      line-height: 17px;
+      width: 100%;
+      text-align: center;
+    }
+    #locker .info.popup .row {
+      width: 100%;
+      float: left;
+    }
+    #locker .info.popup .btn {
+      float: left;
+      width: 100%;
+      text-align: center;
+    }
+    #locker .info.popup .btn + .btn {
+      margin: 12px 0;
+    }
+    #locker .info.popup .btn + .row {
+      margin-top: 12px;
+    }
+    #locker .info.popup .row {
+      margin: 12px 0;
+    }
+      #locker .info.popup .row p {
+        font-size: 15px;
+        color: #707070;
+      }
+      #locker .info.popup .row p {
+        float: left;
+      }
+      #locker .info.popup .row p + p {
+        float: right;
+      }
+    #locker .info.popup hr {
+      margin: 12px 0;
+    }
+    #locker .container .item-container:nth-of-type(4):hover .info.popup,
+    #locker .container .item-container:nth-of-type(8):hover .info.popup,
+    #locker .container .item-container:nth-of-type(12):hover .info.popup {
+      left: -270px;
+    }
+    #locker .container .item-container:hover .info.popup {
+      display: block;
+    }

@@ -387,6 +387,26 @@ button.red:hover,
 .package .scrollable .game-thumb.small img {
   border-radius: 0;
 }
+    .game-thumb .game-thumb {
+        width: 63px;
+        height: 63px;
+        float: left;
+        margin: 10px 0 0;
+        border-radius: 10px;
+      }
+        .game-thumb .game-thumb img {
+          margin-left: -14px;
+          margin-top: -8px;
+          border-radius: 10px;
+        }
+      .game-thumb .game-thumb:nth-child(odd) {
+        float: left;
+        margin-left: 10px;
+      }
+      .game-thumb .game-thumb:nth-child(even) {
+        float: right;
+        margin-right: 10px;
+      }
 .rating-container p {
   color: #707070;
 }
