@@ -302,6 +302,25 @@ main.init = function() {
     $('#change-billing-address-popup').addClass('visible');
     event.stopPropagation();
   });
+  $('.address-overview .btn').on('click',function(){
+    var screen = $(this).closest('.screen');
+    screen.find('[name="fullname"]').val('Sean J MacIsaac');
+    screen.find('[name="street-address-1"]').val('456 Bethesday Drive');
+    screen.find('[name="city"]').val('Ottawa');
+    screen.find('[name="zip"]').val('K1N 8G3');
+  });
+  $('.credit-card-overview .btn').on('click',function(){
+    var screen = $(this).closest('.screen');
+    screen.find('[name="credit-card-name"]').val('Sean James MacIsaac');
+    screen.find('[name="credit-card-number"]').val('4500 2156 8798 3456');
+    screen.find('[name="cid"]').val('546');
+    screen.find('[name="expiry"] .btn').html(screen.find('[name="expiry"] .btn').html().replace('Year','2015'));
+    screen.find('[name="month"] .btn').html(screen.find('[name="month"] .btn').html().replace('Month','January'));
+    screen.find('[name="zip"]').val('K1N 8G3');
+  });
+  $('.checkbox[name="same-as-shipping"]').on('click',function(){
+    $('#billing-address-toggle-container').toggleClass('visible');
+  });
 }
 
 /* Scrolling */

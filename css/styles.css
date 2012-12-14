@@ -697,6 +697,14 @@ aside .overview {
   line-height: 30px;
   margin-bottom: 30px;
 }
+  #billing-address-toggle-container {
+    margin-top: 24px;
+    float: left;
+    display: none;
+  }
+  #billing-address-toggle-container.visible {
+    display: block;
+  }
   .details .row,
   .popup.window .row {
     position: relative;
