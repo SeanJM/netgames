@@ -21,7 +21,7 @@
       font-size: 14px;
       color: #707070;
       position: absolute;
-      top: 11px;
+      top: 9px;
     }
     .path .path-container .indicator-container:nth-of-type(1) { left: -40px; }
     .path .path-container .indicator-container:nth-of-type(2) { left: 210px; }
@@ -43,16 +43,16 @@
         background-position: 0 -1066px;
         width: 0;
       }
-      .path .status-line-container.step-1 .status-line {
+      .path.step-1 .status-line-container .status-line {
         width: 0%;
       }
-      .path .status-line-container.step-2 .status-line {
+      .path.step-2 .status-line-container .status-line {
         width: 33%;
       }
-      .path .status-line-container.step-3 .status-line {
+      .path.step-3 .status-line-container .status-line {
         width: 66%;
       }
-      .path .status-line-container.step-4 .status-line {
+      .path.step-4 .status-line-container .status-line {
         width: 100%;
       }
 /* Cart Table */

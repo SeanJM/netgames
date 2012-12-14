@@ -267,9 +267,10 @@ main.init = function() {
   $('[name="resend-confirmation"]').on('click',function(event){
     spawnWindow($('#confirm-resend-confirmation'));
   });
-  $('.order-summary .continue').on('click',function(event){
+  $('#checkout .continue').on('click',function(event){
     var screen = $(this).closest('.screen');
     var i = screen.index();
+    $('.path').addClass('step-' + parseInt(i+1));
     if (i < $('section.screen').size()) {
       screen.removeClass('visible').next().addClass('visible');
     }
