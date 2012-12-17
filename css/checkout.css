@@ -1,4 +1,4 @@
-.path {
+  .path {
   background: #fff;
   box-shadow: inset 0 -2px 3px rgba(0,0,0,0.15);
   width: 100%;
@@ -155,7 +155,7 @@
     }
     .cart-item-list .item-container .game-thumb {
       float: left;
-      margin-right: 30px;
+      margin-right: 10px;
     }
     .cart-item-list .item-container .media {
       position: absolute;

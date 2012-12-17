@@ -1,10 +1,10 @@
 /* Filters */
-#filter.aside-scroll {
+.filter.aside-scroll {
   position: fixed;
   top: 10px;
   z-index: 1;
 }
-#filter {
+aside.filter {
   width: 299px;
   float: left;
   background: #fff;
@@ -13,27 +13,33 @@
   border: 1px solid #D3D3D3;
   position: relative;
 }
-  #filter .titlebar {
+hr + .filter {
+  margin-top: 12px;
+}
+hr + .filter + .item-list {
+  margin-top: 12px;
+}
+  .filter .titlebar {
     width              : 298px;
   }
-    #filter .titlebar .icon {
+    .filter .titlebar .icon {
       position: absolute;
       left: 3px;
       top: 4px;
     }
-  #filter section {
+  .filter section {
     padding: 16px;
     width: 268px;
     float: left;
   }
-  #filter section ~ section {
+  .filter section ~ section {
     border-top: 1px solid #D3D3D3;
   }
-    #filter section .checkbox {
+    .filter section .checkbox {
       float: left;
       margin: 0;
     }
-    #filter section .checkbox + h2 {
+    .filter section .checkbox + h2 {
       font-size: 15px;
       color: #707070;
       font-weight: 400;
@@ -42,27 +48,27 @@
       line-height: 24px;
       width: 200px;
     }
-    #filter section .rating-container {
+    .filter section .rating-container {
       width: 263px;
       float: left;
       margin: 0;
     }
-      #filter section .rating-container .star {
+      .filter section .rating-container .star {
         margin: 0 14px 0;
       }
-      #filter section .rating-container p {
+      .filter section .rating-container p {
         font-size: 10px;
         color: #707070;
         float: left;
         width: 19.7%;
         text-align: center;
       }
-      #filter section .range-slider {
+      .filter section .range-slider {
         position: relative;
         float: left;
         width: 100%;
       }
-        #filter section .range-slider .slider-container {
+        .filter section .range-slider .slider-container {
           width: 100%;
           height: 10px;
           box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
@@ -70,7 +76,7 @@
           float: left;
           position: relative;
         }
-          #filter section .range-slider .slider-container .range {
+          .filter section .range-slider .slider-container .range {
             background-image: url('../img/sprite_slider-tile.png');
             height: 8px;
             width: 120px;
@@ -79,29 +85,29 @@
             position: absolute;
             left: 30px;
           }
-          #filter section .range-slider.disabled .slider-container .range {
+          .filter section .range-slider.disabled .slider-container .range {
             background-position: 0 8px;
           }
-          #filter section .range-slider .slider-container .knob {
+          .filter section .range-slider .slider-container .knob {
             background-position: -306px -38px;
             width: 24px;
             height: 24px;
             position: absolute;
             top: -7px;
           }
-          #filter section .range-slider .slider-container .knob.active {
+          .filter section .range-slider .slider-container .knob.active {
             background-position: -306px -62px;
           }
-          #filter section .range-slider .slider-container .knob.left {
+          .filter section .range-slider .slider-container .knob.left {
             left: 20px;
           }
-          #filter section .range-slider .slider-container .knob.right {
+          .filter section .range-slider .slider-container .knob.right {
             left: 140px;
           }
-          #filter section .range-slider.disabled .slider-container .knob {
+          .filter section .range-slider.disabled .slider-container .knob {
             background-position: -306px -86px;
           }
-        #filter section .range-slider .bubble-indicator {
+        .filter section .range-slider .bubble-indicator {
           display: none;
           position           : absolute;
           top                : 14px;
@@ -114,74 +120,74 @@
           background-position: -330px 0;
           z-index: 1;
         }
-        #filter section .range-slider.active .bubble-indicator {
+        .filter section .range-slider.active .bubble-indicator {
           display: block;
         }
-        #filter section .range-slider .bubble-indicator.left {
+        .filter section .range-slider .bubble-indicator.left {
          left: 3px;
         }
-        #filter section .range-slider .bubble-indicator.right {
+        .filter section .range-slider .bubble-indicator.right {
           left: 123px;
         }
-        #filter section .units {
+        .filter section .units {
           font-weight: 300;
           font-size: 10px;
           color: #707070;
         }
-          #filter section .units p {
+          .filter section .units p {
             float: left;
             line-height: 12px;
             margin: 15px 0 0 0;
             position: relative;
           }
-          #filter section .units.col-7 p {
+          .filter section .units.col-7 p {
             width: 14.28%;
             text-indent: 2px;
             position: relative;
           }
-          #filter section .units p:after {
+          .filter section .units p:after {
             content: "|";
             top: -14px;
             left: -10px;
             position: relative;
           }
-          #filter section .units.col-7 p ~ p {
+          .filter section .units.col-7 p ~ p {
             text-align: center;
             text-indent: 0;
           }
-          #filter section .units.col-7 p:nth-child(2) {
+          .filter section .units.col-7 p:nth-child(2) {
             left: -8px;
           }
-          #filter section .units.col-7 p:nth-child(3) {
+          .filter section .units.col-7 p:nth-child(3) {
             left: -4px;
           }
-          #filter section .units.col-7 p:nth-last-child(2) {
+          .filter section .units.col-7 p:nth-last-child(2) {
             left: 8px;
           }
-          #filter section .units.col-7 p:nth-last-child(3) {
+          .filter section .units.col-7 p:nth-last-child(3) {
             left: 4px;
           }
-          #filter section .units.col-7 p:nth-last-child(1) {
+          .filter section .units.col-7 p:nth-last-child(1) {
             text-align: right;
             float: right;
           }
-          #filter section .units.col-7 p:nth-last-child(1):after {
+          .filter section .units.col-7 p:nth-last-child(1):after {
             left: -5px;
           }
-          #filter section .units.col-4 p {
+          .filter section .units.col-4 p {
             width: 23%;
           }
-          #filter section .units.col-4 p ~ p {
+          .filter section .units.col-4 p ~ p {
             text-align: center;
           }
-          #filter section .units.col-4 p:nth-child(3) {
+          .filter section .units.col-4 p:nth-child(3) {
             margin-left: 19px;
           }
-          #filter section .units.col-4 p:nth-last-child(1) {
+          .filter section .units.col-4 p:nth-last-child(1) {
             text-align: right;
             float: right;
           }
-          #filter section .squareBtn {
+          .filter section .squareBtn {
             width: 80px;
             height: 64px;
             background-position: -441px 0;
@@ -190,52 +196,52 @@
             font-size: 12px;
             color: #707070;
           }
-          #filter section .squareBtn ~ .squareBtn {
+          .filter section .squareBtn ~ .squareBtn {
             margin-left: 11px;
           }
-          #filter section .squareBtn.active {
+          .filter section .squareBtn.active {
             background-position: -441px -64px;
             color: #fff;
             text-shadow: 0 1px 0 rgba(0,0,0,0.33);
           }
-            #filter section .squareBtn .icon {
+            .filter section .squareBtn .icon {
               margin: 6px auto -4px;
             }
-            #filter section .switch {
+            .filter section .switch {
               float: left;
               text-indent: 12px;
               text-align: left;
             }
-            #filter section .flag-container {
+            .filter section .flag-container {
               width: 20%;
               float: left;
             }
-              #filter section .flag-container .flag {
+              .filter section .flag-container .flag {
                 width: 35px;
                 height: 22px;
                 margin: auto;
               }
-              #filter section .flag-container .flag.french {
+              .filter section .flag-container .flag.french {
                 background-position: -363px -152px;
               }
-              #filter section .flag-container .flag.italian {
+              .filter section .flag-container .flag.italian {
                 background-position: -397px -152px;
               }
-              #filter section .flag-container .flag.german {
+              .filter section .flag-container .flag.german {
                 background-position: -363px -194px;
               }
-              #filter section .flag-container .flag.english {
+              .filter section .flag-container .flag.english {
                 background-position: -363px -173px;
               }
-              #filter section .flag-container .flag.spanish {
+              .filter section .flag-container .flag.spanish {
                 background-position: -397px -173px;
               }
-              #filter section .flag-container .selector {
+              .filter section .flag-container .selector {
                 width: 12px;
                 height: 12px;
                 background-position: -410px -195px;
                 margin: 6px auto 0;
               }
-              #filter section .flag-container .selector.selected {
+              .filter section .flag-container .selector.selected {
                 background-position: -398px -195px;
               }

@@ -13,6 +13,7 @@ itemDB.single = [{
   'developer':'Robot Entertainment',
   'publisher':'Robot Entertainment',
   'serial':'HKJH2H-SKHJD3',
+  'package':'available',
   'thumb-feature':'./img/feature_hero-academy.png',
   'thumb-med':'./img/game-thumb_hero-academy-medium.png',
   'thumb-large':'./img/game-thumb_hero-academy-large.png',
@@ -31,10 +32,11 @@ itemDB.single = [{
   'developer':'Nintendo',
   'publisher':'Nintendo of America',
   'serial':'JU832-23-KH-UYE',
-  'thumb-feature':'./img/feature_mario.png',
+  'thumb-small':'./img/game-thumb_mario-small.png',
   'thumb-med':'./img/game-thumb_mario-medium.png',
   'thumb-large':'./img/game-thumb_mario-large.png',
-  'thumb-marquee':'./img/game-thumb_mario-marquee.png'
+  'thumb-marquee':'./img/game-thumb_mario-marquee.png',
+  'thumb-feature':'./img/game-thumb_mario-feature.png'
 },{
   'name':'The Sims 3',
   'windows':'active',
@@ -42,16 +44,18 @@ itemDB.single = [{
   'genre':'Simulation',
   'osx':'not-active',
   'rating':'5',
-  'rating-count':'914',
+  'rating-count':'4,938',
   'list-price':'$49.99',
   'price':'$39.99',
   'developer':'The Sims Studio',
   'publisher':'Electronic Arts',
   'serial':'JU832-23-KH-UYE',
-  'thumb-feature':'./img/feature_mario.png',
+  'package':'available',
+  'thumb-small':'./img/game-thumb_sims3-small.png',
   'thumb-med':'./img/game-thumb_sims3-medium.png',
   'thumb-large':'./img/game-thumb_sims3-large.png',
-  'thumb-marquee':'./img/game-thumb_sims3-marquee.png'
+  'thumb-marquee':'./img/game-thumb_sims3-marquee.png',
+  'thumb-feature':'./img/game-thumb_sims3-feature.png'
 },{
   'name':'Call of Duty: Black Ops II',
   'windows':'active',
@@ -68,7 +72,8 @@ itemDB.single = [{
   'thumb-small':'./img/game-thumb_cod-black-ops-2-small.png',
   'thumb-med':'./img/game-thumb_cod-black-ops-2-medium.png',
   'thumb-large':'./img/game-thumb_cod-black-ops-2-large.png',
-  'thumb-marquee':'./img/game-thumb_cod-black-ops-2-marquee.png'
+  'thumb-marquee':'./img/game-thumb_cod-black-ops-2-marquee.png',
+  'thumb-feature':'./img/game-thumb_cod-black-ops-2-feature.png'
 },{
   'name':'Super Meat Boy',
   'windows':'active',
@@ -82,10 +87,12 @@ itemDB.single = [{
   'developer':'Team Meat',
   'publisher':'Team Meat',
   'serial':'JU832-23-KH-UYE',
-  'thumb-feature':'./img/game-thumb_super-meat-boy-marquee.png',
+  'package':'available',
+  'thumb-small':'./img/game-thumb_super-meat-boy-small.png',
   'thumb-med':'./img/game-thumb_super-meat-boy-medium.png',
   'thumb-large':'./img/game-thumb_super-meat-boy-large.png',
-  'thumb-marquee':'./img/game-thumb_super-meat-boy-marquee.png'
+  'thumb-marquee':'./img/game-thumb_super-meat-boy-marquee.png',
+  'thumb-feature':'./img/game-thumb_super-meat-boy-feature.png'
 }];
 itemDB.pkg = [{
   'name':'The Sims 3: Super Fun Pack',
@@ -150,6 +157,48 @@ itemDB.pkg = [{
   }]
 }];
 
+itemDB.trailers = [{
+  'name':'Far Cry 3: The Story (UK)',
+  'submitted':'2 hours Ago',
+  'thumb':'far-cry-3',
+  'time':'2:59',
+  'resolution':'hidef',
+  'rating':'45',
+  'rating-count':'1,955'
+},{
+  'name':'Castle Story',
+  'submitted':'2 hours Ago',
+  'thumb':'castle-story',
+  'time':'1:00',
+  'resolution':'meddef',
+  'rating':'45',
+  'rating-count':'95'
+},{
+  'name':'Rayman Jungle Run',
+  'submitted':'3 days ago',
+  'thumb':'rayman',
+  'time':'3:23',
+  'resolution':'lowdef',
+  'rating':'35',
+  'rating-count':'198,428'
+},{
+  'name':'Call of Duty: Black Ops II',
+  'submitted':'3 days ago',
+  'thumb':'cod',
+  'time':'2:53',
+  'resolution':'hidef',
+  'rating':'45',
+  'rating-count':'1,198,428'
+},{
+  'name':'Bioshock: Infinite',
+  'submitted':'3 days ago',
+  'thumb':'bioshock',
+  'time':'1:41',
+  'resolution':'hidef',
+  'rating':'5',
+  'rating-count':'3,198,428'
+}];
+
 var templateDir = './templates/';
 
 var header = {};
@@ -160,26 +209,97 @@ header.init = function() {
     header.loaded();
   });
 }
-header.loaded = function() {
-  var path = window.location.pathname;
-  if (/browse.html/.test(path) || /game-details.html/.test(path) || /game-details/.test(path) || /search-results/.test(path)) { 
-    $('header .secondary-level .tab:eq(4)').addClass('active');
+
+/* Scrolling */
+
+var pkg = {};
+pkg.drag = function(el,areaW,parW) {
+  var 
+    scrPos      = el.position().left - 24,
+    scrollable  = el.closest('.package').find('.scrollable'),
+    shadowLeft  = el.closest('.package').find('.shadow.left'),
+    shadowRight = el.closest('.package').find('.shadow.right'),
+    percent     = (scrPos*(areaW/parW))/100;
+  scrollable.css({left: -(scrPos*(areaW/parW))});
+  shadowLeft.css('opacity',percent);
+  shadowRight.css('opacity',1-percent);
+}
+pkg.scrollInit = function() {
+  $('.scroll-bar').each(function(){
+    if ($(this).closest('.package').size() > 0) {
+      var scrollable = $(this).closest('.package').find('.scrollable');
+    }
+    if ($(this).closest('.media-overview').size() > 0) {
+      var scrollable = $(this).closest('.media-overview').find('.scrollable');
+    }
+    var scrollbar = $(this).closest('.scroll'),
+        parW = scrollable.width()-2,
+        areaW = scrollbar.width(),
+        scrW = parW / (areaW/parW);
+    $(this).css('width',areaW/parW*areaW)
+    $(this).draggable({
+      axis: 'x',
+      containment: 'parent',
+      drag: function() {
+        pkg.drag($(this),areaW,parW);
+      }
+    });
+  });
+}
+
+templateFunction.packageScroll = function(element) {
+  var 
+    container  = element.find('.scroll'),
+    scrW       = parW / (areaW/parW),
+    scrollable = element.find('.scrollable'),
+    miniW      = scrollable.find('.mini-item').outerWidth(true)+20,
+    scrollableW;
+
+  scrollableW = miniW*scrollable.find('.mini-item').size();
+  console.log(scrollableW);
+  scrollable.css('width',scrollableW);
+  var
+    parW       = scrollable.width()-2,
+    areaW      = scrollable.width();
+
+  function drag(el,areaW,parW) {
+    var 
+      scrPos      = el.position().left - 24,
+      scrollable  = el.closest('.package').find('.scrollable'),
+      shadowLeft  = el.closest('.package').find('.shadow.left'),
+      shadowRight = el.closest('.package').find('.shadow.right'),
+      percent     = (scrPos*(areaW/parW))/100;
+    scrollable.css({left: -(scrPos*(areaW/parW))});
+    shadowLeft.css('opacity',percent);
+    shadowRight.css('opacity',1-percent);
   }
-  if (/trailers.html/.test(path)) {
-    $('header .secondary-level .tab:eq(1)').addClass('active'); 
-  }
-  if (!/.html/.test(path)) {
-    $('header .secondary-level .tab:eq(0)').addClass('active');
-  }
+  element.find('.scroll-bar').draggable({
+    axis: 'x',
+    containment:'parent',
+    drag: function() {
+      drag($(this),areaW,parW)
+    }
+  });
+}
+
+templateFunction.headerLoaded = function() {
   var signIn = $('#status .sign-in');
   signIn.find('.guest').click(function(event){
     signIn.find('.user-popup').toggleClass('visible');
     signIn.find('.user-popup .login').addClass('visible');
     event.stopPropagation();
   });
+  signIn.find('#register').on('click',function() {
+    $(this).closest('.screen').removeClass('visible');
+    $(this).closest('.user-control').find('.register.screen').addClass('visible');
+  });
+  signIn.find('[name="register"]').on('click',function() {
+    window.location = 'registration.html';
+  });
 
   var account = $('#status .account');
   account.find('.user').on('click',function(event){
+    $('.popup').removeClass('visible');
     account.find('.user-popup').toggleClass('visible');
     account.find('.user-popup .login').addClass('visible');
     event.stopPropagation();
@@ -190,12 +310,14 @@ header.loaded = function() {
 
   var cart = $('#status .cart')
   $('#open-cart').click(function(event){
+    $('.popup,.user-popup').removeClass('visible');
     cart.find('.cart-popup').toggleClass('visible');
     event.stopPropagation();
   });
 
   var wishlist = $('#status .wishlist')
   $('#open-wishlist').click(function(event){
+    $('.popup,.user-popup').removeClass('visible');
     wishlist.find('.popup').toggleClass('visible');
     event.stopPropagation();
   });
@@ -230,18 +352,58 @@ header.loaded = function() {
     event.stopPropagation();
   });
 }
-var footer = {};
-footer.init = function() {
-  var obj = $('<footer></footer>');
-  obj.load(templateDir + 'footer.html',function(){
-    $('div[template="footer"]').replaceWith(obj);
+
+function uiBind(element) {
+  element.find('.checkbox').on('click',function(){ $(this).toggleClass('checked'); });
+  element.find('.selector').on('click',function(){ $(this).toggleClass('selected'); });
+  element.find('.switch .btn').on('click',function(){ $(this).parent().find('.btn').toggleClass('active'); });
+  element.find('.squareBtn').on('click',function(){ $(this).toggleClass('active'); });
+}
+templateFunction.asideScroll = function(aside) {
+  var clear = function() {
+    aside.removeClass('aside-scroll');
+    aside.removeAttr('scrolltop');
+  }
+  function scrolling(aside) {
+    var scroll = $(window).scrollTop(),
+        asideTop  = aside.offset().top - 12;
+    if (scroll > asideTop && !aside.hasClass('aside-scroll')) {
+      aside.addClass('aside-scroll');
+      aside.attr('scrolltop',asideTop);
+    }
+    if (scroll < aside.attr('scrolltop')) {
+      clear();
+    }
+  }
+  $(window).on('scroll',function(){
+    if (aside.closest('.screen').size() > 0) {
+      if (aside.closest('.screen').hasClass('visible')) {
+        scrolling(aside);
+      }
+      else { clear(); }
+    }
+    else {
+      scrolling(aside);
+    }
+  });
+  uiBind(aside);
+}
+
+templateFunction.lockerInfo = function(item) {
+  item.find('.info.popup').on('mouseleave',function(){
+    item.find('.info.popup').removeClass('visible');
+  });
+  item.find('.game-thumb').on('click',function(event){
+    item.parent().find('.visible').removeClass('visible');
+    item.find('.info.popup').addClass('visible');
+    event.stopPropagation();
   });
 }
 
 var main = {};
 main.init = function() {
   $('html').on('click',function(){
-    $('.popup.visible,.menu.visible').each(function(){
+    $('.popup.visible,.menu.visible,.user-popup').each(function(){
       $(this).removeClass('visible');
     });
   });
@@ -267,29 +429,6 @@ main.init = function() {
   $('.selector').on('click',function(){
     $(this).toggleClass('selected');
   });
-  if ($('aside').size() > 0) {
-    $('aside').each(function(){
-      var aside = $(this);
-      var clear = function() {
-        aside.removeClass('aside-scroll');
-        aside.removeAttr('scrolltop');
-      }
-      $(window).on('scroll',function(){
-        if (aside.closest('.screen').hasClass('visible')) {
-          var scroll = $(window).scrollTop(),
-              asideTop  = aside.offset().top - 12;
-          if (scroll > asideTop) {
-            aside.addClass('aside-scroll');
-            aside.attr('scrolltop',asideTop);
-          }
-          if (scroll < aside.attr('scrolltop')) {
-            clear();
-          }
-        }
-        else { clear(); }
-      });
-    });
-  }
   $('#game-details .switch .btn').on('click',function(){
     var id = $(this).attr('id');
     function clear() { $('.screen.visible').removeClass('visible'); }
@@ -375,50 +514,18 @@ main.init = function() {
   $('.checkbox[name="same-as-shipping"]').on('click',function(){
     $('#billing-address-toggle-container').toggleClass('visible');
   });
-}
-
-/* Scrolling */
-
-var pkg = {};
-pkg.drag = function(el,areaW,parW) {
-  var scrPos = el.position().left - 24;
-  var scrollable = el.closest('.package').find('.scrollable');
-  scrollable.css({left: -(scrPos*(areaW/parW))});
-  var shadowLeft = el.closest('.package').find('.shadow.left');
-  var shadowRight = el.closest('.package').find('.shadow.right');
-  var percent = (scrPos*(areaW/parW))/100;
-  shadowLeft.css('opacity',percent);
-  shadowRight.css('opacity',1-percent);
-}
-pkg.scrollInit = function() {
-  $('.scroll-bar').each(function(){
-    if ($(this).closest('.package').size() > 0) {
-      var scrollable = $(this).closest('.package').find('.scrollable');
-    }
-    if ($(this).closest('.media-overview').size() > 0) {
-      var scrollable = $(this).closest('.media-overview').find('.scrollable');
-    }
-    var scrollbar = $(this).closest('.scroll'),
-        parW = scrollable.width()-2,
-        areaW = scrollbar.width(),
-        scrW = parW / (areaW/parW);
-    $(this).css('width',areaW/parW*areaW)
-    $(this).draggable({
-      axis: 'x',
-      containment: 'parent',
-      drag: function() {
-        pkg.drag($(this),areaW,parW);
-      }
-    });
+  $('.radio').on('click',function(event){
+    var group = $(this).attr('group');
+    $('.radio[group="' + group + '"]').removeClass('checked');
+    $(this).addClass('checked');
+    event.stopPropagation();
   });
 }
+
 function spinner() {
   $('.spinner').each(function(){
     var spinner = $(this);
     var delay = 90;
-    /* Start the animation */
-    /* Animate each frame */
-    /* Loop animation when done */
     function animate() {
       if (spinner.attr('frame')) {
         var i = parseInt(spinner.attr('frame'))+1;
@@ -433,45 +540,8 @@ function spinner() {
   });
 }
 
-/* Ugly prototype stuff */
-function itemTemplate() {
-  var templateFile = './templates/items.html';
-  var templateData = $('<div></div>');
-  function runTemplate(element,limit) {
-    $('div[' + element + ']').each(function(n){
-      var templateRef = $(this);
-      var templateName = '[template="' + $(this).attr('template') + '"]';
-      var templatePre  = templateData.find(templateName);
-      var keys         = itemDB[$(this).attr('obj')];
-      for (var i=0;i<keys.length;i++) {
-        if (typeof limit != 'undefined') {
-          if (i < limit) {
-            template.process({'template':templatePre,'keys':keys[i],'element':templateRef});
-          }
-        }
-        else {
-          template.process({'template':templatePre,'keys':keys[i],'element':templateRef});
-        }
-      }
-    });
-    $('div[' + element + ']').remove();
-  }
-  templateData.load(templateFile,function(){
-    runTemplate('feature-tile',2);
-    runTemplate('single-tile',3);
-    runTemplate('package-tile');
-    runTemplate('package-list');
-    runTemplate('single-list');
-    runTemplate('single-locker');
-    runTemplate('package-locker');
-  });
-}
-
 $(function() {
-  header.init();
   main.init();
-  footer.init();
   pkg.scrollInit()
   spinner();
-  itemTemplate();
 });

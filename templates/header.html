@@ -1,196 +1,200 @@
-<div class="container-950">
-  <h1 class="logo">NetGames</h1>
-  <div id="status" class="logged-in">
-    <div class="cart">
-      <div class="btn green" id="open-cart"><div class="icon cart"></div>Cart (2)<div class="arrow"></div></div>
-      <div class="cart-popup popup"> <!-- Add 'visible' class to see it -->
-        <div class="tab"></div>
-        <div class="container"> <!-- Add edit class for it to be editable -->
-          <div class="switch col-2">
-            <div class="btn active" id="mini-view-cart">View</div>
-            <div class="btn" id="mini-edit-cart">Edit</div>
-          </div>
-          <hr>
-          <div class="item-container">
-            <div class="game-thumb small">
-              <img src="./img/game-thumb_sims3-generations-small.png">
-            </div>
-            <h1>The Sims 3: Generations</h1>
-            <h2 class="cost-ea">$19.99ea</h2>
-            <h2 class="cost">$19.99</h2>
-            <h2 class="qty">Quantity: 1</h2>
-            <input type="text" class="edit" value="1">
-            <h2 class="os default"><span class="icon windows"></span>Windows</h2>
-            <div class="switch col-2 edit">
-              <div class="btn active"><div class="icon windows"></div></div>
-              <div class="btn"><div class="icon osx"></div></div>
-            </div>
-            <div class="btn-delete"></div>
-          </div>
-          <div class="item-container">
-            <div class="game-thumb small">
-              <img src="./img/game-thumb_mario-small.png">
-            </div>
-            <h1>New Super Mario Bros U</h1>
-            <h2 class="cost-ea">$19.99ea</h2>
-            <h2 class="cost">$19.99</h2>
-            <h2 class="qty">Quantity: 1</h2>
-            <input type="text" class="edit" value="1">
-            <h2 class="os default"><span class="icon windows"></span>Windows</h2>
-            <div class="switch col-2 edit">
-              <div class="btn active"><div class="icon windows"></div></div>
-              <div class="btn"><div class="icon osx"></div></div>
-            </div>
-            <div class="btn-delete"></div>
-          </div>
-          <hr>
-          <h3 class="subtotal">Subtotal: <span class="amount">$73.97</span></h3>
-          <button class="green">Checkout</button>
-        </div>
-      </div>
-    </div>
-    <div class="seperator"></div>
-    <div class="wishlist">
-      <div class="btn indigo" id="open-wishlist"><div class="icon wish"></div>Wishlist (2)<div class="arrow"></div></div>
-      <div class="wishlist-popup popup"> <!-- Add 'visible' class to see it -->
-        <div class="tab"></div>
-        <div class="container"> <!-- Add edit class for it to be editable -->
-          <div class="item-container">
-            <div class="game-thumb small">
-              <img src="./img/game-thumb_sims3-generations-small.png">
-            </div>
-            <h1>The Sims 3: Generations</h1>
-            <h2 class="cost-ea">$19.99</h2>
-            <h2 class="qty">Quantity: </h2>
-            <input type="text" class="edit" value="1">
-            <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
-            <div class="switch col-2 edit">
-              <div class="btn active"><div class="icon windows"></div></div>
-              <div class="btn"><div class="icon osx"></div></div>
-            </div>
-            <div class="btn-delete"></div>
-          </div>
-          <div class="item-container">
-            <div class="game-thumb small">
-              <img src="./img/game-thumb_mario-small.png">
-            </div>
-            <h1>New Super Mario Bros U</h1>
-            <h2 class="cost-ea">$19.99</h2>
-            <h2 class="qty">Quantity: </h2>
-            <input type="text" class="edit" value="1">
-            <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
-            <div class="switch col-2 edit">
-              <div class="btn"><div class="icon windows"></div></div>
-              <div class="btn active"><div class="icon osx"></div></div>
-            </div>
-            <div class="btn-delete"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="seperator"></div>
-    <div class="locker">
-      <div class="btn blue"><div class="icon locker"></div>Locker (83)<div class="arrow"></div></div>
-    </div>
-    <div class="seperator"></div>
-    <div class="account user-control">
-      <p class="user">Sean J MacIsaac <span class="arrow"></span></p>
-      <div class="user-popup">  <!-- Add 'visible' class to see it -->
-        <div class="tab"><div class="arrow"></div></div>
-        <div class="container">
-          <ul>
-            <li><a href="/account"><span class="icon account"></span>My Account</a></li>
-            <li><a><span class="icon logout"></span>Logout</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="sign-in user-control">
-      <p class="guest">Sign in <span class="arrow"></span></p>
-      <div class="user-popup"> <!-- Add 'visible' class to make it seen  -->
-        <div class="tab"><div class="arrow"></div></div>
-        <div class="container">
-          <!-- Login -->
-          <div class="login screen visible"> <!-- Add 'error' Class To View The Error and 'visible' to make it seen  -->
-            <input name="email" type="text" placeholder="Email Address">
-            <input name="password" type="password" placeholder="Password">
-            <button name="sign-in" class="silver">Sign in</button>
-            <hr>
-            <div class="register default">
-              <label for="register">Actually, I am a new customer</label>
-              <button class="indigo" id="register">Register</button>
-            </div>
-            <div class="error">
-              <label for="reset-password">Incorrect password</label>
-              <button class="red" id="reset-password">Reset Password</button>
-            </div>
-          </div>
-          <!-- Register -->
-          <div class="register screen">  <!-- Add 'error' Class To View The Error and 'visible' to make it seen -->
-            <input class="error" name="email" type="text" placeholder="Email Address">
-            <input name="password" type="text" placeholder="Password">
-            <input name="password-confirm" type="text" placeholder="Confirm Password">
-            <button name="register" class="indigo">Register</button>
-            <hr>
-            <div class="reset default">
-              <label for="reset-password-confirm">Registration info will be e-mailed</label>
-            </div>
-            <div class="error">
-              <label for="error-register">The Email address you supplied is not a valid e-mail.</label>
-            </div>
-          </div>
-          <!-- Reset Password -->
-          <div class="reset screen"> <!-- Add 'error' Class To View The Error and 'visible' to make it seen  -->
-            <input name="email" type="text" placeholder="Email Address">
-            <button name="reset" class="silver">Reset</button>
-            <hr>
-            <div class="reset default">
-              <label for="reset-password-confirm">We will send you a link to your Email address to confirm the resetting of the password</label>
-              <button class="red">Cancel</button>
-            </div>
-            <div class="error">
-              <label for="error-register">The Email address you supplied does not exist in your database. Try again or create an account.</label>
-              <button class="indigo" id="error-register">Register</button>
-              <button class="red">Cancel</button>
-            </div>
-          </div>
-        </div>
-      </div> <!-- End User Popup -->
-    </div> 
-  </div> <!-- End status -->
-</div><!-- <div class="container-950"> -->
-<nav>
-  <div class="top-level">
+<div template="header">
+  <header>
     <div class="container-950">
-      <div class="tab active"><h2><span class="icon core"></span>Core</h2></div>
-      <div class="tab"><h2><span class="icon mobile"></span>Mobile</h2></div>
-      <div class="tab"><h2><span class="icon casual"></span>Casual</h2></div>
-      <div class="search-container">
-        <input type="text" placeholder="Search">
-        <div class="icon search"></div>
+      <h1 class="logo">NetGames</h1>
+      <div id="status" class="logged-in">
+        <div class="cart">
+          <div class="btn green" id="open-cart"><div class="icon cart"></div>Cart (2)<div class="arrow"></div></div>
+          <div class="cart-popup popup"> <!-- Add 'visible' class to see it -->
+            <div class="tab"></div>
+            <div class="container"> <!-- Add edit class for it to be editable -->
+              <div class="switch col-2">
+                <div class="btn active" id="mini-view-cart">View</div>
+                <div class="btn" id="mini-edit-cart">Edit</div>
+              </div>
+              <hr>
+              <div class="item-container">
+                <div class="game-thumb small">
+                  <img src="./img/game-thumb_sims3-generations-small.png">
+                </div>
+                <h1>The Sims 3: Generations</h1>
+                <h2 class="cost-ea">$19.99ea</h2>
+                <h2 class="cost">$19.99</h2>
+                <h2 class="qty">Quantity: 1</h2>
+                <input type="text" class="edit" value="1">
+                <h2 class="os default"><span class="icon windows"></span>Windows</h2>
+                <div class="switch col-2 edit">
+                  <div class="btn active"><div class="icon windows"></div></div>
+                  <div class="btn"><div class="icon osx"></div></div>
+                </div>
+                <div class="btn-delete"></div>
+              </div>
+              <div class="item-container">
+                <div class="game-thumb small">
+                  <img src="./img/game-thumb_mario-small.png">
+                </div>
+                <h1>New Super Mario Bros U</h1>
+                <h2 class="cost-ea">$19.99ea</h2>
+                <h2 class="cost">$19.99</h2>
+                <h2 class="qty">Quantity: 1</h2>
+                <input type="text" class="edit" value="1">
+                <h2 class="os default"><span class="icon windows"></span>Windows</h2>
+                <div class="switch col-2 edit">
+                  <div class="btn active"><div class="icon windows"></div></div>
+                  <div class="btn"><div class="icon osx"></div></div>
+                </div>
+                <div class="btn-delete"></div>
+              </div>
+              <hr>
+              <h3 class="subtotal">Subtotal: <span class="amount">$73.97</span></h3>
+              <a href="./checkout.html" class="btn green" id="goto-checkout">Checkout</a>
+            </div>
+          </div>
+        </div>
+        <div class="seperator"></div>
+        <div class="wishlist">
+          <div class="btn indigo" id="open-wishlist"><div class="icon wish"></div>Wishlist (2)<div class="arrow"></div></div>
+          <div class="wishlist-popup popup"> <!-- Add 'visible' class to see it -->
+            <div class="tab"></div>
+            <div class="container"> <!-- Add edit class for it to be editable -->
+              <div class="item-container">
+                <div class="game-thumb small">
+                  <img src="./img/game-thumb_sims3-generations-small.png">
+                </div>
+                <h1>The Sims 3: Generations</h1>
+                <h2 class="cost-ea">$19.99</h2>
+                <h2 class="qty">Quantity: </h2>
+                <input type="text" class="edit" value="1">
+                <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+                <div class="switch col-2 edit">
+                  <div class="btn active"><div class="icon windows"></div></div>
+                  <div class="btn"><div class="icon osx"></div></div>
+                </div>
+                <div class="btn-delete"></div>
+              </div>
+              <div class="item-container">
+                <div class="game-thumb small">
+                  <img src="./img/game-thumb_mario-small.png">
+                </div>
+                <h1>New Super Mario Bros U</h1>
+                <h2 class="cost-ea">$19.99</h2>
+                <h2 class="qty">Quantity: </h2>
+                <input type="text" class="edit" value="1">
+                <div class="btn green add-to-cart"><div class="icon add-to-cart"></div></div>
+                <div class="switch col-2 edit">
+                  <div class="btn"><div class="icon windows"></div></div>
+                  <div class="btn active"><div class="icon osx"></div></div>
+                </div>
+                <div class="btn-delete"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="seperator"></div>
+        <div class="locker">
+          <a href="./locker.html" class="btn blue"><span class="icon locker"></span>Locker (83)<span class="arrow"></span></a>
+        </div>
+        <div class="seperator"></div>
+        <div class="account user-control">
+          <p class="user">Sean J MacIsaac <span class="arrow"></span></p>
+          <div class="user-popup">  <!-- Add 'visible' class to see it -->
+            <div class="tab"><div class="arrow"></div></div>
+            <div class="container">
+              <ul>
+                <li><a href="./my-account.html"><span class="icon account"></span>My Account</a></li>
+                <li><a><span class="icon logout"></span>Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="sign-in user-control">
+          <p class="guest">Sign in <span class="arrow"></span></p>
+          <div class="user-popup"> <!-- Add 'visible' class to make it seen  -->
+            <div class="tab"><div class="arrow"></div></div>
+            <div class="container">
+              <!-- Login -->
+              <div class="login screen visible"> <!-- Add 'error' Class To View The Error and 'visible' to make it seen  -->
+                <input name="email" type="text" placeholder="Email Address">
+                <input name="password" type="password" placeholder="Password">
+                <button name="sign-in" class="silver">Sign in</button>
+                <hr>
+                <div class="register default">
+                  <label for="register">Actually, I am a new customer</label>
+                  <button class="indigo" id="register">Register</button>
+                </div>
+                <div class="error">
+                  <label for="reset-password">Incorrect password</label>
+                  <button class="red" id="reset-password">Reset Password</button>
+                </div>
+              </div>
+              <!-- Register -->
+              <div class="register screen">  <!-- Add 'error' Class To View The Error and 'visible' to make it seen -->
+                <input class="error" name="email" type="text" placeholder="Email Address">
+                <input name="password" type="text" placeholder="Password">
+                <input name="password-confirm" type="text" placeholder="Confirm Password">
+                <button name="register" class="indigo">Register</button>
+                <hr>
+                <div class="reset default">
+                  <label for="reset-password-confirm">Registration info will be e-mailed</label>
+                </div>
+                <div class="error">
+                  <label for="error-register">The Email address you supplied is not a valid e-mail.</label>
+                </div>
+              </div>
+              <!-- Reset Password -->
+              <div class="reset screen"> <!-- Add 'error' Class To View The Error and 'visible' to make it seen  -->
+                <input name="email" type="text" placeholder="Email Address">
+                <button name="reset" class="silver">Reset</button>
+                <hr>
+                <div class="reset default">
+                  <label for="reset-password-confirm">We will send you a link to your Email address to confirm the resetting of the password</label>
+                  <button class="red">Cancel</button>
+                </div>
+                <div class="error">
+                  <label for="error-register">The Email address you supplied does not exist in your database. Try again or create an account.</label>
+                  <button class="indigo" id="error-register">Register</button>
+                  <button class="red">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End User Popup -->
+        </div> 
+      </div> <!-- End status -->
+    </div><!-- <div class="container-950"> -->
+    <nav>
+      <div class="top-level">
+        <div class="container-950">
+          <a href="./" class="tab core"><span class="container"><span class="icon core"></span>Core</span></a>
+          <a href="./mobile.html" class="tab mobile"><span class="container"><span class="icon mobile"></span>Mobile</span></a>
+          <a href="./casual.html" class="tab casual"><span class="container"><span class="icon casual"></span>Casual</span></a>
+          <div class="search-container">
+            <input type="text" placeholder="Search">
+            <div class="icon search"></div>
+          </div>
+          <a href="./search-results.html" class="btn indigo search">Go</a>
+        </div>
       </div>
-      <button class="indigo">Go</button>
-    </div>
-  </div>
-  <div class="container-950">
-    <div class="secondary-level">
-      <div class="tab"><h2><span class="icon featured"></span>Featured</h2></div>
-      <div class="tab"><h2><span class="icon trailers"></span>Trailers</h2></div>
-      <div class="tab"><h2><span class="icon new-releases"></span>New Releases</h2></div>
-      <div class="tab"><h2><span class="icon hot-sellers"></span>Hot Sellers</h2></div>
-      <div class="tab">
-        <h2><span class="icon browse"></span>Browse<span class="arrow"></span></h2>
-        <div class="menu"> <!-- Add class 'visible' for it to be seen -->
-          <div class="tab"><div class="arrow"></div></div>
-          <div class="container">
-            <ul>
-              <li><a href="/action">Action</a></li>
-              <li><a href="/strategy">Strategy</a></li>
-              <li><a href="/role-playing">Role Playing</a></li>
+      <div class="container-950">
+        <div class="secondary-level">
+          <a href="./" class="tab featured"><span class="container"><span class="icon featured"></span>Featured</span></a>
+          <a href="./trailers.html" class="tab trailers"><span class="container"><span class="icon trailers"></span>Trailers</span></a>
+          <a href="./new-releases.html" class="tab new-releases"><span class="container"><span class="icon new-releases"></span>New Releases</span></a>
+          <a href="./hot-sellers.html" class="tab hot-sellers"><span class="container"><span class="icon hot-sellers"></span>Hot Sellers</span></a>
+          <div class="tab browse">
+            <span class="container"><span class="icon browse"></span>Browse<span class="arrow"></span></span>
+            <span class="menu"> <!-- Add class 'visible' for it to be seen -->
+              <span class="tab"><span class="arrow"></span></span>
+              <span class="container">
+                <ul>
+                  <li><a href="./browse.html">Action</a></li>
+                  <li><a href="./browse.html">Strategy</a></li>
+                  <li><a href="./browse.html">Role Playing</a></li>
+                </ul>
+              </span>
             </ul>
           </div>
-        </ul>
+        </div>
       </div>
-    </div>
-  </div>
-</nav>
+    </nav>
+  </header>
+</div>

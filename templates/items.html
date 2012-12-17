@@ -2,7 +2,7 @@
   <div class="item-container col-2 single">
     <div class="single-container">
       <div class="heading">
-        <h1><a href="">{{name}}</a></h1>
+        <h1><a href="./game-details-single.html">{{name}}</a></h1>
         <div class="platform">
           <div class="icon osx {{osx}}"></div>
           <div class="icon windows {{windows}}"></div>
@@ -31,7 +31,7 @@
   <div class="item-container col-3 single">
     <div class="single-container">
       <div class="heading">
-        <h1><a href="">{{name}}</a></h1>
+        <h1><a href="./game-details-single.html">{{name}}</a></h1>
         <div class="platform">
           <div class="icon osx {{osx}}"></div>
           <div class="icon windows {{windows}}"></div>
@@ -60,7 +60,7 @@
   <div class="item-container col-2 package">
     <div class="package-container">
       <div class="heading">
-        <h1><a href="">{{name}}</a></h1>
+        <h1><a href="./game-details-package.html">{{name}}</a></h1>
         <div class="platform">
           <div class="icon osx {{osx}}"></div>
           <div class="icon windows {{windows}}"></div>
@@ -111,7 +111,7 @@
   <div class="item-container package">
     <div class="package-container">
       <div class="heading">
-        <h1><a href="">{{name}}</a></h1>
+        <h1><a href="./game-details-package.html">{{name}}</a></h1>
         <div class="platform">
           <div class="icon osx {{osx}}"></div>
           <div class="icon windows {{windows}}"></div>
@@ -166,7 +166,7 @@
         <img src="{{thumb-med}}">
       </div>
       <div class="heading">
-        <h1><a href="">{{name}}</a></h1>
+        <h1><a href="./game-details-single.html">{{name}}</a></h1>
         <div class="platform">
           <div class="icon osx {{osx}}"></div>
           <div class="icon windows {{windows}}"></div>
@@ -192,12 +192,12 @@
       <div class="tab"><div class="icon images"></div></div>
       <div class="tab available"><div class="icon demo"></div></div>
     </div>
-    <div class="package-available"><a href="">Available in a package</a></div>
+    <div class="package-{{package}}"><a href="">Available in a package</a></div>
   </div> <!-- <div class="item-container"> -->
   <hr>
 </div>
 
-<div template="single-locker" function="infoDisplay">
+<div template="single-locker">
   <div class="item-container">
     <div class="game-thumb medium">
       <img src="{{thumb-med}}">
@@ -272,4 +272,73 @@
     </div>
     <div class="package-count">{{package-count}}</div>
   </div>
+</div>
+
+<div template="trailer-col-2">
+  <div class="item-container col-2 trailer">
+    <div class="trailer-container">
+      <img src="./img/trailer-thumb_{{thumb}}-featured.png">
+      <div class="info">
+        <p>{{time}}</p>
+        <div class="icon {{resolution}} active"></div>
+      </div>
+    </div>
+    <h1><a href="">{{name}}</a></h1>
+    <time>{{submitted}}</time>
+    <div class="rating-container rating-{{rating}}"> <!-- 4.5 = 45, 4 = 4 etc... -->
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <p>({{rating-count}})</p>
+    </div>
+  </div>
+</div>
+
+<div template="trailer-col-3">
+  <div class="item-container col-3 trailer">
+    <div class="trailer-container">
+      <img src="./img/trailer-thumb_{{thumb}}-medium.png">
+      <div class="info">
+        <p>{{time}}</p>
+        <div class="icon {{resolution}} active"></div>
+      </div>
+    </div>
+    <h1><a href="">{{name}}</a></h1>
+    <div class="rating-container rating-{{rating}}"> <!-- 4.5 = 45, 4 = 4 etc... -->
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <p>({{rating-count}})</p>
+    </div>
+    <time>{{submitted}}</time>
+  </div>
+</div>
+
+<div template="trailer-container">
+  <div class="item-container trailer">
+    <div class="trailer-container">
+      <img src="./img/trailer-thumb_{{thumb}}-medium.png">
+      <div class="info">
+        <p>{{time}}</p>
+        <div class="icon {{resolution}} active"></div>
+      </div>
+    </div>
+    <h1><a href="">{{name}}</a></h1>
+    <div class="rating-container rating-{{rating}}"> <!-- 4.5 = 45, 4 = 4 etc... -->
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <p>({{rating-count}})</p>
+    </div>
+    <time>{{submitted}}</time>
+    <hr>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Stan ...</p>
+  </div>
+  <hr>
 </div>

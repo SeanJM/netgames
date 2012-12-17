@@ -4,11 +4,11 @@
   margin-top: 24px;
 }
   .trailer-container {
+    position     : relative;
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
+    overflow     : hidden;
+    box-shadow   : 0 2px 6px rgba(0,0,0,0.2);
+    cursor       : pointer;
   }
   .col-2 .trailer-container {
     height: 264px;
@@ -20,20 +20,20 @@
     border-radius: 10px;
   }
   .trailer-container .info {
-    position: absolute;
-    right: 12px;
-    bottom: 12px;
-    background: rgba(255,255,255,0.88);
-    width: 89px;
-    height: 36px;
+    position     : absolute;
+    right        : 12px;
+    bottom       : 12px;
+    width        : 89px;
+    height       : 36px;
     border-radius: 6px;
+    background   : rgba(255,255,255,0.88);
   }
     .trailer-container .info p {
-      line-height: 38px;
-      float: left;
+      float      : left;
       margin-left: 9px;
-      font-size: 14px;
-      color: #3F3F3F; 
+      font-size  : 14px;
+      line-height: 38px;
+      color      : #3F3F3F;
     }
     .trailer-container .info .icon {
       float: right;
@@ -42,10 +42,14 @@
 .trailer h1 {
   float      : left;
   width      : 100%;
-  margin     : 12px 0 0 12px;
+  margin     : 6px 0 0 12px;
   font-size  : 15px;
   font-weight: 600;
   line-height: 30px;
+}
+.trailer.col-2 h1,
+.trailer.col-3 h1 {
+  margin-top: 12px;
 }
 .trailer time {
   position   : absolute;
@@ -55,8 +59,15 @@
   line-height: 24px;
   color      : #707070;
 }
+.trailer .col-3 time {
+  float      : left;
+  position   : inherit;
+  width      : 100%;
+  margin-top : 5px;
+  text-indent: 24px;
+}
   .trailer .rating-container {
-    margin-top: 6px;
+    margin-top: 3px;
   }
   .trailer .rating-container p {
     left: 130px;
@@ -69,35 +80,35 @@
     width: 100%;
   }
   .item-list .trailer-container {
-    width: 300px;
+    float : left;
+    width : 300px;
     height: 164px;
-    float: left;
   }
     .item-list .trailer h1 {
-      width: 286px;
-      float: left;
+      float      : left;
+      width      : 286px;
       margin-left: 24px;
     }
     .item-list .trailer .rating-container {
-      float: left;
-      margin-left: 24px;
+      float      : left;
+      margin-left: 21px;
     }
     .item-list .trailer time {
-      float: left;
+      float   : left;
       position: inherit;
-      margin-left: 24px;
-      right: 0;
+      right   : 0;
+      margin  : 7px 0 0 24px;
     }
     #main .item-list .trailer hr {
-      width: 292px;
-      float: right;
+      float              : right;
+      clear              : none;
+      width              : 292px;
+      margin             : 12px 0;
       background-position: 0 -4px;
-      clear: none;
-      margin: 12px 0;
     }
     .item-list .trailer hr + p {
-      float: right;
-      width: 292px;
+      float    : right;
+      width    : 292px;
       font-size: 14px;
-      color: #707070;
+      color    : #707070;
     }

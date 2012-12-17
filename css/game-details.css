@@ -66,51 +66,51 @@
     }
       #game-details .mini-overview .row p,
       #game-details .about-overview .row p {
-        float: left;
-        width: 32%;
+        float      : left;
+        width      : 32%;
+        font-size  : 15px;
         line-height: 36px;
-        font-size: 15px;
-        color: #707070;
+        color      : #707070;
       }
       #game-details .mini-overview .row p + p,
       #game-details .about-overview .row p + p {
-        float: right;
-        width: 68%;
+        float     : right;
+        width     : 68%;
         text-align: right;
       }
       #game-details .mini-overview .row.list-price p + p {
         text-decoration: line-through;;
       }
       #game-details .mini-overview .row.price p + p {
-        color: #961B1B;
-        font-size: 22px;
+        font-size     : 22px;
         letter-spacing: -1px;
+        color         : #961B1B;
       }
       #game-details .mini-overview .row.cart p {
         width: 50px;
       }
       #game-details .mini-overview .row.cart input[type="text"] {
-        float: left;
-        width: 43px;
-        padding: 7px 0 9px;
-        text-align: center;
-        font-size: 15px;
+        float        : left;
+        width        : 43px;
+        padding      : 7px 0 9px;
         border-radius: 8px;
+        text-align   : center;
+        font-size    : 15px;
       }
       #game-details .mini-overview .row.cart .btn {
-        float: right;
-        width: 137px;
+        float         : right;
+        width         : 137px;
         letter-spacing: -1px;
       }
       #game-details .overview hr {
+        float              : left;
+        margin             : 18px 0 24px;
         background-position: 0 -4px;
-        margin: 18px 0 24px;
-        float: left;
       }
       #game-details .mini-overview hr + .btn,
       #game-details .about-overview hr + .btn {
-        float: left;
-        width: 100%;
+        float      : left;
+        width      : 100%;
         text-indent: 20px;
       }
         #game-details .mini-overview hr + .btn .icon,
@@ -119,8 +119,8 @@
         }
 /* Media */
   .media-overview {
-    float: right;
-    width: 570px;
+    float : right;
+    width : 570px;
     margin: 0 0 24px 0;
   }
     .media-overview .scroll {
@@ -131,19 +131,19 @@
         width: 80px;
       }
     .media-overview .media-gallery-container {
-      margin: 14px 0 0;
-      width: 570px;
+      width   : 570px;
+      margin  : 14px 0 0;
       overflow: hidden;
     }
     .media-overview .media-gallery-container .scrollable {
       width: 1000px;
     }
       .media-overview .media-gallery-container .scrollable .tab {
-        float: left;
-        width: 118px;
-        height: 110px;
+        float              : left;
+        position           : relative;
+        width              : 118px;
+        height             : 110px;
         background-position: -521px 0;
-        position: relative;
       }
       .media-overview .media-gallery-container .scrollable .tab.active {
         background-position: -521px -110px;
@@ -158,17 +158,18 @@
         }
     /* Media Indicator (icon) # */
     #game-details .media-overview .media {
-      float: left;
-      width: 160px;
+      float     : left;
+      width     : 160px;
+      margin-top: 4px;
     }
     #game-details .media-overview .media .icon {
       float: left;
     }
     #game-details .media-overview .media .icon + p {
-      float: left;
+      float      : left;
+      margin     : 0 10px;
       line-height: 32px;
-      margin: 0 10px;
-      color: #707070;
+      color      : #707070;
     }
     #game-details .media-overview .media .icon + p + .icon {
       margin: 0 0 0 10px;
@@ -182,11 +183,11 @@
       margin: 0 0 0 12px;
     }
     #game-details .media-overview .social p {
-      float: left;
+      float      : left;
+      margin     : 0 10px 0 0;
+      font-size  : 16px;
       line-height: 36px;
-      font-size: 16px;
-      color: #707070;
-      margin: 0 10px 0 0;
+      color      : #707070;
     }
     /* Switch */
     #game-details .switch {
@@ -218,6 +219,7 @@
     position     : relative;
     width        : 100%;
     height       : 53px;
+    margin       : 30px 0 8px;
     border       : 1px solid #D3D3D3;
     border-radius: 6px;
     text-align   : center;
@@ -225,7 +227,6 @@
     line-height  : 53px;
     color        : #707070;
     box-shadow   : 0 3px 7px rgba(0,0,0,0.1);
-    margin: 30px 0 8px;
   }
     #game-details .about-overview .player .icon {
       position: absolute;
@@ -244,9 +245,9 @@
         width: 100%;
       }
         #game-details #about .details .row p {
-          float: left;
+          float      : left;
           line-height: 30px;
-          color: #3F3F3F;
+          color      : #3F3F3F;
         }
         #game-details #about .details .row p + p {
           float     : right;
@@ -264,8 +265,8 @@
         }
         #game-details .screen {
           display: none;
-          width: 100%;
-          float: left;
+          float  : left;
+          width  : 100%;
         }
         #game-details .screen.visible {
           display: block;
@@ -315,7 +316,7 @@
                 text-align: center;
               }
               .review-overview .rating-container + .group-table {
-                margin-top: 24px;
+                margin-top   : 24px;
                 margin-bottom: 24px;
                 border-top   : 1px solid #d3d3d3;
                 border-bottom: 1px solid #d3d3d3;
@@ -336,8 +337,8 @@
       box-shadow: 0 3px 5px rgba(0,0,0,0.12);
     }
       #game-details .comment article.bubble {
-        float   : right;
-        position: relative;
+        float      : right;
+        position   : relative;
         margin-left: 36px;
       }
         #game-details .comment article.bubble > .arrow {
@@ -423,43 +424,43 @@
           }
           /* Comments Only */
           #game-details .comment article.bubble .top h1 {
-            line-height: 16px;
+            float        : left;
+            width        : 100%;
             margin-bottom: 14px;
-            font-size: 16px;
-            width: 100%;
-            float: left;
+            font-size    : 16px;
+            line-height  : 16px;
           }
           #game-details .comment article.bubble .top h1 + time {
-            float: right;
-            position: absolute;
-            right: 95px;
-            top: 20px;
+            float    : right;
+            position : absolute;
+            top      : 20px;
+            right    : 95px;
             font-size: 15px;
-            color: #707070;
+            color    : #707070;
           }
           #game-details .comment article.bubble .top .menu-container {
             position: absolute;
-            right: 18px;
-            top: 18px;
-            width: 150px;
+            top     : 18px;
+            right   : 18px;
+            width   : 150px;
           }
             #game-details .comment article.bubble .top .menu-container .menu {
               left: -30px;
             }
             #game-details .comment article.bubble .top .menu-container .btn {
+              position     : absolute;
+              right        : 30px;
               border-radius: 6px 0 0 6px;
-              position: absolute;
-              right: 30px;
             }
           #game-details .comment article.bubble .top .confirm-menu-container {
             position: absolute;
-            right: 17px;
-            top: 18px;
+            top     : 18px;
+            right   : 17px;
           }
             #game-details .comment article.bubble .top .confirm-menu-container .confirm-menu {
+              top                : 20px;
+              left               : -211px;
               background-position: -253px -252px;
-              left: -211px;
-              top: 20px;
             }
             #game-details .comment article.bubble .top .confirm-menu-container > .btn {
               border-radius: 0 6px 6px 0;
@@ -482,32 +483,20 @@
                   #game-details .comment .comment .comment .comment .comment .comment .comment { width: 600px; }
                     #game-details .comment .comment .comment .comment .comment .comment .comment .comment { width: 550px; }
                       #game-details .comment .comment .comment .comment .comment .comment .comment .comment .comment { width: 500px; }
-        #game-details .comment .comment article.bubble {
-          width: 756px;
-        }
-          #game-details .comment .comment .comment article.bubble {
-            width: 706px;
-          }
-            #game-details .comment .comment .comment .comment article.bubble {
-              width: 656px;
-            }
-              #game-details .comment .comment .comment .comment .comment article.bubble {
-                width: 606px;
-              }
-                #game-details .comment .comment .comment .comment .comment .comment article.bubble {
-                  width: 556px;
-                }
-                  #game-details .comment .comment .comment .comment .comment .comment article.bubble {
-                    width: 506px;
-                  }
-                    #game-details .comment .comment .comment .comment .comment .comment .comment article.bubble {
-                      width: 456px;
-                    }
+                        #game-details .comment .comment .comment .comment .comment .comment .comment .comment .comment .comment { width: 450px; }
+        #game-details .comment .comment article.bubble { width: 756px; }
+          #game-details .comment .comment .comment article.bubble { width: 706px; }
+            #game-details .comment .comment .comment .comment article.bubble { width: 656px; }
+              #game-details .comment .comment .comment .comment .comment article.bubble { width: 606px; }
+                #game-details .comment .comment .comment .comment .comment .comment article.bubble { width: 556px; }
+                  #game-details .comment .comment .comment .comment .comment .comment article.bubble { width: 506px; }
+                    #game-details .comment .comment .comment .comment .comment .comment .comment article.bubble { width: 456px; }
+                      #game-details .comment .comment .comment .comment .comment .comment .comment .comment article.bubble { width: 406px; }
           /* Review only */
           #game-details .comment.review article.bubble .top h1 {
-            line-height: 25px;
             margin-bottom: 14px;
-            font-size  : 22px;
+            font-size    : 22px;
+            line-height  : 25px;
           }
           #game-details .comment.review article.bubble .top h2 {
             float      : left;
@@ -533,13 +522,13 @@
     margin: 0 0 24px;
   }
     #game-details .leave-comment > h1 {
-      font-size: 18px;
+      font-size  : 18px;
       line-height: 22px;
-      color: #707070;
+      color      : #707070;
     }
     #game-details .leave-comment > textarea {
-      float: left;
-      width: 100%;
+      float : left;
+      width : 100%;
       height: 200px;
       margin: 0 0 24px;
     }
@@ -549,35 +538,31 @@
       text-align: center;
     }
 
-    #game-details .leave-comment > .btn.cancel {
-      float: left;
-    }
-    #game-details .leave-comment > button.confirm {
-      float: right;
-    }
+    #game-details .leave-comment > .btn.cancel { float: left; }
+    #game-details .leave-comment > button.confirm { float: right; }
     #game-details .leave-comment .character-count {
-      float: right;
+      float      : right;
+      margin     : 0 24px 0;
+      font-size  : 15px;
       line-height: 36px;
-      margin: 0 24px 0;
-      font-size: 15px;
-      color: #afafaf;
+      color      : #afafaf;
     }
 /* Comment Loading */
 .comment-loading-container {
-  float: left;
-  width: 100%;
-  height: 57px;
+  float        : left;
+  width        : 100%;
+  height       : 57px;
   margin-bottom: 24px;
 }
   .comment-loading-container .comment-loading {
-    width: 57px;
-    height: 57px;
+    position           : relative;
+    width              : 57px;
+    height             : 57px;
+    margin             : auto;
     background-position: 0 -80px;
-    margin: auto;
-    position: relative;
   }
     .comment-loading-container .comment-loading .spinner {
-      top: 14px;
-      left: 18px;
       position: absolute;
+      top     : 14px;
+      left    : 18px;
     }

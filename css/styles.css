@@ -1,50 +1,55 @@
 /* Elements Using the 1PX Sprite */
-button,
 .btn,
-header,
+.group-table .row:hover,
+.menu .container li a:hover,
+.scroll .scroll-bar,
+.scroll,
+.status-line,
+.status-line-container,
+.titlebar,
+article.bubble .bottom,
+button,
 header #status .account .user-popup .container ul li a:hover,
 header nav .top-level .search-container,
-.menu .container li a:hover,
-.scroll,
-.scroll .scroll-bar,
-.titlebar,
-.group-table .row:hover,
-article.bubble .bottom,
-.status-line-container,
-.status-line {
+header {
   background-image: url('../img/sprite_1px.png');
   background-repeat: repeat-x;
 }
 
-header .logo,
-.btn-delete,
-.arrow,
-header nav .top-level .tab,
-header nav .top-level .tab .icon,
-header nav .secondary-level .tab .icon,
-header nav .secondary-level .tab.active,
+#browse header nav .secondary-level > .tab.browse,
 #hero .icon,
-.star,
+#home header nav .secondary-level > .tab.featured,
+#hot-sellers header nav .secondary-level > .tab.hot-sellers,
+#new-releases header nav .secondary-level > .tab.new-releases,
+#trailers header nav .secondary-level > .tab.trailers,
+.arrow,
+.btn-delete,
+.bubble-indicator,
 .carousel-container .controls .left,
 .carousel-container .controls .right,
-footer .logo,
-.package .scrollable-container .shadow,
 .checkbox,
-.slider-container .knob,
-.bubble-indicator,
-.squareBtn,
-.selector,
-.item-container .media .tab.available,
-.package-available,
-.scrollable .tab,
-.play,
 .confirm-menu,
-#filter .flag-container .flag,
-.message .icon,
-.path .icon.indicator,
-.radio,
 .credit-card.icon,
-.icon.order-success {
+.filter .flag-container .flag,
+.icon.order-success,
+.item-container .media .tab.available,
+.message .icon,
+.package .scrollable-container .shadow,
+.package-available,
+.path .icon.indicator,
+.play,
+.radio,
+.scrollable .tab,
+.selector,
+.slider-container .knob,
+.squareBtn,
+.star,
+footer .logo,
+header .logo,
+header nav .secondary-level .tab .icon,
+header nav .secondary-level > .tab:hover,
+header nav .top-level .tab .icon,
+header nav .top-level .tab {
   background-image: url('../img/sprite_main.png');
   position: relative;
 }
@@ -56,10 +61,10 @@ footer .logo,
 }
 .checkbox + p,
 .radio + p {
-  line-height: 24px;
-  font-size: 16px;
-  color: #707070;
   text-indent: 10px;
+  font-size  : 16px;
+  line-height: 24px;
+  color      : #707070;
 }
 .checkbox + p ~ .checkbox,
 .radio + p ~ .radio,
@@ -69,11 +74,11 @@ footer .logo,
 }
 
 .radio {
+  top                : -2px;
+  width              : 18px;
+  height             : 18px;
+  margin             : 6px;
   background-position: -293px -20px;
-  width: 18px;
-  height: 18px;
-  margin: 6px; /* Makes it fit the same box model as the checkbox */
-  top: -2px;
 }
 
 .radio.checked {
@@ -81,58 +86,42 @@ footer .logo,
 }
 
 .titlebar {
+  z-index            : 1;
   position           : relative;
+  top                : -1px;
   height             : 36px;
   border             : 1px solid #3F3F3F;
   border-bottom      : 0;
   border-radius      : 12px 12px 0 0;
   background-position: 0 -740px;
   box-shadow         : inset 0 0 1px rgba(255,255,255,1);
-  z-index: 1;
-  top: -1px;
 }
   .titlebar h1,
   .module .titlebar h1 {
-    font-size: 16px;
+    position   : absolute;
+    width      : 100%;
+    text-indent: 12px;
+    font-size  : 16px;
     font-weight: 400;
     line-height: 36px;
-    color: #fff;
-    width: 100%;
-    position: absolute;
-    text-indent: 12px;
+    color      : #fff;
   }
   .titlebar .icon + h1 {
     text-indent: 36px;
   }
 .spinner {
+  width           : 28px;
+  height          : 27px;
   background-image: url('../img/sprite_spinner.png');
-  width: 28px;
-  height: 27px;
 }
-.spinner[frame="0"] {
-  background-position: 0 0;
-}
-.spinner[frame="1"] {
-  background-position: 0 -27px;
-}
-.spinner[frame="2"] {
-  background-position: 0 -54px;
-}
-.spinner[frame="3"] {
-  background-position: 0 -81px;
-}
-.spinner[frame="4"] {
-  background-position: 0 -108px;
-}
-.spinner[frame="5"] {
-  background-position: 0 -135px;
-}
-.spinner[frame="6"] {
-  background-position: 0 -162px;
-}
-.spinner[frame="7"] {
-  background-position: 0 -189px;
-}
+.spinner[frame="0"] { background-position: 0 0; }
+.spinner[frame="1"] { background-position: 0 -27px; }
+.spinner[frame="2"] { background-position: 0 -54px; }
+.spinner[frame="3"] { background-position: 0 -81px; }
+.spinner[frame="4"] { background-position: 0 -108px; }
+.spinner[frame="5"] { background-position: 0 -135px; }
+.spinner[frame="6"] { background-position: 0 -162px; }
+.spinner[frame="7"] { background-position: 0 -189px; }
 /* ---------------------- End Aggregated Styles   */
 * {
   margin: 0;
@@ -151,12 +140,12 @@ footer .logo,
   color: #AFAFAF;
 }
 input[type="text"], input[type="password"],textarea {
-  color: #707070;
-  border: 1px solid #AFAFAF;
-  box-shadow: inset 0 1px 4px rgba(0,0,0,0.2);
-  font-size: 15px;
-  padding: 6px 6px;
+  padding      : 6px 6px;
+  border       : 1px solid #AFAFAF;
   border-radius: 6px;
+  font-size    : 15px;
+  color        : #707070;
+  box-shadow   : inset 0 1px 4px rgba(0,0,0,0.2);
 }
 textarea {
   border-radius: 10px 10px 0 10px;
@@ -178,19 +167,20 @@ button {
 }
 button,
 .btn {
-  border-radius: 8px;
-  position: relative;
-  font-size: 16px;
-  cursor: pointer;
+  display           : block;
+  position          : relative;
+  height            : 36px;
+  border-radius     : 8px;
+  font-size         : 16px;
+  line-height       : 36px;
+  cursor            : pointer;
   -webkit-appearance: none;
-  height: 36px;
-  line-height: 36px;
 }
 button.green,
 .btn.green {
+  border             : 1px solid #53822E;
+  color              : #fff;
   background-position: 0 -226px;
-  color: #fff;
-  border: 1px solid #53822E;
 }
 button.green:hover,
 .btn.green:hover {
@@ -199,10 +189,10 @@ button.green:hover,
 button.silver,
 .btn.silver,
 .switch .btn {
+  border             : 1px solid #AFAFAF;
+  color              : #fff;
+  color              : #707070;
   background-position: 0 -302px;
-  color: #fff;
-  border: 1px solid #AFAFAF;
-  color: #707070;
 }
 button.silver:hover,
 .btn.silver:hover {
@@ -222,9 +212,9 @@ button.silver:hover,
   }
 button.indigo,
 .btn.indigo {
+  border             : 1px solid #1A7196;
+  color              : #fff;
   background-position: 0 -374px;
-  border: 1px solid #1A7196;
-  color: #fff;
 }
 button.indigo:hover,
 .btn.indigo:hover {
@@ -232,9 +222,9 @@ button.indigo:hover,
 }
 button.blue,
 .btn.blue {
+  border             : 1px solid #234E82;
+  color              : #fff;
   background-position: 0 -554px;
-  border: 1px solid #234E82;
-  color: #fff;
 }
 button.blue:hover,
 .btn.blue:hover {
@@ -242,27 +232,25 @@ button.blue:hover,
 }
 button.red,
 .btn.red {
+  border             : 1px solid #951A1A;
+  color              : #fff;
   background-position: 0 -446px;
-  border: 1px solid #951A1A;
-  color: #fff;
 }
 button.red:hover,
-.btn.red:hover { background-position: 0 -482px; }
-
-.btn.facebook { background-position: 0 -776px; border: 1px solid #3B5998; }
-.btn.facebook:hover { background-position: 0 -812px; }
-
-.btn.gplus { background-position: 0 -848px; border: 1px solid #B32E1D; }
-.btn.gplus:hover { background-position: 0 -884px; }
+.btn.red:hover        { background-position: 0 -482px; }
+.btn.facebook         { background-position: 0 -776px; border: 1px solid #3B5998; }
+.btn.facebook:hover   { background-position: 0 -812px; }
+.btn.gplus            { background-position: 0 -848px; border: 1px solid #B32E1D; }
+.btn.gplus:hover      { background-position: 0 -884px; }
 
 .btn .icon {
-  float: left;
+  float : left;
   margin: 2px 4px;
 }
 .checkbox {
+  width              : 24px;
+  height             : 24px;
   background-position: -258px -62px;
-  width: 24px;
-  height: 24px;
 }
 .checkbox:hover {
   background-position: -282px -62px;
@@ -275,15 +263,15 @@ button.red:hover,
 }
 /* Switches */
 .switch {
-  width: 100%;
   position: relative;
-  height: 36px;
+  width   : 100%;
+  height  : 36px;
 }
 .switch .btn {
-  text-align: center;
+  float      : left;
+  height     : 36px;
+  text-align : center;
   line-height: 36px;
-  height: 36px;
-  float: left;
 }
 .switch .btn {
   border-radius: 0;
@@ -303,10 +291,10 @@ button.red:hover,
   border-right: 0;
 }
 .switch .btn.active {
+  border-color       : #1A7196;
+  text-shadow        : 0 1px 0 rgba(0,0,0,0.33);
+  color              : #fff;
   background-position: 0 -518px;
-  color: #fff;
-  text-shadow: 0 1px 0 rgba(0,0,0,0.33);
-  border-color: #1A7196;
 }
 .switch.col-2 .btn {
   width: 50%;
@@ -338,30 +326,30 @@ button.red:hover,
   margin: 0 -1px 0;
 }
 .switch .icon + p {
-  float: left;
-  position: absolute;
-  left: 28px;
+  float    : left;
+  position : absolute;
+  left     : 28px;
   font-size: 15px;
 }
 #browse .switch.col-2.narrow {
   float: right;
 }
 .scroll {
-  height: 18px;
-  width: 415px;
-  margin: 0 24px;
-  border-radius: 9px;
+  float              : left;
+  width              : 415px;
+  height             : 18px;
+  margin             : 0 24px;
+  border-radius      : 9px;
   background-position: 0 -710px;
-  float: left;
 }
   .scroll .scroll-bar {
-    height: 12px;
-    width: 250px;
+    float              : left;
+    width              : 250px;
+    height             : 12px;
+    margin             : 3px;
+    border-radius      : 6px;
     background-position: 0 -728px;
-    float: left;
-    margin: 3px;
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    box-shadow         : 0 1px 3px rgba(0,0,0,0.5);
   }
 /* Game Thumbs */
 .game-thumb {
@@ -387,29 +375,30 @@ button.red:hover,
 .package .scrollable .game-thumb.small img {
   border-radius: 0;
 }
-    .game-thumb .game-thumb {
+    .game-thumb.medium .game-thumb {
         width: 63px;
         height: 63px;
         float: left;
         margin: 10px 0 0;
         border-radius: 10px;
       }
-        .game-thumb .game-thumb img {
+        .game-thumb.medium .game-thumb img {
           margin-left: -14px;
           margin-top: -8px;
           border-radius: 10px;
         }
-      .game-thumb .game-thumb:nth-child(odd) {
+      .game-thumb.medium .game-thumb:nth-child(odd) {
         float: left;
         margin-left: 10px;
       }
-      .game-thumb .game-thumb:nth-child(even) {
+      .game-thumb.medium .game-thumb:nth-child(even) {
         float: right;
         margin-right: 10px;
       }
 .rating-container p {
   color: #707070;
 }
+
 /* ---------------------- Aggregated Styles       */
 /* ---------------------- Main Container          */
 .container-950,
@@ -647,6 +636,10 @@ aside {
   width: 300px;
   float: left;
 }
+#my-account aside.aside-scroll {
+  position: fixed;
+  top: 24px;
+}
 aside h1 {
   width: 100%;
 }
@@ -685,7 +678,8 @@ aside .overview {
     aside .overview .group-table .row:nth-last-child(1) {
       border-radius: 0 0 20px 20px;
     }
-    aside .overview .group-table .row:hover {
+    aside .overview .group-table .row:hover,
+    aside .overview .group-table .row.selected {
       background-image   : url('../img/sprite_1px.png');
       background-position: 0 -920px;
       background-repeat  : repeat-x;

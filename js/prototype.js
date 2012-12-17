@@ -37,12 +37,8 @@ template.process = function (object,callback) {
     subTemplate.hide();
   }
   var processedHtml = template.fill({'keys':object.keys,'template':object.template});
-  el.before(processedHtml,function() {
-    if (typeof fn != 'undefined') {
-      templateFunction[fn]();
-    }
-  });
-  if (typeof callback == 'function') { callback(); }
+  return processedHtml;
+  if (typeof callback == 'function') { callback(processedHtml); }
   
 }
 
@@ -69,6 +65,55 @@ template.fill = function (object,callback) {
   if (typeof callback == 'function') { callback(); }
 }
 
+template.scan = function() {
+  $('[template]').each(function(){
+    var 
+      templateRef  = $(this),
+      templateSrc  = './templates/templates.html',
+      templateName = '[template=' + templateRef.attr('template') + ']',
+      templateData = $('<div></div>'),
+      limit        = templateRef.attr('limit');
+      
+    function onload(finished,reference) {
+      fn = reference.attr('onload');
+      if (typeof fn != 'undefined') {
+        var fnEach = fn.split(',');
+        for (var i=0;i<fnEach.length;i++)
+        templateFunction[fnEach[i].replace('()','')](finished);
+      }
+    }       
+
+    if (templateRef.attr('obj')) { 
+      var templateKeys = itemDB[templateRef.attr('obj')];
+    }
+
+    if (templateRef.attr('src') != 'undefined') { 
+      var templateSrc = templateRef.attr('src');
+    }
+
+    templateData.load(templateSrc,function() {
+      var templatePre  = templateData.find(templateName);
+      if (typeof templateKeys != 'undefined') {
+        for (var i=0;i<templateKeys.length;i++) {
+          if (i < limit || typeof limit == 'undefined') { 
+            templateDone = $(template.process({'template':templatePre,'keys':templateKeys[i],'element':templateRef},function() { onload(templatePre) }));
+            templateRef.before(templateDone); 
+            onload(templateDone,templateRef);
+          }
+        }
+      }
+      else { 
+        templateDone = $(templatePre.html()); 
+        templateRef.before(templateDone);
+        onload(templateDone,templateRef);
+      }
+      templateRef.remove();
+    });
+  });
+}
+$(function(){
+  template.scan();
+});
 /* Needs to be adapted */
 /*var templateFile = './templates/items.html';
 var templateData = $('<div></div>');

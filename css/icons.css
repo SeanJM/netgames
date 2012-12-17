@@ -170,8 +170,8 @@ header nav .secondary-level .tab .icon.new-releases,
 header nav .secondary-level .tab .icon.hot-sellers { background-position: -277px -110px; }
 header nav .secondary-level .tab .icon.browse { background-position: -320px -110px; }
 /* Active */
-header nav .secondary-level .tab.active .icon.featured { background-position: -150px -152px; }
-header nav .secondary-level .tab.active .icon.trailers { background-position: -192px -152px; }
-header nav .secondary-level .tab.active .icon.new-releases { background-position: -235px -152px; }
-header nav .secondary-level .tab.active .icon.hot-sellers { background-position: -277px -152px; }
-header nav .secondary-level .tab.active .icon.browse { background-position: -320px -152px; }
+#home header nav .secondary-level .tab .icon.featured { background-position: -150px -152px; }
+#trailers header nav .secondary-level .tab .icon.trailers { background-position: -192px -152px; }
+#new-releases header nav .secondary-level .tab .icon.new-releases { background-position: -235px -152px; }
+#hot-sellers header nav .secondary-level .tab .icon.hot-sellers { background-position: -277px -152px; }
+#browse header nav .secondary-level .tab .icon.browse { background-position: -320px -152px; }
