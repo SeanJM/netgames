@@ -24,7 +24,7 @@ itemDB.single = [{
   'windows':'active',
   'esrb':'Everyone',
   'genre':'Action',
-  'rating':'5',
+  'rating':'50',
   'rating-count':'914',
   'list-price':'$49.99',
   'price':'$39.99',
@@ -43,7 +43,7 @@ itemDB.single = [{
   'esrb':'Teen',
   'genre':'Simulation',
   'osx':'not-active',
-  'rating':'5',
+  'rating':'35',
   'rating-count':'4,938',
   'list-price':'$49.99',
   'price':'$39.99',
@@ -62,7 +62,7 @@ itemDB.single = [{
   'esrb':'Mature',
   'genre':'Action',
   'osx':'not-active',
-  'rating':'5',
+  'rating':'40',
   'rating-count':'3,942',
   'list-price':'$59.99',
   'price':'$49.99',
@@ -100,7 +100,7 @@ itemDB.pkg = [{
   'esrb':'Teen',
   'genre':'Simulation',
   'osx':'active',
-  'rating':'5',
+  'rating':'45',
   'rating-count':'914',
   'price':'14',
   'package-count':'12',
@@ -115,15 +115,15 @@ itemDB.pkg = [{
     },{
     'sub-name':'The Sims 3: Ambitions',
     'thumb-small':'./img/game-thumb_sims3-ambitions-small.png',
-    'sub-rating':'4'
+    'sub-rating':'35'
     },{
       'sub-name':'The Sims 2: University',
       'thumb-small':'./img/game-thumb_sims2-university-small.png',
-      'sub-rating':'4'
+      'sub-rating':'30'
     },{
       'sub-name':'The Sims 3: Generations',
       'thumb-small':'./img/game-thumb_sims3-generations-small.png',
-      'sub-rating':'4'
+      'sub-rating':'40'
     }]
   },{
   'name':'Minecraft &amp; Friends',
@@ -141,19 +141,19 @@ itemDB.pkg = [{
   'games':[{
     'sub-name':'Hero Academy',
     'thumb-small':'./img/game-thumb_hero-academy-small.png',
-    'sub-rating':'5'
+    'sub-rating':'50'
     },{
     'sub-name':'Minecraft',
     'thumb-small':'./img/game-thumb_minecraft-small.png',
-    'sub-rating':'4'
+    'sub-rating':'40'
   },{
     'sub-name':'The Sims 2: University',
     'thumb-small':'./img/game-thumb_sims2-university-small.png',
-    'sub-rating':'4'
+    'sub-rating':'35'
   },{
     'sub-name':'The Sims 3: Generations',
     'thumb-small':'./img/game-thumb_sims3-generations-small.png',
-    'sub-rating':'4'
+    'sub-rating':'35'
   }]
 }];
 
@@ -195,57 +195,13 @@ itemDB.trailers = [{
   'thumb':'bioshock',
   'time':'1:41',
   'resolution':'hidef',
-  'rating':'5',
+  'rating':'50',
   'rating-count':'3,198,428'
 }];
 
 var templateDir = './templates/';
 
-var header = {};
-header.init = function() {
-  var obj = $('<header></header>');
-  obj.load(templateDir + 'header.html',function(){
-    $('div[template="header"]').replaceWith(obj);
-    header.loaded();
-  });
-}
-
 /* Scrolling */
-
-var pkg = {};
-pkg.drag = function(el,areaW,parW) {
-  var 
-    scrPos      = el.position().left - 24,
-    scrollable  = el.closest('.package').find('.scrollable'),
-    shadowLeft  = el.closest('.package').find('.shadow.left'),
-    shadowRight = el.closest('.package').find('.shadow.right'),
-    percent     = (scrPos*(areaW/parW))/100;
-  scrollable.css({left: -(scrPos*(areaW/parW))});
-  shadowLeft.css('opacity',percent);
-  shadowRight.css('opacity',1-percent);
-}
-pkg.scrollInit = function() {
-  $('.scroll-bar').each(function(){
-    if ($(this).closest('.package').size() > 0) {
-      var scrollable = $(this).closest('.package').find('.scrollable');
-    }
-    if ($(this).closest('.media-overview').size() > 0) {
-      var scrollable = $(this).closest('.media-overview').find('.scrollable');
-    }
-    var scrollbar = $(this).closest('.scroll'),
-        parW = scrollable.width()-2,
-        areaW = scrollbar.width(),
-        scrW = parW / (areaW/parW);
-    $(this).css('width',areaW/parW*areaW)
-    $(this).draggable({
-      axis: 'x',
-      containment: 'parent',
-      drag: function() {
-        pkg.drag($(this),areaW,parW);
-      }
-    });
-  });
-}
 
 templateFunction.packageScroll = function(element) {
   var 
@@ -256,7 +212,6 @@ templateFunction.packageScroll = function(element) {
     scrollableW;
 
   scrollableW = miniW*scrollable.find('.mini-item').size();
-  console.log(scrollableW);
   scrollable.css('width',scrollableW);
   var
     parW       = scrollable.width()-2,
@@ -354,10 +309,22 @@ templateFunction.headerLoaded = function() {
 }
 
 function uiBind(element) {
-  element.find('.checkbox').on('click',function(){ $(this).toggleClass('checked'); });
-  element.find('.selector').on('click',function(){ $(this).toggleClass('selected'); });
-  element.find('.switch .btn').on('click',function(){ $(this).parent().find('.btn').toggleClass('active'); });
-  element.find('.squareBtn').on('click',function(){ $(this).toggleClass('active'); });
+  element.find('.checkbox').on('click',function(){ 
+    $(this).toggleClass('checked'); 
+  });
+  element.find('.selector').on('click',function(){ 
+    if (!$(this).closest('section').hasClass('disabled')) { $(this).toggleClass('selected'); } 
+  });
+  element.find('.switch .btn').on('click',function(){ 
+    if (!$(this).closest('section').hasClass('disabled')) { 
+      $(this).parent().find('.btn').toggleClass('active'); 
+    } 
+  });
+  element.find('.squareBtn').on('click',function(){ 
+    if (!$(this).closest('section').hasClass('disabled')) { 
+      $(this).toggleClass('active'); 
+    } 
+  });
 }
 templateFunction.asideScroll = function(aside) {
   var clear = function() {
@@ -389,15 +356,122 @@ templateFunction.asideScroll = function(aside) {
   uiBind(aside);
 }
 
-templateFunction.lockerInfo = function(item) {
-  item.find('.info.popup').on('mouseleave',function(){
-    item.find('.info.popup').removeClass('visible');
+templateFunction.lockerInfo = function(el) {
+  el.find('.info.popup').on('mouseleave',function(){
+    el.find('.info.popup').removeClass('visible');
   });
-  item.find('.game-thumb').on('click',function(event){
-    item.parent().find('.visible').removeClass('visible');
-    item.find('.info.popup').addClass('visible');
+  el.find('.game-thumb').on('click',function(event){
+    el.parent().find('.visible').removeClass('visible');
+    el.find('.info.popup').addClass('visible');
     event.stopPropagation();
   });
+}
+
+function filterRange(el) {
+  var slider = el.find('.range-slider');
+  slider.each(function(){
+    if (!$(this).closest('section').hasClass('disabled')) {
+      var 
+        curSlider   = $(this),
+        knobLeft    = curSlider.find('.knob.left'),
+        knobRight   = curSlider.find('.knob.right'),
+        range       = curSlider.find('.range'),
+        container   = curSlider.find('.slider-container'),
+        bubbleLeft  = curSlider.find('.bubble-indicator.left'),
+        bubbleRight = curSlider.find('.bubble-indicator.right'),
+        rangeOffset = parseInt(curSlider.attr('rangeoffset')),
+        rangeVal    = parseInt(curSlider.attr('range')),
+        unit        = curSlider.attr('rangeoffset').split('')[0];
+
+      if (/[$%]/.test(curSlider.attr('rangeoffset'))) { rangeOffset = parseInt(curSlider.attr('rangeoffset').substring(1,curSlider.attr('rangeoffset').length)); }
+      if (/[$%]/.test(curSlider.attr('range'))) { rangeVal = parseInt(curSlider.attr('range').substring(1,curSlider.attr('range').length)); }
+      
+      function offsetValue(value) { 
+        if (typeof rangeOffset == 'undefined') { rangeOffset = 0; }
+        var n = parseInt(parseInt((parseInt(value)/rangeVal)*(rangeVal-rangeOffset))+rangeOffset);
+        if (/[$%]/.test(unit)) { return unit + '' + n; }
+        return n; 
+      }
+
+      function dragKnob(active) {
+        var 
+          width          = (knobRight.offset().left+(knobRight.width()/3))-knobLeft.offset().left,
+          leftPos        = (knobLeft.offset().left+(knobLeft.width()/2))-container.offset().left,
+          leftVal        = parseInt(parseInt(knobLeft.css('left'))/container.width()*rangeVal),
+          rightVal       = parseInt((parseInt(knobRight.css('left'))+knobRight.width())/container.width()*rangeVal),
+          bubbleLeftPos  = (parseInt(knobLeft.css('left'))+knobLeft.width()/2)-(bubbleLeft.width()/2),
+          bubbleRightPos = (parseInt(knobRight.css('left'))+knobRight.width()/2)-(bubbleRight.width()/2);
+        
+        if (knobLeft.offset().left+knobLeft.width() >= knobRight.offset().left) {
+          var
+            knobLeftX  = parseInt(knobRight.css('left'))-knobLeft.width(),
+            knobRightX = parseInt(knobLeft.css('left'))+parseInt(knobLeft.css('width'));
+          if (knobLeftX >= 0) { knobLeft.css('left',knobLeftX); }
+          if ((knobRightX+knobRight.width()) <= container.width()) { knobRight.css('left',knobRightX); }
+        }
+        range.css('left',leftPos).css('width',width);
+        bubbleLeft.text(offsetValue(leftVal)).css('left',bubbleLeftPos);
+        bubbleRight.text(offsetValue(rightVal)).css('left',bubbleRightPos);
+      }
+      function activate(el) {
+        el.addClass('active');
+        curSlider.addClass('active');
+        $('html').on('mouseup',function(){ 
+          el.removeClass('active'); 
+          curSlider.removeClass('active'); 
+        });
+      }
+      knobLeft
+        .draggable({
+          disabled: false,
+          axis: 'x',
+          containment:'parent',
+          drag: function(el) {
+            dragKnob();
+          }
+        })
+        .on('mousedown',function(){ activate($(this)); });
+      knobRight
+        .draggable({
+          disabled: false,
+          axis: 'x',
+          containment:'parent',
+          drag: function(el) {
+            dragKnob();
+          }
+        })
+        .on('mousedown',function(){ activate($(this)); });
+    }
+    else { $(this).find('.ui-draggable').draggable('disable'); }
+  });
+}
+
+function starRatings(el) {
+  var ratingsContainer = el.find('.rating-container');
+  ratingsContainer.find('.star').on('click',function(event) {
+    var 
+      mouseX   = event.pageX,
+      whole    = $(this).index()+1,
+      fraction = (mouseX-$(this).offset().left)/$(this).width()*2;
+    if (fraction > 1) { fraction = 0; } else { fraction = 5; }
+
+    var 
+      rating        = (whole*10)-fraction,
+      currentRating = ratingsContainer.attr('class'),
+      newRating     = currentRating.replace(currentRating.replace('rating-container ',''),'rating-' + rating);
+    
+    ratingsContainer.attr('class',newRating);
+  
+  });
+}
+
+templateFunction.asideUI = function(el) {
+  filterRange(el);
+  el.find('.checkbox').on('click',function(){
+    $(this).closest('section').toggleClass('disabled');
+    filterRange(el);
+  });
+  starRatings(el);
 }
 
 var main = {};
@@ -524,8 +598,8 @@ main.init = function() {
 
 function spinner() {
   $('.spinner').each(function(){
-    var spinner = $(this);
-    var delay = 90;
+    var spinner = $(this),
+        delay   = 90;
     function animate() {
       if (spinner.attr('frame')) {
         var i = parseInt(spinner.attr('frame'))+1;
@@ -542,6 +616,5 @@ function spinner() {
 
 $(function() {
   main.init();
-  pkg.scrollInit()
   spinner();
 });

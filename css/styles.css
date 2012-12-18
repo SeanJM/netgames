@@ -584,11 +584,12 @@ hr {
     }
     /* Front Page Gallery View */
     .gallery .carousel-container .controls {
-      top: 150px;
+      top: 130px;
     }
     .gallery #package-view .carousel-container .controls {
       top: 160px;
     }
+    #trailers .carousel-container .controls { top: 62px; }
   label {
     font-size: 16px;
     font-weight: 400;
