@@ -134,8 +134,15 @@ aside {
   width: 300px;
   float: right;
 }
+aside.left {
+  float: left;
+}
 .col-left {
   float: left;
+  width: 620px;
+}
+.col-right {
+  float: right;
   width: 620px;
 }
 .row {
@@ -720,7 +727,8 @@ aside .overview {
         color       : #707070;
       }
 /* Aside Details */
-.col-left h2 {
+.col-left h2,
+.col-right h2 {
   font-size: 22px;
   font-weight: 400;
   color: #707070;
@@ -736,12 +744,14 @@ aside .overview {
     display: block;
   }
   .col-left .row,
+  .col-right .row,
   .popup.window .row {
     position: relative;
     float: left;
     width: 100%;
   }
-  .col-left .row + h1 {
+  .col-left .row + h1,
+  .col-right .row + h1 {
     margin-top: 36px;
   }
   .row .col,
@@ -759,15 +769,18 @@ aside .overview {
     float: right;
     width: 100px;
   }
+  .col-right .row + .row,
   .col-left .row + .row {
     margin-top: 30px;
   }
   .popup.window .row + .row {
     margin-top: 20px;
   }
+  .col-right .row + hr,
   .col-left .row + hr {
     margin-top: 36px;
   }
+  .col-right .row ~ hr + .row,
   .col-left .row ~ hr + .row {
     margin-top: 0;
   }
@@ -775,6 +788,7 @@ aside .overview {
     width: 297px;
   }
   .col-left .row label,
+  .col-right .row label,
   .popup.window .row label {
     width: 100%;
     margin-bottom: 18px;
@@ -785,6 +799,8 @@ aside .overview {
   }
   .col-left .row .col .dropdown,
   .col-left .row .col .dropdown .btn,
+  .col-right .row .col .dropdown,
+  .col-right .row .col .dropdown .btn,
   .popup.window .row .col .dropdown,
   .popup.window .row .col .dropdown .btn {
     width: 100%;
@@ -796,34 +812,41 @@ aside .overview {
   .row.col-3 .col:nth-of-type(3n) {
     float: right;
   }
+  .col-right .row.col-3 .col:nth-of-type(2n),
   .col-left .row.col-3 .col:nth-of-type(2n) {
     margin: 0 24px;
     float: left;
   }
-  .col-left .row.col-3 .col {
+  .col-left .row.col-3 .col,
+  .col-right .row.col-3 .col {
     width: 190px;
   }
   .col-left .row.col-3Two .col,
+  .col-right .row.col-3Two .col,
   .popup.window .row.col-3Two .col {
     float: left;
     width: 200px;
   }
   .col-left .row.col-3Two .col + .col,
+  .col-right .row.col-3Two .col + .col,
   .popup.window .row.col-3Two .col + .col {
     margin-left: 24px;
   }
 
-  .col-left .switch {
+  .col-left .switch,
+  .col-right .switch {
     float: left;
     width: 100%;
   }
-  .col-left .switch .icon {
+  .col-left .switch .icon,
+  .col-right .switch .icon {
     position: absolute;
     left: 2px;
     top: 0px;
   }
 
-  .col-left .switch + p {
+  .col-left .switch + p,
+  .col-right .switch + p {
     float: left;
     font-size: 14px;
     color: #707070;
@@ -832,7 +855,8 @@ aside .overview {
     line-height: 32px;
     margin-top: 12px;
   }
-    .col-left .switch + p .icon {
+    .col-left .switch + p .icon,
+    .col-right .switch + p .icon {
       position: absolute;
       left: 0;
       top: 0;
@@ -840,28 +864,33 @@ aside .overview {
   .row > input[type="text"]:only-of-type {
     width: 606px;
   }
-  .col-left .row .group-box {
+  .col-left .row .group-box,
+  .col-right .row .group-box {
     border: 1px solid #D3D3D3;
     background: #fff;
     border-radius: 8px;
     box-shadow: inset 0 -2px 2px rgba(0,0,0,0.1);
   }
-    .col-left .row .group-box .padding {
+    .col-left .row .group-box .padding,
+    .col-right .row .group-box .padding {
       padding: 24px;
     }
   .col-left .row [name="cid"],
+  .col-right .row [name="cid"],
   .popup.window .row [name="cid"] {
     width: 84px;
     text-align: center;
     float: right;
   }
-  .col-left .row [name="credit-card-number"] {
+  .col-left .row [name="credit-card-number"],
+  .col-right .row [name="credit-card-number"] {
     width: 483px;
   }
   .popup.window .row [name="credit-card-number"] {
     width: 483px;
   }
-  .col-left .row button.confirm {
+  .col-left .row button.confirm,
+  .col-right .row button.confirm {
     float: right;
     width: 192px;
   }
