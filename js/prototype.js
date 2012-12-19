@@ -23,12 +23,16 @@ template.load = function (data,callback) {
 //template.process({'element':$(this),'keys':[{'title':'Some title','subhead':'some more subhead'}]})
 
 template.process = function (object,callback) {
-  var el          = object['element'];
-  var html        = object['template'];
-  var subTemplate = html.find('[sub-template]');
-  var subKeys      = object.keys[subTemplate.attr('obj')];
-  var processedHtml;
-  var fn           = html.attr('function');
+  var 
+    el          = object['element'],
+    html        = object['template'],
+    keys        = object['keys'],
+    subTemplate = html.find('[sub-template]'),
+    subKeys     = object.keys[subTemplate.attr('obj')],
+    processedHTML,
+    subTemplateHTML,
+    fn          = html.attr('function');
+  
   if (subTemplate.size() > 0 && typeof subKeys != 'undefined') {
     for (i=0;i<subKeys.length;i++) {
       subTemplateHTML = template.fill({'keys':subKeys[i],'template':subTemplate});
@@ -36,10 +40,26 @@ template.process = function (object,callback) {
     }
     subTemplate.hide();
   }
-  var processedHtml = template.fill({'keys':object.keys,'template':object.template});
-  return processedHtml;
-  if (typeof callback == 'function') { callback(processedHtml); }
+  processedHTML = template.fill({'keys':keys,'template':object.template});
+  return processedHTML;
+  if (typeof callback == 'function') { callback(processedHTML); }
   
+}
+
+template.keyfilters = function (match,key) {
+  /* Filters format limit(30),etc(30) */
+  var conditions = key.split(':')[1];
+  if (typeof conditions != 'undefined') { 
+    for (var i=0;i<conditions.split(',').length;i++) {
+      var str = conditions.split(',')[i];
+      var name = str.split('(')[0];
+      var attribute = str.split('(')[1].split(')')[0];
+      if (name == 'limit' && match.length > attribute) {
+        match = match.substring(0,attribute) + '...';
+      }
+    }
+  }
+  return match;
 }
 
 template.fill = function (object,callback) {
@@ -58,7 +78,9 @@ template.fill = function (object,callback) {
         str = str.split('{{' + key + '}}')[0] + str.split('{{' + key + '}}')[1].split('{{endif}}')[1];
       }
     }
-    if (keys.hasOwnProperty(key)) { return keys[key]; }
+    if (keys.hasOwnProperty(key.split(':')[0])) { 
+      return template.keyfilters(keys[key.split(':')[0]],key); 
+    }
     return '';
   });
   return output;
@@ -111,8 +133,19 @@ template.scan = function() {
     });
   });
 }
+
+template.css = function() {
+  if (typeof itemDB.css != undefined) {
+    var link = "<link rel='stylesheet' type='text/css'>"
+    for (var i=0;i<itemDB.css['files'].length;i++) {
+      var file = itemDB.css['directory'] + itemDB.css['files'][i];
+      $('head').append($(link).attr('href',file));
+    }
+  }
+}
 $(function(){
   template.scan();
+  template.css();
 });
 /* Needs to be adapted */
 /*var templateFile = './templates/items.html';

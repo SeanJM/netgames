@@ -3,15 +3,6 @@
 <html>
 	<head>
     <!-- CSS Styles -->
-    <link rel='stylesheet' type='text/css' href='css/styles.css'>
-    <link rel='stylesheet' type='text/css' href='css/icons.css'>
-    <link rel='stylesheet' type='text/css' href='css/popups.css'>
-    <link rel='stylesheet' type='text/css' href='css/header.css'>
-    <link rel='stylesheet' type='text/css' href='css/footer.css'>
-    <link rel='stylesheet' type='text/css' href='css/filter.css'>
-    <link rel='stylesheet' type='text/css' href='css/item-container.css'>
-    <link rel='stylesheet' type='text/css' href='css/stars.css'>
-    <link rel='stylesheet' type='text/css' href='css/trailers.css'>
     <link rel="icon" type="image/png" href="img/favicon.png">
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
@@ -19,6 +10,7 @@
     <script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/prototype.js" type="text/javascript"></script>
     <script src="js/netgames.js" type="text/javascript"></script>
+    <script src="js/netgames-db.js" type="text/javascript"></script>
     <script src="js/jquery.placeholder.min.js" type="text/javascript"></script>
     <script src="js/jquery-ui-1.9.2.custom.min.js" type="text/javascript"></script>
     <!-- BEGIN LivePerson Monitor. -->
@@ -47,8 +39,7 @@
               <h2>Click <a href="#">here</a> to go to the invalid field to fix this problem.</h2>
             </div>
           </div>
-          <div template="menu" src="./templates/my-account.html" onload="asideScroll()"></div>
-          <div class="details">
+          <div class="col-left">
             <h1 class="anchor" id="about">About Me</h1>
             <div class="row col-2">
               <div class="col">
@@ -479,6 +470,9 @@
               <button class="indigo confirm">Save</button>
             </div>
           </div>
+          <aside>
+            <div template="menu" src="./templates/my-account.html" onload="asideScroll()"></div>
+          </aside>
         </section>
       </div>
     </div>

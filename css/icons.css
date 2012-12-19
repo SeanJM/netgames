@@ -23,7 +23,7 @@
 .icon.search { background-position: -160px 0px; }
 .icon.add-to-cart { background-position: -160px -32px; }
 .icon.add-to-wishlist { background-position: 0 -64px; }
-.icon.filter { background-position: -96px -64px; }
+.icon.funnel { background-position: -96px -64px; }
 .icon.trailers { background-position: -64px -96px; }
 .icon.images { background-position: 0 -96px; }
 .icon.demo { background-position: -32px -96px; }
@@ -118,19 +118,19 @@ a:hover .icon.quote { background-position: -192px -160px; }
 }
 
 .path .icon.indicator {
-  background-position: -258px -86px;
-  width: 24px;
-  height: 24px;
+  background-position: 0 -66px;
+  width: 22px;
+  height: 22px;
 }
 
 .path .active .icon.indicator {
-  background-position: -282px -86px;
+  background-position: -22px -66px;
 }
 .path.step-1 .indicator-container:nth-of-type(1) .icon.indicator,
 .path.step-2 .indicator-container:nth-of-type(2) .icon.indicator,
 .path.step-3 .indicator-container:nth-of-type(3) .icon.indicator,
 .path.step-4 .indicator-container:nth-of-type(4) .icon.indicator {
-  background-position: -282px -86px;
+  background-position: -22px -66px;
 }
 
 .esrb-icon {

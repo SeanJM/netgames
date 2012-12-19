@@ -1,4 +1,10 @@
 /* Regular Size Stars */
+.star {
+  float              : left;
+  width              : 24px;
+  height             : 24px;
+  background-position: -221px -14px;
+}
 .rating-container.rating-40 .star:nth-of-type(5),
 .rating-container.rating-30 .star:nth-of-type(5),
 .rating-container.rating-35 .star:nth-of-type(5),
@@ -34,37 +40,42 @@
   background-position: -269px -14px;
 }
 /* Small Stars */
-.package-container .rating-container.rating-40 .star:nth-of-type(5),
-.package-container .rating-container.rating-35 .star:nth-of-type(5),
-.package-container .rating-container.rating-30 .star:nth-of-type(5),
-.package-container .rating-container.rating-30 .star:nth-of-type(4),
-.package-container .rating-container.rating-25 .star:nth-of-type(5),
-.package-container .rating-container.rating-25 .star:nth-of-type(4),
-.package-container .rating-container.rating-20 .star:nth-of-type(5),
-.package-container .rating-container.rating-20 .star:nth-of-type(4),
-.package-container .rating-container.rating-20 .star:nth-of-type(3),
-.package-container .rating-container.rating-15 .star:nth-of-type(5),
-.package-container .rating-container.rating-15 .star:nth-of-type(4),
-.package-container .rating-container.rating-15 .star:nth-of-type(3),
-.package-container .rating-container.rating-10 .star:nth-of-type(5),
-.package-container .rating-container.rating-10 .star:nth-of-type(4),
-.package-container .rating-container.rating-10 .star:nth-of-type(3),
-.package-container .rating-container.rating-10 .star:nth-of-type(2),
-.package-container .rating-container.rating-05 .star:nth-of-type(5),
-.package-container .rating-container.rating-05 .star:nth-of-type(4),
-.package-container .rating-container.rating-05 .star:nth-of-type(3),
-.package-container .rating-container.rating-05 .star:nth-of-type(2),
-.package-container .rating-container.rating-00 .star:nth-of-type(5),
-.package-container .rating-container.rating-00 .star:nth-of-type(4),
-.package-container .rating-container.rating-00 .star:nth-of-type(3),
-.package-container .rating-container.rating-00 .star:nth-of-type(2),
-.package-container .rating-container.rating-00 .star:nth-of-type(1) {
+.rating-container.small .star {
+  width              : 15px;
+  height             : 14px;
+  background-position: -221px 0;
+}
+.rating-container.small.rating-40 .star:nth-of-type(5),
+.rating-container.small.rating-35 .star:nth-of-type(5),
+.rating-container.small.rating-30 .star:nth-of-type(5),
+.rating-container.small.rating-30 .star:nth-of-type(4),
+.rating-container.small.rating-25 .star:nth-of-type(5),
+.rating-container.small.rating-25 .star:nth-of-type(4),
+.rating-container.small.rating-20 .star:nth-of-type(5),
+.rating-container.small.rating-20 .star:nth-of-type(4),
+.rating-container.small.rating-20 .star:nth-of-type(3),
+.rating-container.small.rating-15 .star:nth-of-type(5),
+.rating-container.small.rating-15 .star:nth-of-type(4),
+.rating-container.small.rating-15 .star:nth-of-type(3),
+.rating-container.small.rating-10 .star:nth-of-type(5),
+.rating-container.small.rating-10 .star:nth-of-type(4),
+.rating-container.small.rating-10 .star:nth-of-type(3),
+.rating-container.small.rating-10 .star:nth-of-type(2),
+.rating-container.small.rating-05 .star:nth-of-type(5),
+.rating-container.small.rating-05 .star:nth-of-type(4),
+.rating-container.small.rating-05 .star:nth-of-type(3),
+.rating-container.small.rating-05 .star:nth-of-type(2),
+.rating-container.small.rating-00 .star:nth-of-type(5),
+.rating-container.small.rating-00 .star:nth-of-type(4),
+.rating-container.small.rating-00 .star:nth-of-type(3),
+.rating-container.small.rating-00 .star:nth-of-type(2),
+.rating-container.small.rating-00 .star:nth-of-type(1) {
   background-position: -236px 0;
 }
-.package-container .rating-container.rating-45 .star:nth-of-type(5),
-.package-container .rating-container.rating-35 .star:nth-of-type(4),
-.package-container .rating-container.rating-25 .star:nth-of-type(3),
-.package-container .rating-container.rating-15 .star:nth-of-type(2),
-.package-container .rating-container.rating-05 .star:nth-of-type(1) {
+.rating-container.small.rating-45 .star:nth-of-type(5),
+.rating-container.small.rating-35 .star:nth-of-type(4),
+.rating-container.small.rating-25 .star:nth-of-type(3),
+.rating-container.small.rating-15 .star:nth-of-type(2),
+.rating-container.small.rating-05 .star:nth-of-type(1) {
   background-position: -251px 0;
 }

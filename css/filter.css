@@ -4,7 +4,7 @@
   top: 10px;
   z-index: 1;
 }
-aside.filter {
+.filter {
   width: 299px;
   float: left;
   background: #fff;
@@ -12,6 +12,12 @@ aside.filter {
   border-radius: 12px;
   border: 1px solid #D3D3D3;
   position: relative;
+}
+.advertisement + .filter {
+  margin-top: 12px;
+}
+.advertisement + .filter.aside-scroll {
+  margin-top: 0;
 }
 hr + .filter {
   margin-top: 12px;
@@ -45,7 +51,7 @@ hr + .filter + .item-list {
       font-weight: 400;
       float: left;
       margin: 0 0 12px 6px;
-      line-height: 24px;
+      line-height: 22px;
       width: 200px;
     }
     .filter section .rating-container {
@@ -83,7 +89,7 @@ hr + .filter + .item-list {
           .filter section .range-slider .slider-container .range {
             background-image: url('../img/sprite_slider-tile.png');
             height: 8px;
-            width: 120px;
+            width: 125px;
             border-radius: 4px;
             margin: 1px;
             position: absolute;
@@ -93,23 +99,21 @@ hr + .filter + .item-list {
             background-position: 0 8px;
           }
           .filter section .range-slider .slider-container .knob {
-            background-position: -309px -38px;
+            background-position: -46px 1px;
             width: 18px;
-            height: 24px;
-            position: absolute;
+            height: 22px;
+            position: absolute !important;
             top: -7px;
+            float: left;
           }
           .filter section .range-slider .slider-container .knob.active {
-            background-position: -309px -62px;
+            background-position: -46px -21px;
           }
           .filter section .range-slider .slider-container .knob.left {
             left: 20px;
           }
           .filter section .range-slider .slider-container .knob.right {
             left: 140px;
-          }
-          .filter section.disabled .range-slider .slider-container .knob {
-            background-position: -309px -86px;
           }
         .filter section .range-slider .bubble-indicator {
           position           : absolute;

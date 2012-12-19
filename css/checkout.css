@@ -21,7 +21,7 @@
       font-size: 14px;
       color: #707070;
       position: absolute;
-      top: 9px;
+      top: 11px;
     }
     .path .path-container .indicator-container:nth-of-type(1) { left: -40px; }
     .path .path-container .indicator-container:nth-of-type(2) { left: 210px; }
@@ -90,8 +90,10 @@
       font-size: 16px;
       font-weight: 400;
     }
-    .cart-item-list .item-container .price,
-    .cart-item-list .item-container .price-each,
+    .cart-item-list .item-container.single .price,
+    .cart-item-list .item-container.single .price-each,
+    .cart-item-list .item-container.package .price,
+    .cart-item-list .item-container.package .price-each,
     .cart-item-list h5.price,
     .cart-item-list h5.quantity,
     .cart-item-list h5.price-each {
@@ -103,12 +105,14 @@
     .cart-item-list h5.price-each {
       left: 685px;
     }
-    .cart-item-list .item-container .price,
+    .cart-item-list .item-container.package .price,
+    .cart-item-list .item-container.single .price,
     .cart-item-list h5.price {
       left: 808px;
       margin: 0;
     }
-    .cart-item-list .item-container .price,
+    .cart-item-list .item-container.single .price,
+    .cart-item-list .item-container.package .price,
     .cart-item-list .item-container .price-each {
       line-height: 36px;
     }
@@ -284,7 +288,7 @@
       .module .padding {
         padding: 24px;
         float: left;
-        width: 252px;
+        width: 241px;
       }
       .module h1 {
         font-size: 16px;
@@ -302,7 +306,7 @@
       .module .btn {
         position: absolute;
         bottom: 24px;
-        width: 252px;
+        width: 241px;
         text-align: center;
       }
       .module .credit-card {

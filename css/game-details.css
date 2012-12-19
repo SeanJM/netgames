@@ -196,7 +196,7 @@
 /* Screen */
   /* Universal */
   #game-details .details {
-    float: right;
+    float: left;
     width: 600px;
   }
   aside {

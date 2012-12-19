@@ -72,38 +72,38 @@
   .trailer .rating-container p {
     left: 130px;
   }
-  .item-list .trailer {
+  .trailer.list {
     margin: 0;
-    width: 100%;
+    width: 617px;
   }
-  .item-list .trailer-container {
+  .trailer.list .trailer-container {
     float : left;
     width : 300px;
     height: 164px;
   }
-    .item-list .trailer h1 {
+    .trailer.list h1 {
       float      : left;
       width      : 286px;
       margin-left: 24px;
     }
-    .item-list .trailer .rating-container {
+    .trailer.list .rating-container {
       float      : left;
       margin-left: 21px;
     }
-    .item-list .trailer time {
+    .trailer.list time {
       float   : left;
       position: inherit;
       right   : 0;
       margin  : 7px 0 0 24px;
     }
-    #main .item-list .trailer hr {
+    .trailer.list hr {
       float              : right;
       clear              : none;
       width              : 292px;
       margin             : 12px 0;
       background-position: 0 -4px;
     }
-    .item-list .trailer hr + p {
+    .trailer.list hr + p {
       float    : right;
       width    : 292px;
       font-size: 14px;

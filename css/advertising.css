@@ -1,0 +1,12 @@
+.ad-728 {
+  float: left;
+  width: 100%;
+  margin-bottom: 24px;
+  height: 90px;
+}
+  .ad-728 img {
+    margin: 0 111px;
+  }
+  .ad-728 + hr {
+    margin-top: 0;
+  }

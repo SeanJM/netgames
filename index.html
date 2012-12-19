@@ -3,13 +3,6 @@
 <html>
 	<head>
     <!-- CSS Styles -->
-    <link rel='stylesheet' type='text/css' href='css/styles.css'>
-    <link rel='stylesheet' type='text/css' href='css/icons.css'>
-    <link rel='stylesheet' type='text/css' href='css/popups.css'>
-    <link rel='stylesheet' type='text/css' href='css/header.css'>
-    <link rel='stylesheet' type='text/css' href='css/footer.css'>
-    <link rel='stylesheet' type='text/css' href='css/item-container.css'>
-    <link rel='stylesheet' type='text/css' href='css/stars.css'>
     <link rel="icon" type="image/png" href="img/favicon.png">
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
@@ -17,6 +10,7 @@
     <script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/prototype.js" type="text/javascript"></script>
     <script src="js/netgames.js" type="text/javascript"></script>
+    <script src="js/netgames-db.js" type="text/javascript"></script>
     <script src="js/jquery.placeholder.min.js" type="text/javascript"></script>
     <script src="js/jquery-ui-1.9.2.custom.min.js" type="text/javascript"></script>
   	<!-- BEGIN LivePerson Monitor. -->
@@ -30,100 +24,57 @@
     <div template="header" src="./templates/header.html" onload="headerLoaded()"></div>
     <div id="main">
       <div class="container-950">
-        <div id="hero">
-          <img src="./img/hero.png">
-          <div id="activity">
-            <div class="item-container">
-              <div class="thumb">
-                <div class="shadow"></div>
-                <a href=""><img src="./img/hero-img_far-cry.png"></a>
-              </div>
-              <h2><a href="">Far Cry 3</a></h2>
-              <p>This sequel to the amazing epic takes us into a lot of new teritory. Lots of great...</p>
-              <div class="icon review"></div>
-            </div>
-            <div class="item-container">
-              <div class="thumb">
-                <div class="shadow"></div>
-                <a href=""><img src="./img/hero-img_mario.png"></a>
-              </div>
-              <h2><a href="">New Super Mario Bro...</a></h2>
-              <p>Mario&rsquo;s got some new tricks up his sleeve, and some old ones in this classic revisitin...</p>
-              <div class="icon new-release"></div>
-            </div>
-            <div class="item-container">
-              <div class="thumb">
-                <div class="shadow"></div>
-                <a href=""><img src="./img/hero-img_batman.png"></a>
-                <div class="play"></div>
-              </div>
-              <h2><a href="">Batman: Arkham Asy...</a></h2>
-              <p>Harley Quinn Dishes it out. This is the only time it&rsquo;s okay to hit a woman. </p>
-              <div class="icon trailer"></div>
-            </div>
-          </div>
-        </div> <!-- <div id="hero"> -->
-      </div>
-      <div class="container-950">
-        <hr>
         <div id="feature-gallery" class="gallery">
           <div class="switch col-2 edit narrow">
             <div class="btn active" id="show-singles">Singles</div>
             <div class="btn" id="show-packages">Packages</div>
           </div>
           <hr>
+          <div template="ad-728" src="./templates/ad-banners.html"></div>
           <div class="screen visible" id="single-view">
             <section>
               <h1>New Releases</h1>
               <div class="btn indigo more">More<div class="arrow"></div></div>
-              <div template="single-feature" obj="single" src="./templates/items.html" limit="2"></div>
-              <!-- 3 Column Items -->
+              <div template="single-hero" obj="single" src="./templates/items.html" limit="1"></div>
               <div class="carousel-container">
                 <div class="carousel">
-                  <div template="single-tile" obj="single" src="./templates/items.html" limit="3"></div>
-                </div> <!-- <div class="carousel"> -->
-                <div class="controls">
-                  <div class="left"></div>
-                  <div class="right"></div>
+                  <div template="single-feature" obj="single" src="./templates/items.html" limit="2"></div>
                 </div>
-              </div> <!-- <div class="carousel-container"> -->
+                <div class="controls">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                  </div>
+              </div>
             </section>
             <hr>
-            <section>
-              <h1>Recommended For You</h1>
+            <div class="col-left">
+              <section>
+                <h1>Recommended</h1>
+                <div class="btn indigo more">More<div class="arrow"></div></div>
+                <!-- 3 Column Items -->
+                <div template="single-tile" obj="single" src="./templates/items.html" limit="4"></div>
+              </section>
+              <hr>
+              <section>
+                <h1>What others are currently buying</h1>
+                <div class="btn indigo more">More<div class="arrow"></div></div>
+                <!-- 3 Column Items -->
+                <div template="single-tile" obj="single" src="./templates/items.html" limit="4"></div>
+              </section>
+              <hr>
+            </div>
+            <aside class="bulletin">
+              <h1>Advertising</h1>
+              <div template="ad-300" src="./templates/ad-banners.html"></div>
+              <h1>Hot Sellers</h1>
+              <div template="bulletin-top-10" src="./templates/bulletin.html" obj="top10Sellers"></div>
               <div class="btn indigo more">More<div class="arrow"></div></div>
-              <div template="single-feature" obj="single" src="./templates/items.html" limit="2"></div>
-              <!-- 3 Column Items -->
-              <div class="carousel-container">
-                <div class="carousel">
-                  <div template="single-tile" obj="single" src="./templates/items.html" limit="3"></div>
-                </div> <!-- <div class="carousel"> -->
-                <div class="controls">
-                  <div class="left"></div>
-                  <div class="right"></div>
-                </div>
-              </div> <!-- <div class="carousel-container"> -->
-            </section>
-            <hr>
-            <section>
-              <h1>Top 10</h1>
-              <div class="btn indigo more">More<div class="arrow"></div></div>
-              <div template="single-feature" obj="single" src="./templates/items.html" limit="2"></div>
-              <!-- 3 Column Items -->
-              <div class="carousel-container">
-                <div class="carousel">
-                  <div template="single-tile" obj="single" src="./templates/items.html" limit="3"></div>
-                </div> <!-- <div class="carousel"> -->
-                <div class="controls">
-                  <div class="left"></div>
-                  <div class="right"></div>
-                </div>
-              </div> <!-- <div class="carousel-container"> -->
-            </section>
+            </aside>
           </div> <!-- <div class="screen" id="single-view"> -->
           <div class="screen" id="package-view">
             <section>
               <h1>New Releases</h1>
+              <div template="package-hero" obj="pkg" src="./templates/items.html" limit="1"></div>
               <div class="carousel-container">
                 <div class="carousel">
                   <div template="package-tile" obj="pkg" src="./templates/items.html" onload="packageScroll()"></div>
@@ -135,35 +86,28 @@
               </div>
             </section>
             <hr>
-            <section>
-              <h1>Recommended</h1>
-              <div class="carousel-container">
-                <div class="carousel">
-                  <div template="package-tile" obj="pkg" src="./templates/items.html" onload="packageScroll()"></div>
-                </div>
-                <div class="controls">
-                  <div class="left"></div>
-                  <div class="right"></div>
-                </div>
-              </div>
-            </section>
-            <hr>
-            <section>
-              <h1>Action Packed</h1>
-              <div class="carousel-container">
-                <div class="carousel">
-                  <div template="package-tile" obj="pkg" src="./templates/items.html"></div>
-                </div>
-                <div class="controls">
-                  <div class="left"></div>
-                  <div class="right"></div>
-                </div>
-              </div>
-            </section>
-          </div>
+            <div class="col-left">
+              <section>
+                <h1>Recommended</h1>
+                <div template="package-list" obj="pkg" src="./templates/items.html" onload="packageScroll()"></div>
+              </section>
+              <hr>
+              <section>
+                <h1>Action Packed</h1>
+                <div template="package-list" obj="pkg" src="./templates/items.html"></div>
+              </section>
+            </div>
+            <aside class="bulletin">
+              <h1>Advertising</h1>
+              <div template="ad-300" src="./templates/ad-banners.html"></div>
+              <h1>Hot Sellers</h1>
+              <div template="bulletin-top-10" src="./templates/bulletin.html" obj="top10Sellers"></div>
+              <div class="btn indigo more">More<div class="arrow"></div></div>
+            </aside>
+          </div> <!-- <div class="screen" id="package-view"> -->
         </div> <!-- <div id="feature-gallery"> -->
-      </div>
-    </div>
+      </div> <!-- <div class="container-950"> --> 
+    </div> <!-- <div id="main"> -->
     <div template="footer" src="./templates/footer.html"></div>
   </body>
 </html>

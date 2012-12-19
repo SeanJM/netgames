@@ -91,6 +91,12 @@ header {
         padding   : 0 44px 0 0;
         box-shadow: 0 2px 1px rgba(0,0,0,0.4);
       }
+        header #status .cart > .btn p,
+        header #status .locker > .btn p,
+        header #status .wishlist > .btn p {
+          float: left;
+          color: #fff;
+        }
         header #status .btn .arrow {
           position           : absolute;
           top                : 18px;
@@ -141,7 +147,9 @@ header {
           header nav .top-level .tab.active,
           .core header nav .top-level .tab.core,
           .casual header nav .top-level .tab.casual,
-          .mobile header nav .top-level .tab.mobile {
+          .flash header nav .top-level .tab.flash,
+          .ios header nav .top-level .tab.ios,
+          .android header nav .top-level .tab.android {
             background-position: 0 -89px;
           }
           header nav .top-level .tab:hover {
@@ -160,7 +168,9 @@ header {
             }
             .core header nav .top-level .tab.core > .container,
             .casual header nav .top-level .tab.casual > .container,
-            .mobile header nav .top-level .tab.mobile > .container {
+            .flash header nav .top-level .tab.flash > .container,
+            .ios header nav .top-level .tab.ios > .container,
+            .android header nav .top-level .tab.android > .container {
               text-shadow: none;
             }
             header nav .top-level .tab .icon {
@@ -173,26 +183,36 @@ header {
           
             header nav .top-level .tab .icon.core { background-position: -150px -38px; }
             .core header nav .top-level .tab .icon.core { background-position: -150px -76px; }
-            header nav .top-level .tab .icon.mobile { background-position: -186px -38px; }
-            .mobile header nav .top-level .tab .icon.mobile { background-position: -186px -76px; }
+            header nav .top-level .tab .icon.ios { background-position: -186px -38px; }
+            .ios header nav .top-level .tab .icon.ios { background-position: -186px -76px; }
             header nav .top-level .tab .icon.casual { background-position: -222px -38px; }
-            .mobile header nav .top-level .tab .icon.casual { background-position: -222px -76px; }
+            .casual header nav .top-level .tab .icon.casual { background-position: -222px -76px; }
+            header nav .top-level .tab .icon.android { background-position: -294px -38px; }
+            .android header nav .top-level .tab .icon.android { background-position: -294px -74px; }
+            header nav .top-level .tab .icon.flash { background-position: -258px -38px; }
+            .flash header nav .top-level .tab .icon.flash { background-position: -258px -74px; }
           
           header nav .top-level .search-container {
             content            : "";
             position           : absolute;
             top                : 15px;
             right              : 78px;
-            width              : 337px;
+            width              : 142px;
             height             : 36px;
             border-radius      : 8px;
             background-position: 0 -674px;
           }
+          header.search-focus nav .top-level .search-container {
+            width: 290px;
+          }
+            header.search-focus nav .top-level .search-container input[type="text"] {
+              width: 246px;
+            }
             header nav .top-level .search-container input[type="text"] { 
               position     : absolute;
               top          : 2px;
               right        : 2px;
-              width        : 293px;
+              width        : 98px;
               height       : 32px;
               padding      : 0 0 0 40px;
               border       : 0;
